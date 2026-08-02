@@ -21,7 +21,7 @@
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-desktop-en-overview.png?v=20260802" alt="BSTVC Desktop English overview interface" width="100%" />
+  <img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-desktop-en-overview.png?v=20260802-2" alt="BSTVC Desktop English overview interface" width="100%" />
 </p>
 
 <p align="center"><em>The official English desktop interface: prepare data, verify spatial order, fit BSTVC/BSVC models, and export interpretable results in one guided environment.</em></p>
@@ -56,7 +56,7 @@ BSTVC Desktop provides an **ante-hoc interpretable Bayesian workflow**. Interpre
 ## Three research tasks in one full-map framework
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-full-map-framework.png?v=20260802" alt="BSTVC full-map framework" width="100%" />
+  <img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-full-map-framework.webp?v=20260802-2" alt="BSTVC full-map framework" width="100%" />
 </p>
 
 | Research task | Core question | Main model/output |
