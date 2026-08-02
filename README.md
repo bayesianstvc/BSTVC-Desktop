@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="README-assets/bstvc-logo.png" alt="BSTVC Desktop logo" width="112" />
+<img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-logo-motion.gif?v=20260802" alt="Animated BSTVC Desktop logo" width="150" />
 
 # BSTVC Desktop
 
@@ -21,7 +21,7 @@
 ---
 
 <p align="center">
-  <img src="README-assets/bstvc-desktop-en-overview.webp" alt="BSTVC Desktop English overview interface" width="100%" />
+  <img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-desktop-en-overview.png?v=20260802" alt="BSTVC Desktop English overview interface" width="100%" />
 </p>
 
 <p align="center"><em>The official English desktop interface: prepare data, verify spatial order, fit BSTVC/BSVC models, and export interpretable results in one guided environment.</em></p>
@@ -56,7 +56,7 @@ BSTVC Desktop provides an **ante-hoc interpretable Bayesian workflow**. Interpre
 ## Three research tasks in one full-map framework
 
 <p align="center">
-  <img src="README-assets/bstvc-full-map-framework.webp" alt="BSTVC full-map framework" width="100%" />
+  <img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-full-map-framework.png?v=20260802" alt="BSTVC full-map framework" width="100%" />
 </p>
 
 | Research task | Core question | Main model/output |
@@ -156,6 +156,7 @@ We welcome reproducible bug reports, feature proposals, documentation improvemen
 1. Song, C., Shi, X., & Wang, J. (2020). Spatiotemporally varying coefficients (STVC) model: a Bayesian local regression to detect spatial and temporal nonstationarity in variable relationships. *Annals of GIS, 26*(3), 277–291.
 2. Song, C., Yin, H., Shi, X., et al. (2022). Spatiotemporal disparities in regional public risk perception of COVID-19 using Bayesian spatiotemporally varying coefficients (STVC) series models across Chinese cities. *International Journal of Disaster Risk Reduction, 77*, 103078.
 3. Wan, Q., Tang, Z., Pan, J., et al. (2022). Spatiotemporal heterogeneity in associations of national population ageing with socioeconomic and environmental factors at the global scale. *Journal of Cleaner Production, 373*, 133781.
+4. Song, C., Shi, X., Bo, Y., Wang, J., Wang, Y., & Huang, D. (2019). Exploring spatiotemporal nonstationary effects of climate factors on hand, foot, and mouth disease using a Bayesian spatiotemporally varying coefficients (STVC) model in Sichuan, China. *Science of the Total Environment, 648*, 550–560.
 
 For an extended publication and application record, visit the **[BSTVC model homepage](https://chaosong.blog/bayesian-stvc/)**.
 
