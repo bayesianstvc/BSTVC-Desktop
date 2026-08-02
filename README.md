@@ -134,7 +134,7 @@ Both interfaces belong to the same BSTVC research ecosystem. The desktop edition
 
 ## Companion performance monitor
 
-[BSTVC Process Monitor](https://github.com/bayesianstvc/inla-monitor) helps Windows users observe CPU and memory use during model fitting and compare thread settings. Start from the desktop default of **6 threads**, then adjust only after monitoring a comparable model run; more threads do not always produce a faster or more stable fit.
+[BSTVC Process Monitor](https://github.com/bayesianstvc/BSTVC-Monitor) helps Windows users observe CPU and memory use during model fitting and compare thread settings. Start from the desktop default of **6 threads**, then adjust only after monitoring a comparable model run; more threads do not always produce a faster or more stable fit.
 
 ## Scientific scope
 
