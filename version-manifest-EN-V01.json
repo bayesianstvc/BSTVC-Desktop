@@ -1,0 +1,28 @@
+{
+  "site": "BSTVC English Homepage",
+  "version": "EN-V01",
+  "date": "2026-08-11",
+  "baseVersion": "Chinese V47",
+  "status": "production",
+  "published": true,
+  "publishTarget": "https://bayesianstvc.github.io/BSTVC-Desktop/",
+  "publishBranch": "main",
+  "entry": "index.html",
+  "language": "en",
+  "desktopInstaller": "https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe",
+  "desktopRepository": "https://github.com/bayesianstvc/BSTVC-Desktop",
+  "englishGuide": {
+    "status": "coming-soon",
+    "href": null,
+    "integrationPoint": "#download [data-resource=\"ENGLISH GUIDE\"]"
+  },
+  "qa": {
+    "desktopViewport": "1440x900",
+    "mobileViewport": "390x844",
+    "desktopHorizontalOverflow": false,
+    "mobileHorizontalOverflow": false,
+    "visibleChineseTextNodes": 0,
+    "consoleErrors": 0,
+    "englishScreenshotFormat": "WebP"
+  }
+}
