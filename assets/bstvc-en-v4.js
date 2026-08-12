@@ -659,9 +659,8 @@
       link.target = "_blank";
       link.rel = "noreferrer";
       link.setAttribute("hreflang", "zh-CN");
-      link.setAttribute("lang", "zh-CN");
       link.setAttribute("aria-label", "Open the Chinese BSTVC homepage");
-      link.innerHTML = "中文主页 <span>/ Chinese</span> ↗";
+      link.innerHTML = "Chinese Homepage <span aria-hidden=\"true\">↗</span>";
       nav.insertBefore(link, nav.querySelector(".nav-cta"));
     }
 
@@ -669,7 +668,7 @@
 
     const footerLinks = document.querySelector(".footer-links");
     if (footerLinks && !footerLinks.querySelector("[hreflang='zh-CN']")) {
-      footerLinks.insertAdjacentHTML("beforeend", '<a href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/" target="_blank" rel="noreferrer" hreflang="zh-CN" lang="zh-CN" aria-label="Open the Chinese BSTVC homepage">中文主页 / Chinese ↗</a>');
+      footerLinks.insertAdjacentHTML("beforeend", '<a href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/" target="_blank" rel="noreferrer" hreflang="zh-CN" aria-label="Open the Chinese BSTVC homepage">Chinese Homepage <span aria-hidden="true">↗</span></a>');
     }
   }
 
@@ -699,8 +698,7 @@
         <a href="https://github.com/bayesianstvc/BSTVC-Shiny" target="_blank" rel="noreferrer"><b>BSTVC-Shiny</b><span>Interactive application</span></a>
         <a href="https://github.com/bayesianstvc/BSTVC-Monitor" target="_blank" rel="noreferrer"><b>BSTVC-Monitor</b><span>Resource diagnostics</span></a>
       </div>
-      <a class="organization-cta" href="https://github.com/bayesianstvc" target="_blank" rel="noreferrer" aria-label="Explore the bayesianstvc organization on GitHub">Explore the BSTVC Organization <span>↗</span></a>
-      <div class="compact-contact-slot" aria-label="BSTVC contacts"></div>`;
+      <a class="organization-cta" href="https://github.com/bayesianstvc" target="_blank" rel="noreferrer" aria-label="Explore the bayesianstvc organization on GitHub">Explore the BSTVC Organization <span>↗</span></a>`;
     if (preservedVisitorMap) panel.appendChild(preservedVisitorMap);
   }
 
@@ -750,24 +748,17 @@
 
   let visitorMapWaits = 0;
 
-  function createSharedVisitorMap() {
-    const map = document.createElement("div");
-    map.className = "contact-visit-map v3-shared-visitor-map";
-    map.setAttribute("aria-label", "Shared anonymous visitor map for the BSTVC websites");
-    map.innerHTML = `
-      <div class="contact-map-head"><span>SHARED VISITOR MAP</span><small data-visitor-status>CONNECTING / ANONYMOUS AGGREGATE</small></div>
-      <iframe class="visitor-map-frame" data-v3-visitor-map-frame src="./assets/bstvc-visitor-map.html" title="Anonymous BSTVC visitor map" loading="lazy"></iframe>
-      <div class="contact-map-summary"><span>Local interpretation, global insight, and dynamic prediction — within one full-map framework.</span><strong data-global-visitor-count>—</strong><small>Shared total across BSTVC-Desktop EN, BSTVC-Desktop ZH, and BSTVC-R</small></div>`;
+  function activateSharedVisitorMap(map) {
     const frame = map.querySelector("[data-v3-visitor-map-frame]");
     const status = map.querySelector("[data-visitor-status]");
     const endpoint = window.BSTVC_VISITOR_ENDPOINT || "";
     const site = window.BSTVC_VISITOR_SITE_KEY || "bstvc-r";
-    if (endpoint && !window.__BSTVC_V3_VISITOR_REQUESTED__) {
+    if (endpoint && frame && status && !window.__BSTVC_V3_VISITOR_REQUESTED__) {
       window.__BSTVC_V3_VISITOR_REQUESTED__ = true;
       fetch(endpoint, {
         method: "POST", mode: "cors", credentials: "omit", cache: "no-store",
         headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ site, event: "visit", version: "en-v4" })
+        body: JSON.stringify({ site, event: "visit", version: "en-v6" })
       }).then(response => response.ok ? response.json() : Promise.reject(new Error("visitor endpoint")))
         .then(payload => {
           const data = payload?.data || payload || {};
@@ -777,10 +768,20 @@
           const send = () => frame.contentWindow?.postMessage({ type: "bstvc:visitor-points", points }, "*");
           frame.addEventListener("load", send, { once: true });
           send();
-          status.textContent = "LIVE / SHARED ANONYMOUS TOTAL";
-        }).catch(() => { status.textContent = "OFFLINE PREVIEW / SHARED INTERFACE READY"; });
+          status.textContent = "LIVE / ANONYMOUS TOTAL";
+        }).catch(() => { status.textContent = "OFFLINE PREVIEW / MAP READY"; });
     }
     return map;
+  }
+
+  function createSharedVisitorMap() {
+    const map = document.createElement("div");
+    map.className = "contact-visit-map v3-shared-visitor-map v6-visitor-map";
+    map.setAttribute("aria-label", "Shared anonymous visitor map for the BSTVC websites");
+    map.innerHTML = `
+      <div class="contact-map-head"><span>ANONYMOUS VISITOR MAP</span><small data-visitor-status>CONNECTING / ANONYMOUS TOTAL</small><strong data-global-visitor-count aria-label="Anonymous visits">—</strong></div>
+      <iframe class="visitor-map-frame" data-v3-visitor-map-frame src="./assets/bstvc-visitor-map.html" title="Anonymous BSTVC visitor map" loading="lazy"></iframe>`;
+    return activateSharedVisitorMap(map);
   }
 
   function wireV3ContactLayout() {
@@ -791,26 +792,56 @@
     if (!contact || !inner || !copy || !panel) return;
     inner.classList.add("contact-visitor-layout");
 
-    let map = contact.querySelector(".contact-visit-map");
+    contact.querySelectorAll(".contact-visit-map:not(.v6-visitor-map)").forEach(legacyMap => legacyMap.remove());
+    let map = contact.querySelector(".v6-visitor-map");
     if (!map) {
       visitorMapWaits += 1;
       if (visitorMapWaits < 4) return;
       map = createSharedVisitorMap();
     }
+    activateSharedVisitorMap(map);
     if (!copy.contains(map)) copy.appendChild(map);
     map.classList.add("v3-shared-visitor-map");
-    const summaryLabel = map.querySelector(".contact-map-summary > span");
-    if (summaryLabel) summaryLabel.textContent = "Local interpretation, global insight, and dynamic prediction — within one full-map framework.";
-    const summaryNote = map.querySelector(".contact-map-summary > small");
-    if (summaryNote) summaryNote.textContent = "Shared total across BSTVC-Desktop EN, BSTVC-Desktop ZH, and BSTVC-R";
+    map.querySelector(".contact-map-summary")?.remove();
     const status = map.querySelector("[data-visitor-status]");
-    if (status && /[\u3400-\u9fff]/.test(status.textContent)) status.textContent = "LIVE / SHARED ANONYMOUS TOTAL";
+    if (status && /[\u3400-\u9fff]/.test(status.textContent)) status.textContent = "LIVE / ANONYMOUS TOTAL";
 
     contact.querySelector('[data-contact-key="package"]')?.remove();
     contact.querySelector('[data-contact-link="package"]')?.remove();
+    copy.querySelectorAll(":scope > p:not(.section-kicker)").forEach(paragraph => paragraph.remove());
     const cards = contact.querySelector(".contact-cards");
-    const slot = panel.querySelector(".compact-contact-slot");
-    if (cards && slot && !slot.contains(cards)) slot.appendChild(cards);
+    let leftContacts = copy.querySelector(".contact-left-contacts");
+    if (!leftContacts) {
+      leftContacts = document.createElement("div");
+      leftContacts.className = "contact-left-contacts";
+      leftContacts.setAttribute("aria-label", "BSTVC contacts");
+      copy.querySelector("h2")?.insertAdjacentElement("afterend", leftContacts);
+    }
+    if (cards && !leftContacts.contains(cards)) leftContacts.appendChild(cards);
+    panel.querySelector(".compact-contact-slot")?.remove();
+    const organizationCta = panel.querySelector(".organization-cta");
+    if (organizationCta) {
+      let extra = organizationCta.nextElementSibling;
+      while (extra) {
+        const next = extra.nextElementSibling;
+        extra.remove();
+        extra = next;
+      }
+    }
+    copy.querySelectorAll("details").forEach(details => details.remove());
+    if (!panel.__BSTVC_V6_CONTACT_OBSERVER__) {
+      panel.__BSTVC_V6_CONTACT_OBSERVER__ = new MutationObserver(() => {
+        const cta = panel.querySelector(".organization-cta");
+        if (!cta) return;
+        let node = cta.nextElementSibling;
+        while (node) {
+          const next = node.nextElementSibling;
+          node.remove();
+          node = next;
+        }
+      });
+      panel.__BSTVC_V6_CONTACT_OBSERVER__.observe(panel, { childList: true });
+    }
   }
 
   function wireV3CopyAndLayout() {
