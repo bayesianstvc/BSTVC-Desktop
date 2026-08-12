@@ -800,8 +800,9 @@
       map = createSharedVisitorMap();
     }
     activateSharedVisitorMap(map);
-    if (!copy.contains(map)) copy.appendChild(map);
-    map.classList.add("v3-shared-visitor-map");
+    if (map.parentElement !== copy) copy.appendChild(map);
+    map.classList.add("v3-shared-visitor-map", "contact-map-compact");
+    map.classList.remove("contact-map-wide");
     map.querySelector(".contact-map-summary")?.remove();
     const status = map.querySelector("[data-visitor-status]");
     if (status && /[\u3400-\u9fff]/.test(status.textContent)) status.textContent = "LIVE / ANONYMOUS TOTAL";
@@ -891,17 +892,29 @@
     const footerMain = document.querySelector(".footer-main");
     footerMain?.querySelector(".footer-framework-slogan")?.remove();
     const footerBottom = document.querySelector(".footer-bottom");
-    const footerBottomItems = footerBottom?.querySelectorAll(":scope > span");
-    if (footerBottomItems?.[0]) {
-      footerBottomItems[0].textContent = "Local interpretation, global insight, and dynamic prediction — within one full-map framework.";
-      footerBottomItems[0].classList.remove("footer-visit-count");
-      footerBottomItems[0].removeAttribute("aria-hidden");
+    if (footerBottom) {
+      let frameworkClaim = footerBottom.querySelector("[data-footer-framework-claim]") || footerBottom.querySelector(":scope > span:first-child");
+      let groupName = footerBottom.querySelector("[data-footer-group]") || footerBottom.querySelector(":scope > span:nth-child(2)");
+      if (!frameworkClaim) {
+        frameworkClaim = document.createElement("span");
+        footerBottom.prepend(frameworkClaim);
+      }
+      if (!groupName) {
+        groupName = document.createElement("span");
+        footerBottom.append(groupName);
+      }
+      frameworkClaim.dataset.footerFrameworkClaim = "true";
+      frameworkClaim.textContent = "Local interpretation, global insight, and dynamic prediction — within one full-map framework.";
+      frameworkClaim.classList.remove("footer-visit-count");
+      frameworkClaim.removeAttribute("aria-hidden");
+      groupName.dataset.footerGroup = "true";
+      groupName.textContent = "HEOA–West China Health & Medical Geography Group";
+      groupName.classList.remove("footer-visit-count");
+      groupName.removeAttribute("aria-hidden");
+      [...footerBottom.children].forEach(item => {
+        if (item !== frameworkClaim && item !== groupName) item.remove();
+      });
     }
-    if (footerBottomItems?.[1]) footerBottomItems[1].textContent = "HEOA–West China Health & Medical Geography Group";
-    document.querySelectorAll(".footer-bottom .footer-visit-count").forEach(item => {
-      item.classList.remove("footer-visit-count");
-      item.removeAttribute("aria-hidden");
-    });
   }
 
   function copyText(button, text, successLabel) {
