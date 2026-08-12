@@ -172,8 +172,8 @@
 
     ["用真实图件读取时空证据链。", "Read the Spatiotemporal Evidence Chain through Real Figures."],
     ["不要孤立阅读一个系数。把 TCs、SCs、STVPI、局部预测、可信区间与模型评价组合起来，才能形成可解释结论。", "Do not interpret a coefficient in isolation. Combine TCs, SCs, STVPI, local predictions, credible intervals, and model assessment to build an interpretable conclusion."],
-    ["SCs 空间系数", "SCs · Spatial Coefficients"],
-    ["TCs 时间系数", "TCs · Temporal Coefficients"],
+    ["SCs 空间系数", "Space-coefficients"],
+    ["TCs 时间系数", "Time-coefficients"],
     ["STVPI 贡献度", "STVPI · Contributions"],
     ["局部预测", "Local Prediction"],
     ["模型总体评价", "Overall Model Assessment"],
@@ -863,6 +863,16 @@
       pillars.setAttribute("aria-label", "BSTVC core capabilities");
       pillars.innerHTML = "<span>Local Effects.</span><span>Global Insight.</span><span>Dynamic Prediction.</span>";
     }
+    const spaceCoefficientTab = document.querySelector('.results-showcase [data-tab-key="scs"]');
+    const timeCoefficientTab = document.querySelector('.results-showcase [data-tab-key="tcs"]');
+    if (spaceCoefficientTab) {
+      spaceCoefficientTab.textContent = "Space-coefficients";
+      spaceCoefficientTab.setAttribute("aria-label", "Space-coefficients");
+    }
+    if (timeCoefficientTab) {
+      timeCoefficientTab.textContent = "Time-coefficients";
+      timeCoefficientTab.setAttribute("aria-label", "Time-coefficients");
+    }
     const heroLede = document.querySelector(".hero-lede");
     if (heroLede) heroLede.innerHTML = 'Conventional global regression reduces complex spatiotemporal relationships to a single coefficient, while black-box GeoAI often explains predictions only after the fact. <strong>BSTVC (Bayesian Spatiotemporally Varying Coefficients)</strong> takes a different path—unifying local effects, global key-driver identification, dynamic prediction, and uncertainty quantification within a transparent Bayesian framework to reveal <strong>where, when, and why relationships change</strong>.';
     const heroActions = document.querySelector(".hero-actions");
@@ -873,6 +883,13 @@
     document.querySelectorAll(".signal-number").forEach(item => {
       if (item.textContent.trim() === "50 / 95") item.classList.add("compact-credible-number");
     });
+
+    const downloadCopy = document.querySelector("#download .download-copy");
+    const downloadTitleRow = downloadCopy?.querySelector(".download-title-row");
+    const downloadBrand = downloadCopy?.querySelector(":scope > .download-brand");
+    if (downloadTitleRow && downloadBrand && downloadBrand.parentElement === downloadCopy) {
+      downloadTitleRow.appendChild(downloadBrand);
+    }
 
     const frameworkIntro = document.querySelector("#framework .section-intro");
     if (frameworkIntro && !frameworkIntro.querySelector(".framework-memory-line")) {
