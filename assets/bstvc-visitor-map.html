@@ -30,6 +30,15 @@
       let map = null;
       let visitorLayer = null;
       let pendingPoints = [];
+      let resizeObserver = null;
+      const notifyParentReady = () => {
+        if (window.parent === window) return;
+        window.parent.postMessage({ type: "bstvc:visitor-map-ready" }, "*");
+      };
+      const refreshMapSize = () => {
+        if (!map) return;
+        window.requestAnimationFrame(() => map?.invalidateSize({ pan: false, debounceMoveend: true }));
+      };
       const normalizePoint = (point) => ({
         lat: Number(point.lat ?? point.latitude),
         lng: Number(point.lng ?? point.lon ?? point.longitude),
@@ -63,6 +72,7 @@
             window.setTimeout(() => visitorLayer.removeLayer(ring), 1000);
           });
         });
+        refreshMapSize();
       };
       const initialize = () => {
         if (!window.L) return;
@@ -84,12 +94,24 @@
         visitorLayer = L.layerGroup().addTo(map);
         document.body.classList.add("is-live-map");
         renderPoints(pendingPoints);
+        refreshMapSize();
+        window.setTimeout(refreshMapSize, 180);
+        window.setTimeout(refreshMapSize, 760);
+        if ("ResizeObserver" in window) {
+          resizeObserver = new ResizeObserver(refreshMapSize);
+          resizeObserver.observe(document.getElementById("map"));
+        } else {
+          window.addEventListener("resize", refreshMapSize, { passive: true });
+        }
+        notifyParentReady();
       };
       window.addEventListener("message", (event) => {
         if (event.source !== window.parent || event.data?.type !== "bstvc:visitor-points") return;
         renderPoints(event.data.points);
+        notifyParentReady();
       });
       initialize();
+      window.addEventListener("load", notifyParentReady, { once: true });
     })();
   </script>
 </body>

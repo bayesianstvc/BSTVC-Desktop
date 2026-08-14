@@ -761,6 +761,21 @@
     const status = map.querySelector("[data-visitor-status]");
     const endpoint = window.BSTVC_VISITOR_ENDPOINT || "";
     const site = window.BSTVC_VISITOR_SITE_KEY || "bstvc-r";
+    const sendPoints = () => {
+      if (!frame?.contentWindow || !Array.isArray(frame.__bstvcVisitorPoints)) return;
+      frame.contentWindow.postMessage({ type: "bstvc:visitor-points", points: frame.__bstvcVisitorPoints }, "*");
+    };
+    if (frame && !frame.__bstvcReadyListenerBound) {
+      frame.__bstvcReadyListenerBound = true;
+      window.addEventListener("message", event => {
+        if (event.source !== frame.contentWindow || event.data?.type !== "bstvc:visitor-map-ready") return;
+        sendPoints();
+      });
+      frame.addEventListener("load", () => {
+        sendPoints();
+        window.setTimeout(sendPoints, 240);
+      });
+    }
     if (endpoint && frame && status && !window.__BSTVC_V3_VISITOR_REQUESTED__) {
       window.__BSTVC_V3_VISITOR_REQUESTED__ = true;
       fetch(endpoint, {
@@ -773,9 +788,9 @@
           const total = Number(data.total ?? data.globalVisitors ?? data.count);
           if (Number.isFinite(total)) map.querySelector("[data-global-visitor-count]").textContent = new Intl.NumberFormat("en-US").format(total);
           const points = Array.isArray(data.points) ? data.points : (Array.isArray(data.regions) ? data.regions : []);
-          const send = () => frame.contentWindow?.postMessage({ type: "bstvc:visitor-points", points }, "*");
-          frame.addEventListener("load", send, { once: true });
-          send();
+          frame.__bstvcVisitorPoints = points;
+          sendPoints();
+          window.setTimeout(sendPoints, 320);
           status.textContent = "LIVE / ANONYMOUS TOTAL";
         }).catch(() => { status.textContent = "OFFLINE PREVIEW / MAP READY"; });
     }
