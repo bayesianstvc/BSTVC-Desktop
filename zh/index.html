@@ -1841,18 +1841,20 @@ html{scroll-behavior:smooth}
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => setTimeout(run, 40), {once:true});
   else setTimeout(run, 40);
 })();
-</script><script id="bstvc-v50-motion-loader">
+</script><script id="bstvc-v52-motion-loader">
 (() => {
   const frames = [...document.querySelectorAll('[data-motion-src]')];
   if (!frames.length) return;
+
   const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   const saveData = connection?.saveData === true;
-  const mobile = window.matchMedia?.('(max-width: 760px)').matches || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
   const memory = Number(navigator.deviceMemory || 8);
   const cores = Number(navigator.hardwareConcurrency || 8);
-  const lowPower = reduced || saveData || mobile || memory <= 2 || cores <= 2;
+  const mobile = window.matchMedia?.('(max-width: 760px)').matches || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+  const lowPower = reduced || saveData || memory <= 2 || cores <= 2;
   const hero = document.querySelector('.hero-dynamic-background');
+
   const loadFrame = (frame) => {
     if (!frame || frame.dataset.motionLoaded === 'true') return;
     const src = frame.getAttribute('data-motion-src');
@@ -1860,24 +1862,42 @@ html{scroll-behavior:smooth}
     frame.dataset.motionLoaded = 'true';
     frame.src = src;
   };
+
+  const afterPaint = (fn) => requestAnimationFrame(() => requestAnimationFrame(fn));
+  const idle = (fn, timeout = 900) => {
+    if ('requestIdleCallback' in window) window.requestIdleCallback(fn, { timeout });
+    else window.setTimeout(fn, timeout);
+  };
+
   if (lowPower) {
     document.documentElement.classList.add('bstvc-motion-static');
     return;
   }
-  const idle = window.requestIdleCallback || ((callback) => window.setTimeout(() => callback({ timeRemaining: () => 0 }), 900));
-  if (hero) idle(() => window.setTimeout(() => loadFrame(hero), 260));
-  const rest = frames.filter((frame) => frame !== hero);
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        loadFrame(entry.target);
-        observer.unobserve(entry.target);
-      });
-    }, { rootMargin: '420px 0px' });
-    rest.forEach((frame) => observer.observe(frame));
-  } else {
-    window.setTimeout(() => rest.forEach(loadFrame), 1400);
+
+  if (mobile) {
+    // Mobile keeps the static WebP first. Once it has painted, all motion frames
+    // enter a short queue so the page remains responsive instead of loading at once.
+    document.documentElement.classList.add('bstvc-mobile-motion-progressive');
+    afterPaint(() => window.setTimeout(() => {
+      const queue = [hero, ...frames.filter((frame) => frame !== hero)];
+      queue.forEach((frame, index) => window.setTimeout(() => loadFrame(frame), index * 260));
+    }, 560));
+    return;
   }
+
+  afterPaint(() => idle(() => loadFrame(hero), 500));
+  const delayedFrames = frames.filter((frame) => frame !== hero);
+  if (!('IntersectionObserver' in window)) {
+    idle(() => delayedFrames.forEach(loadFrame), 1200);
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      loadFrame(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '520px 0px' });
+  delayedFrames.forEach((frame) => observer.observe(frame));
 })();
 </script></body></html>
