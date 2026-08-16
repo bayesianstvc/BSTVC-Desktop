@@ -4,7 +4,13 @@
   "date": "2026-08-16",
   "sourceVersion": "20260814-BSTVC英文主页首次载入与地图修复-V01-离线包",
   "scope": "Mobile Logo motion and compact layouts for sections 03 and 04 only",
-  "published": false,
+  "published": true,
+  "publication": {
+    "url": "https://bayesianstvc.github.io/BSTVC-Desktop/",
+    "commit": "4e4dbec963996ace889956c6556f48c84fd01a79",
+    "pagesStatus": "built",
+    "onlineMobileLogoMotionReady": true
+  },
   "previewEntry": "index.html",
   "verification": {
     "mobileViewport": "390x844",

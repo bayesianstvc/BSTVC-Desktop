@@ -8,6 +8,5 @@
   2. The GeoAI Paradigm section uses compact law cards, a touch-friendly concept rail, and a concise text-first explanation panel.
   3. The Model System uses a decision rail, two-column compact model selectors, on-demand scope disclosure, and a one-card-at-a-time principles rail.
   4. Static and animated Logo layers are mutually exclusive after the iframe reports ready.
-- Verification: 390 × 844 mobile, reduced-motion mobile, and 1440 px desktop regression completed locally. No online publication in this version.
+- Verification: 390 × 844 mobile, reduced-motion mobile, and 1440 px desktop regression completed locally. Published to GitHub Pages from commit `4e4dbec963996ace889956c6556f48c84fd01a79`; the online mobile check confirmed both Logo motion iframes are ready.
 - Preview: open `index.html` directly from this offline package.
-
