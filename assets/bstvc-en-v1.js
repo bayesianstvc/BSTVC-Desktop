@@ -1,4 +1,4 @@
-/* BSTVC English Homepage V3 — independent international language and UX layer */
+/* BSTVC English Homepage V1 — language layer and English-only download wiring */
 (() => {
   "use strict";
 
@@ -18,18 +18,18 @@
     ["普通全局回归常以单一系数概括所有地点与时期，黑箱 GeoAI 则多在预测之后附加近似解释。BSTVC（贝叶斯时空变系数）把局部系数、不确定性、关键驱动与动态预测统一在贝叶斯白盒模型中，直接回答影响机制何时、何地、为何不同。", "Conventional global regression often summarizes all places and periods with a single coefficient, while black-box GeoAI usually adds approximate explanations after prediction. BSTVC (Bayesian Spatiotemporally Varying Coefficients) unifies local effects, uncertainty, key-driver identification, and dynamic prediction in an interpretable Bayesian framework—revealing when, where, and why relationships vary."],
     ["探索方法体系", "Explore the Framework"],
     ["下载中文桌面版", "Download English Desktop"],
-    ["无需编程", "No Code"],
-    ["可复现", "Reproducible"],
-    ["贝叶斯白盒", "Bayesian White Box"],
+    ["无需编程", "NO CODE"],
+    ["可复现", "REPRODUCIBLE"],
+    ["贝叶斯白盒", "BAYESIAN WHITE BOX"],
     ["全球首个时空可解释分析开源工具。", "The first open-source tool for spatiotemporal interpretability analysis."],
-    ["目标变量", "Response Types"],
-    ["连续 · 二分类 · 计数", "Continuous · Binary · Count"],
-    ["贝叶斯可信区间", "Bayesian Credible Intervals"],
-    ["不确定性进入解释", "Uncertainty-Informed Interpretation"],
-    ["官方研究案例", "Empirical Studies"],
-    ["2018—至今 · 健康与医学地理学", "2018–Present · Health & Medical Geography"],
-    ["文件上传上限", "Upload Limit"],
-    ["适配大型面板与地图", "Large Panels and Maps"],
+    ["目标变量", "RESPONSE TYPES"],
+    ["连续 · 二分类 · 计数", "CONTINUOUS · BINARY · COUNT"],
+    ["贝叶斯可信区间", "BAYESIAN CREDIBLE INTERVALS"],
+    ["不确定性进入解释", "UNCERTAINTY-INFORMED INTERPRETATION"],
+    ["官方研究案例", "EMPIRICAL STUDIES"],
+    ["2018—至今 · 健康与医学地理学", "2018–PRESENT · HEALTH & MEDICAL GEOGRAPHY"],
+    ["文件上传上限", "UPLOAD LIMIT"],
+    ["适配大型面板与地图", "LARGE PANELS AND MAPS"],
 
     ["解释性，不止是", "Interpretability is more than"],
     ["一个重要性排序。", "an importance ranking."],
@@ -101,9 +101,9 @@
 
     ["一套体系，覆盖解释与预测。", "One System for Interpretation and Prediction."],
     ["从截距到系数、从独立变化到时空交互、从空间截面到时空面板，研究问题决定模型尺度。", "From intercepts to coefficients, independent variation to space–time interactions, and spatial cross-sections to spatiotemporal panels—the research question determines the model scale."],
-    ["时空变截距", "Spatiotemporally Varying Intercepts"],
+    ["时空变截距", "Spatiotemporally Varying Intercept"],
     ["刻画目标变量自身的时空演变，用于缺失值填补、时空平滑与动态预测。", "Characterizes the response variable’s spatiotemporal evolution for missing-value imputation, smoothing, and dynamic prediction."],
-    ["时空交互变截距", "Spatiotemporally Interacting Varying Intercepts"],
+    ["时空交互变截距", "Spatiotemporally Interacting Varying Intercept"],
     ["在变截距结构中加入时空交互，表达空间与时间耦合的动态变化。", "Adds space–time interaction to a varying-intercept structure to represent coupled spatial and temporal dynamics."],
     ["时空变系数", "Spatiotemporally Varying Coefficients"],
     ["拟合解释变量的局部时空系数，识别变量关系的时间与空间非平稳性。", "Fits local spatiotemporal coefficients for explanatory variables to identify temporal and spatial nonstationarity in their relationships."],
@@ -172,8 +172,8 @@
 
     ["用真实图件读取时空证据链。", "Read the Spatiotemporal Evidence Chain through Real Figures."],
     ["不要孤立阅读一个系数。把 TCs、SCs、STVPI、局部预测、可信区间与模型评价组合起来，才能形成可解释结论。", "Do not interpret a coefficient in isolation. Combine TCs, SCs, STVPI, local predictions, credible intervals, and model assessment to build an interpretable conclusion."],
-    ["SCs 空间系数", "Space-coefficients"],
-    ["TCs 时间系数", "Time-coefficients"],
+    ["SCs 空间系数", "SCs · Spatial Coefficients"],
+    ["TCs 时间系数", "TCs · Temporal Coefficients"],
     ["STVPI 贡献度", "STVPI · Contributions"],
     ["局部预测", "Local Prediction"],
     ["模型总体评价", "Overall Model Assessment"],
@@ -578,18 +578,17 @@
     const section = document.querySelector("#download");
     if (!section) return;
     const title = section.querySelector("h2");
-    if (title) title.innerHTML = 'Download BSTVC Desktop.<br><span>Make spatiotemporal relationships interpretable.</span>';
+    if (title) title.innerHTML = 'Download BSTVC Desktop.<br><span>Start with a real case.</span>';
     const intro = section.querySelector(".download-copy > p:not(.section-kicker)");
-    if (intro) intro.textContent = "English desktop release for Windows 10/11, with direct GitHub access to the installer, source repository, reproducible case interface, and supporting tools.";
+    if (intro) intro.textContent = "English desktop release for Windows 10/11, with direct GitHub access to the installer, source repository, R package, and supporting tools.";
 
     const actions = section.querySelector(".download-actions");
     if (actions) actions.innerHTML = `
-      <a class="download-resource-card download-resource-primary" data-resource="DOWNLOAD" href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe" target="_blank" rel="noreferrer" aria-label="Download BSTVC Desktop English installer for Windows x64">
+      <a class="download-resource-card download-resource-primary" data-resource="DOWNLOAD" href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe" target="_blank" rel="noreferrer">
         <span class="download-resource-meta"><i>01</i><b>ENGLISH DESKTOP</b><em>WIN</em></span>
         <strong>Download BSTVC Desktop</strong>
-        <p>English installer · Windows x64 · Version 2026.8.1 · Released 1 August 2026</p>
+        <p>English installer · Windows x64 · Version 2026.8.1</p>
         <span class="download-resource-url">BSTVC_desktop_EN_win_x64_26.08.01_setup.exe</span>
-        <span class="download-resource-sha"><b>SHA-256</b><code>4f98423277254676d88eb64072e01920a597eaeddfaed1ee889bdcc0585c977c</code></span>
         <span class="download-resource-action">Download from GitHub Release <i>↗</i></span>
       </a>
       <a class="download-resource-card" data-resource="DESKTOP REPOSITORY" href="https://github.com/bayesianstvc/BSTVC-Desktop" target="_blank" rel="noreferrer">
@@ -604,12 +603,12 @@
         <p>The module and integration point are reserved for the forthcoming English guide.</p>
         <span class="download-resource-action">Coming soon · Link reserved</span>
       </div>
-      <div class="download-resource-card is-coming-soon" data-resource="CASE DATASET" data-release-placeholder="https://github.com/bayesianstvc/BSTVC-Desktop/releases" role="status" aria-label="Case dataset download interface reserved for a future GitHub Release">
-        <span class="download-resource-meta"><i>04</i><b>CASE DATASET</b><em>SOON</em></span>
-        <strong>Reproducible Case Dataset</strong>
-        <p>Reserved interface for example data, maps, and expected outputs</p>
-        <span class="download-resource-action">Future GitHub Release · Interface reserved</span>
-      </div>
+      <a class="download-resource-card" data-resource="R PACKAGE" href="https://github.com/bayesianstvc/BSTVC-R" target="_blank" rel="noreferrer">
+        <span class="download-resource-meta"><i>04</i><b>R PACKAGE</b><em>GITHUB</em></span>
+        <strong>BSTVC-R</strong>
+        <p>Reproducible research workflows and source code</p>
+        <span class="download-resource-action">View GitHub Project <i>↗</i></span>
+      </a>
       <a class="download-resource-card" data-resource="MONITOR" href="https://github.com/bayesianstvc/BSTVC-Monitor" target="_blank" rel="noreferrer">
         <span class="download-resource-meta"><i>05</i><b>AUXILIARY TOOL</b><em>WIN</em></span>
         <strong>BSTVC Process Monitor</strong>
@@ -621,7 +620,7 @@
     if (packagePanel) {
       const image = packagePanel.querySelector("img");
       if (image) {
-        image.src = "./assets/bstvc-desktop-home-screenshot-en.webp";
+        image.src = "./assets/bstvc-desktop-home-screenshot-en.png";
         image.alt = "BSTVC Desktop English interface showing the overview, core features, and workflow";
       }
       const caption = packagePanel.querySelector("figcaption");
@@ -650,489 +649,20 @@
     });
   }
 
-  function wireInternationalNavigation() {
-    const nav = document.querySelector(".nav-links");
-    if (nav) {
-      let link = nav.querySelector(".language-switch");
-      if (!link) {
-        link = document.createElement("a");
-        link.className = "language-switch";
-        nav.insertBefore(link, nav.querySelector(".nav-cta"));
-      }
-      link.href = "https://bayesianstvc.github.io/BSTVC-Desktop/zh/";
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      link.setAttribute("hreflang", "zh-CN");
-      link.setAttribute("aria-label", "打开中文 BSTVC 主页");
-      link.innerHTML = "中文主页 <span aria-hidden=\"true\">↗</span>";
-    }
-
-    document.querySelectorAll('.footer-links a[href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/"]').forEach(link => {
-      link.innerHTML = "中文主页 <span aria-hidden=\"true\">↗</span>";
-      link.setAttribute("aria-label", "打开中文 BSTVC 主页");
-    });
-
-    document.querySelector(".bstvc-brand-equation")?.remove();
-
-    const footerLinks = document.querySelector(".footer-links");
-    if (footerLinks && !footerLinks.querySelector("[hreflang='zh-CN']")) {
-      footerLinks.insertAdjacentHTML("beforeend", '<a href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/" target="_blank" rel="noreferrer" hreflang="zh-CN" aria-label="打开中文 BSTVC 主页">中文主页 <span aria-hidden="true">↗</span></a>');
-    }
-  }
-
-  function wireOrganizationPanel() {
-    const panel = document.querySelector(".community-panel");
-    if (!panel || (panel.dataset.englishOrg === "true" && panel.querySelector(".organization-products"))) return;
-    const preservedVisitorMap = panel.querySelector(".contact-visit-map");
-    preservedVisitorMap?.remove();
-    panel.dataset.englishOrg = "true";
-    panel.innerHTML = `
-      <div class="organization-brand">
-        <img src="./assets/bstvc-logo-rounded.webp" alt="BSTVC organization logo" loading="lazy" decoding="async">
-        <div><span>GITHUB ORGANIZATION</span><strong>bayesianstvc</strong></div>
-      </div>
-      <div class="organization-vision">
-        <p class="community-kicker">BSTVC ORGANIZATION</p>
-        <h3>Advancing Spatiotemporal<br><span>Interpretability.</span></h3>
-        <p>Bayesian Spatiotemporally Varying Coefficients</p>
-      </div>
-      <div class="product-ecosystem">
-        <span>PRODUCT ECOSYSTEM</span>
-        <h4>One framework. Multiple ways to explore.</h4>
-      </div>
-      <div class="organization-products" aria-label="Four BSTVC open-source products">
-        <a href="https://github.com/bayesianstvc/BSTVC-R" target="_blank" rel="noreferrer"><b>BSTVC-R</b><span>Modeling package</span></a>
-        <a href="https://github.com/bayesianstvc/BSTVC-Desktop" target="_blank" rel="noreferrer"><b>BSTVC-Desktop</b><span>No-code analysis</span></a>
-        <a href="https://github.com/bayesianstvc/BSTVC-Shiny" target="_blank" rel="noreferrer"><b>BSTVC-Shiny</b><span>Interactive application</span></a>
-        <a href="https://github.com/bayesianstvc/BSTVC-Monitor" target="_blank" rel="noreferrer"><b>BSTVC-Monitor</b><span>Resource diagnostics</span></a>
-      </div>
-      <a class="organization-cta" href="https://github.com/bayesianstvc" target="_blank" rel="noreferrer" aria-label="Explore the bayesianstvc organization on GitHub">Explore the BSTVC Organization <span>↗</span></a>`;
-    if (preservedVisitorMap) panel.appendChild(preservedVisitorMap);
-  }
-
-  function removeLegacyCommunityPromotion() {
-    const contact = document.querySelector("#contact");
-    if (!contact) return;
-    contact.querySelectorAll(".wechat-community").forEach(node => node.remove());
-    contact.querySelectorAll('img[src*="healthgeography"], [aria-label*="WECHAT" i], [title*="WECHAT" i]').forEach(node => {
-      const block = node.closest(".wechat-community");
-      if (block) block.remove();
-      else if (node.matches("img")) node.remove();
-    });
-    if (!contact._bstvcEnglishObserver) {
-      const observer = new MutationObserver(() => {
-        contact.querySelectorAll(".wechat-community").forEach(node => node.remove());
-        wireOrganizationPanel();
-      });
-      observer.observe(contact, { childList: true, subtree: true });
-      contact._bstvcEnglishObserver = observer;
-    }
-  }
-
-  function wireTerminologyGlossary() {
-    const guide = document.querySelector("#guide");
-    if (!guide || document.querySelector("#terminology")) return;
-    guide.insertAdjacentHTML("beforeend", `
-      <aside class="terminology-panel" id="terminology" aria-labelledby="terminology-title">
-        <div class="terminology-heading">
-          <p class="section-kicker">ENGLISH TERMINOLOGY</p>
-          <h3 id="terminology-title">A consistent vocabulary for<br><span>spatiotemporal interpretability.</span></h3>
-          <p>Preferred terms used throughout BSTVC publications, software, documentation, and international communication.</p>
-        </div>
-        <dl class="terminology-grid">
-          <div><dt>BSTVC</dt><dd>Bayesian Spatiotemporally Varying Coefficients</dd></div>
-          <div><dt>STVC</dt><dd>Spatiotemporally Varying Coefficients</dd></div>
-          <div><dt>STIVC</dt><dd>Spatiotemporally Interacting Varying Coefficients</dd></div>
-          <div><dt>BSVC</dt><dd>Bayesian Spatially Varying Coefficients</dd></div>
-          <div><dt>STVPI</dt><dd>Spatiotemporal Variance Partitioning Index</dd></div>
-          <div><dt>STVI</dt><dd>Spatiotemporally Varying Intercepts</dd></div>
-          <div><dt>STIVI</dt><dd>Spatiotemporally Interacting Varying Intercepts</dd></div>
-          <div><dt>Ante-hoc interpretability</dt><dd>Interpretability specified within the model before fitting</dd></div>
-          <div><dt>Spatiotemporal nonstationarity</dt><dd>Relationships that vary across both space and time</dd></div>
-          <div><dt>Bayesian credible interval</dt><dd>A posterior interval for uncertainty-aware interpretation</dd></div>
-        </dl>
-      </aside>`);
-  }
-
-  let visitorMapWaits = 0;
-
-  function activateSharedVisitorMap(map) {
-    const frame = map.querySelector("[data-v3-visitor-map-frame]");
-    const status = map.querySelector("[data-visitor-status]");
-    const endpoint = window.BSTVC_VISITOR_ENDPOINT || "";
-    const site = window.BSTVC_VISITOR_SITE_KEY || "bstvc-r";
-    const sendPoints = () => {
-      if (!frame?.contentWindow || !Array.isArray(frame.__bstvcVisitorPoints)) return;
-      frame.contentWindow.postMessage({ type: "bstvc:visitor-points", points: frame.__bstvcVisitorPoints }, "*");
-    };
-    if (frame && !frame.__bstvcReadyListenerBound) {
-      frame.__bstvcReadyListenerBound = true;
-      window.addEventListener("message", event => {
-        if (event.source !== frame.contentWindow || event.data?.type !== "bstvc:visitor-map-ready") return;
-        sendPoints();
-      });
-      frame.addEventListener("load", () => {
-        sendPoints();
-        window.setTimeout(sendPoints, 240);
-      });
-    }
-    if (endpoint && frame && status && !window.__BSTVC_V3_VISITOR_REQUESTED__) {
-      window.__BSTVC_V3_VISITOR_REQUESTED__ = true;
-      fetch(endpoint, {
-        method: "POST", mode: "cors", credentials: "omit", cache: "no-store",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ site, event: "visit", version: "en-v6" })
-      }).then(response => response.ok ? response.json() : Promise.reject(new Error("visitor endpoint")))
-        .then(payload => {
-          const data = payload?.data || payload || {};
-          const total = Number(data.total ?? data.globalVisitors ?? data.count);
-          if (Number.isFinite(total)) map.querySelector("[data-global-visitor-count]").textContent = new Intl.NumberFormat("en-US").format(total);
-          const points = Array.isArray(data.points) ? data.points : (Array.isArray(data.regions) ? data.regions : []);
-          frame.__bstvcVisitorPoints = points;
-          sendPoints();
-          window.setTimeout(sendPoints, 320);
-          status.textContent = "LIVE / ANONYMOUS TOTAL";
-        }).catch(() => { status.textContent = "OFFLINE PREVIEW / MAP READY"; });
-    }
-    return map;
-  }
-
-  function createSharedVisitorMap() {
-    const map = document.createElement("div");
-    map.className = "contact-visit-map v3-shared-visitor-map v6-visitor-map";
-    map.setAttribute("aria-label", "Shared anonymous visitor map for the BSTVC websites");
-    map.innerHTML = `
-      <div class="contact-map-head"><span>ANONYMOUS VISITOR MAP</span><small data-visitor-status>CONNECTING / ANONYMOUS TOTAL</small><strong data-global-visitor-count aria-label="Anonymous visits">—</strong></div>
-      <iframe class="visitor-map-frame" data-v3-visitor-map-frame src="./assets/bstvc-visitor-map.html" title="Anonymous BSTVC visitor map" loading="lazy"></iframe>`;
-    return activateSharedVisitorMap(map);
-  }
-
-  function wireV3ContactLayout() {
-    const contact = document.querySelector("#contact");
-    const inner = contact?.querySelector(".contact-inner");
-    const copy = contact?.querySelector(".contact-copy");
-    const panel = contact?.querySelector(".community-panel");
-    if (!contact || !inner || !copy || !panel) return;
-    inner.classList.add("contact-visitor-layout");
-
-    contact.querySelectorAll(".contact-visit-map:not(.v6-visitor-map)").forEach(legacyMap => legacyMap.remove());
-    let map = contact.querySelector(".v6-visitor-map");
-    if (!map) {
-      visitorMapWaits += 1;
-      if (visitorMapWaits < 4) return;
-      map = createSharedVisitorMap();
-    }
-    activateSharedVisitorMap(map);
-    if (map.parentElement !== copy) copy.appendChild(map);
-    map.classList.add("v3-shared-visitor-map", "contact-map-compact");
-    map.classList.remove("contact-map-wide");
-    map.querySelector(".contact-map-summary")?.remove();
-    const status = map.querySelector("[data-visitor-status]");
-    if (status && /[\u3400-\u9fff]/.test(status.textContent)) status.textContent = "LIVE / ANONYMOUS TOTAL";
-
-    contact.querySelector('[data-contact-key="package"]')?.remove();
-    contact.querySelector('[data-contact-link="package"]')?.remove();
-    copy.querySelectorAll(":scope > p:not(.section-kicker)").forEach(paragraph => paragraph.remove());
-    const cards = contact.querySelector(".contact-cards");
-    let leftContacts = copy.querySelector(".contact-left-contacts");
-    if (!leftContacts) {
-      leftContacts = document.createElement("div");
-      leftContacts.className = "contact-left-contacts";
-      leftContacts.setAttribute("aria-label", "BSTVC contacts");
-      copy.querySelector("h2")?.insertAdjacentElement("afterend", leftContacts);
-    }
-    if (cards && !leftContacts.contains(cards)) leftContacts.appendChild(cards);
-    panel.querySelector(".compact-contact-slot")?.remove();
-    const organizationCta = panel.querySelector(".organization-cta");
-    if (organizationCta) {
-      let extra = organizationCta.nextElementSibling;
-      while (extra) {
-        const next = extra.nextElementSibling;
-        extra.remove();
-        extra = next;
-      }
-    }
-    copy.querySelectorAll("details").forEach(details => details.remove());
-    if (!panel.__BSTVC_V6_CONTACT_OBSERVER__) {
-      panel.__BSTVC_V6_CONTACT_OBSERVER__ = new MutationObserver(() => {
-        const cta = panel.querySelector(".organization-cta");
-        if (!cta) return;
-        let node = cta.nextElementSibling;
-        while (node) {
-          const next = node.nextElementSibling;
-          node.remove();
-          node = next;
-        }
-      });
-      panel.__BSTVC_V6_CONTACT_OBSERVER__.observe(panel, { childList: true });
-    }
-  }
-
-  function wireV3CopyAndLayout() {
-    const heroEyebrow = document.querySelector(".hero-copy .eyebrow");
-    if (heroEyebrow) heroEyebrow.innerHTML = '<span class="eyebrow-dot" aria-hidden="true"></span>BSTVC | Make Space and Time Explainable.';
-    document.querySelector(".bstvc-brand-equation")?.remove();
-
-    const pillars = document.querySelector(".hero-pillar-line");
-    if (pillars) {
-      pillars.setAttribute("aria-label", "BSTVC core capabilities");
-      pillars.innerHTML = "<span>Local Effects.</span><span>Global Insight.</span><span>Dynamic Prediction.</span>";
-    }
-    const spaceCoefficientTab = document.querySelector('.results-showcase [data-tab-key="scs"]');
-    const timeCoefficientTab = document.querySelector('.results-showcase [data-tab-key="tcs"]');
-    if (spaceCoefficientTab) {
-      spaceCoefficientTab.textContent = "Space-coefficients";
-      spaceCoefficientTab.setAttribute("aria-label", "Space-coefficients");
-    }
-    if (timeCoefficientTab) {
-      timeCoefficientTab.textContent = "Time-coefficients";
-      timeCoefficientTab.setAttribute("aria-label", "Time-coefficients");
-    }
-    const heroLede = document.querySelector(".hero-lede");
-    if (heroLede) heroLede.innerHTML = 'Conventional global regression reduces complex spatiotemporal relationships to a single coefficient, while black-box GeoAI often explains predictions only after the fact. <strong>BSTVC (Bayesian Spatiotemporally Varying Coefficients)</strong> takes a different path—unifying local effects, global key-driver identification, dynamic prediction, and uncertainty quantification within a transparent Bayesian framework to reveal <strong>where, when, and why relationships change</strong>.';
-    const heroActions = document.querySelector(".hero-actions");
-    const heroPillars = document.querySelector(".hero-pillar-line");
-    if (heroActions && heroPillars && heroPillars.previousElementSibling === heroActions) {
-      heroActions.parentElement.insertBefore(heroPillars, heroActions);
-    }
-    document.querySelectorAll(".signal-number").forEach(item => {
-      if (item.textContent.trim() === "50 / 95") item.classList.add("compact-credible-number");
-    });
-
-    const downloadCopy = document.querySelector("#download .download-copy");
-    const downloadTitleRow = downloadCopy?.querySelector(".download-title-row");
-    const downloadBrand = downloadCopy?.querySelector(":scope > .download-brand");
-    if (downloadTitleRow && downloadBrand && downloadBrand.parentElement === downloadCopy) {
-      downloadTitleRow.appendChild(downloadBrand);
-    }
-
-    const frameworkIntro = document.querySelector("#framework .section-intro");
-    if (frameworkIntro && !frameworkIntro.querySelector(".framework-memory-line")) {
-      const line = document.createElement("p");
-      line.className = "framework-memory-line";
-      line.textContent = "Where. When. Why.";
-      frameworkIntro.querySelector("h2")?.insertAdjacentElement("afterend", line);
-    }
-
-    const frameworkFlow = document.querySelector("#framework .framework-flow");
-    const frameworkRationale = frameworkIntro && Array.from(frameworkIntro.querySelectorAll(":scope > p")).find(item => !item.classList.contains("section-kicker") && !item.classList.contains("framework-memory-line") && !item.classList.contains("framework-question"));
-    if (frameworkFlow && frameworkRationale && !frameworkFlow.querySelector(".framework-rationale")) {
-      frameworkRationale.classList.add("framework-rationale");
-      frameworkFlow.insertBefore(frameworkRationale, frameworkFlow.firstElementChild);
-    }
-
-    const applicationsTitle = document.querySelector("#applications h2");
-    if (applicationsTitle) applicationsTitle.innerHTML = 'Twelve Research Cases <br><span>Connected to Real-World Questions.</span>';
-    const publicationsTitle = document.querySelector("#publications h2");
-    if (publicationsTitle) publicationsTitle.innerHTML = 'A methods-to-applications <br><span>evidence chain.</span>';
-
-    const terminology = document.querySelector("#terminology");
-    const footer = document.querySelector("footer.footer");
-    if (terminology && footer && terminology.nextElementSibling !== footer) footer.insertAdjacentElement("beforebegin", terminology);
-
-    const footerBrand = document.querySelector(".footer-brand small");
-    if (footerBrand) footerBrand.textContent = "Interpret Space. Understand Time.";
-    const footerMission = document.querySelector(".footer-mission p");
-    if (footerMission) footerMission.innerHTML = "Bayesian Spatiotemporally<br>Varying Coefficients";
-    const quietClaim = document.querySelector(".footer-quiet-claim");
-    if (quietClaim) quietClaim.innerHTML = "Advancing Spatiotemporal<br>Interpretability.";
-    const footerMain = document.querySelector(".footer-main");
-    footerMain?.querySelector(".footer-framework-slogan")?.remove();
-    const footerBottom = document.querySelector(".footer-bottom");
-    if (footerBottom) {
-      let frameworkClaim = footerBottom.querySelector("[data-footer-framework-claim]") || footerBottom.querySelector(":scope > span:first-child");
-      let groupName = footerBottom.querySelector("[data-footer-group]") || footerBottom.querySelector(":scope > span:nth-child(2)");
-      if (!frameworkClaim) {
-        frameworkClaim = document.createElement("span");
-        footerBottom.prepend(frameworkClaim);
-      }
-      if (!groupName) {
-        groupName = document.createElement("span");
-        footerBottom.append(groupName);
-      }
-      frameworkClaim.dataset.footerFrameworkClaim = "true";
-      frameworkClaim.textContent = "Local interpretation, global insight, and dynamic prediction — within one full-map framework.";
-      frameworkClaim.classList.remove("footer-visit-count");
-      frameworkClaim.removeAttribute("aria-hidden");
-      groupName.dataset.footerGroup = "true";
-      groupName.textContent = "HEOA–West China Health & Medical Geography Group";
-      groupName.classList.remove("footer-visit-count");
-      groupName.removeAttribute("aria-hidden");
-      [...footerBottom.children].forEach(item => {
-        if (item !== frameworkClaim && item !== groupName) item.remove();
-      });
-    }
-  }
-
-  function copyText(button, text, successLabel) {
-    const previous = button.textContent;
-    const done = () => {
-      button.textContent = successLabel;
-      window.setTimeout(() => { button.textContent = previous; }, 1600);
-    };
-    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(text).then(done).catch(() => {});
-  }
-
-  function wireCitationTools() {
-    document.querySelectorAll("#publications .doi-actions").forEach((actions, index) => {
-      if (actions.querySelector(".citation-copy")) return;
-      const article = actions.closest("article");
-      const doi = actions.querySelector("[data-copy-doi]")?.getAttribute("data-copy-doi") || actions.querySelector("a[href*='doi.org/']")?.href.split("doi.org/")[1];
-      const title = (article?.querySelector("p")?.textContent?.trim() || "BSTVC publication").replace(/[.]+$/, "");
-      const journal = article?.querySelector("strong")?.textContent?.trim() || "";
-      const year = article?.querySelector(":scope > span")?.textContent?.trim() || "";
-      const citation = `${title}. ${journal}${year ? ` (${year})` : ""}. https://doi.org/${doi}`;
-      const key = `bstvc_${year || "publication"}_${index + 1}`.replace(/[^a-zA-Z0-9_]/g, "_");
-      const bibtex = `@article{${key},\n  title = {${title}},\n  journal = {${journal}},\n  year = {${year}},\n  doi = {${doi}},\n  url = {https://doi.org/${doi}}\n}`;
-      const citationButton = document.createElement("button");
-      citationButton.type = "button";
-      citationButton.className = "citation-copy";
-      citationButton.textContent = "Copy citation";
-      citationButton.setAttribute("aria-label", `Copy formatted citation for ${title}`);
-      citationButton.addEventListener("click", () => copyText(citationButton, citation, "Citation copied"));
-      const bibtexButton = document.createElement("button");
-      bibtexButton.type = "button";
-      bibtexButton.className = "bibtex-copy";
-      bibtexButton.textContent = "Copy BibTeX";
-      bibtexButton.setAttribute("aria-label", `Copy BibTeX for ${title}`);
-      bibtexButton.addEventListener("click", () => copyText(bibtexButton, bibtex, "BibTeX copied"));
-      actions.append(citationButton, bibtexButton);
-    });
-  }
-
-  function applyLazyLoadingAndAccessibility() {
-    document.querySelectorAll("#applications img, #monitor img, #contact img").forEach(img => {
-      img.loading = "lazy";
-      img.decoding = "async";
-    });
-    document.querySelectorAll("#applications iframe, #monitor iframe").forEach(frame => { frame.loading = "lazy"; });
-    document.querySelector("nav")?.setAttribute("aria-label", "Primary navigation");
-    document.querySelector("#monitor")?.setAttribute("aria-label", "BSTVC Process Monitor auxiliary tool");
-    document.querySelectorAll(".menu-toggle").forEach(button => button.setAttribute("aria-label", "Open or close navigation"));
-    document.querySelectorAll("img:not([alt])").forEach(img => img.setAttribute("alt", ""));
-  }
-
-  function cleanCjkAccessibilityAttributes() {
-    const attrs = ["aria-label", "aria-description", "title", "alt", "data-geo-title", "data-geo-route", "data-geo-copy", "data-logo-title"];
-    const compact = value => (value || "").replace(/[\u3400-\u9fff]+/g, " ")
-      .replace(/[，；。：、]+/g, " ").replace(/\s+/g, " ").replace(/\(\s*\)/g, "").trim();
-    const visibleLabel = el => {
-      const own = (el.innerText || el.textContent || "").replace(/\s+/g, " ").trim();
-      return compact(own).slice(0, 150);
-    };
-    document.querySelectorAll("*").forEach(el => attrs.forEach(attr => {
-      const value = el.getAttribute(attr);
-      if (!value || !/[\u3400-\u9fff]/.test(value)) return;
-      let replacement = "";
-      const doi = el.getAttribute("data-copy-doi");
-      if (doi) replacement = `Copy DOI ${doi}`;
-      else if (el.matches("a[target='_blank']")) replacement = `${visibleLabel(el) || "Open resource"} (opens in a new tab)`;
-      else if (el.matches("button")) replacement = visibleLabel(el) || "Interactive control";
-      else if (el.matches("img")) replacement = compact(el.closest("figure")?.querySelector("figcaption")?.textContent) || "BSTVC research figure";
-      else if (el.matches("iframe")) replacement = "BSTVC interactive visual";
-      else replacement = compact(value);
-      if (!replacement || !/[A-Za-z0-9]/.test(replacement)) {
-        replacement = visibleLabel(el) || el.closest("section")?.querySelector("h2,h3")?.textContent?.trim() || "BSTVC interactive element";
-      }
-      el.setAttribute(attr, replacement.slice(0, 180));
-    }));
-  }
-
-  function normalizeEnglishTypography() {
-    const replacements = [
-      [/Systemfor/g, "System for"],
-      [/HomepageBayesian/g, "Homepage · Bayesian"],
-      [/Spatiotemporally Interacting Varying Intercept(?!s)/g, "Spatiotemporally Interacting Varying Intercepts"],
-      [/Spatiotemporally Varying Intercept(?!s)/g, "Spatiotemporally Varying Intercepts"],
-      [/\s+([,.;:!?])/g, "$1"],
-      [/([,.;:!?])([A-Za-z])/g, "$1 $2"]
-    ];
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode(node) {
-        const tag = node.parentElement?.tagName;
-        return tag && !["SCRIPT", "STYLE", "CODE"].includes(tag) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-      }
-    });
-    const nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(node => {
-      let value = node.nodeValue || "";
-      replacements.forEach(([pattern, replacement]) => { value = value.replace(pattern, replacement); });
-      node.nodeValue = value;
-    });
-    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-      const address = link.getAttribute("href").slice(7).split("?")[0];
-      link.textContent = `${address} ↗`;
-    });
-    const modelTitle = document.querySelector("#models h2");
-    if (modelTitle) modelTitle.innerHTML = 'One System <span>for interpretation and prediction.</span>';
-  }
-
-  function applyStructuredMetadata() {
-    document.title = "BSTVC | Spatiotemporal Interpretability";
-    document.querySelector('meta[name="description"]')?.setAttribute("content", "BSTVC is an open-source Bayesian framework and English desktop tool for ante-hoc spatiotemporal interpretability, key-driver identification, and dynamic prediction.");
-  }
-
-  function wireMobileModelDisclosure() {
-    const isMobile = window.matchMedia("(max-width: 760px)").matches;
-    const cards = [...document.querySelectorAll("#models .model-grid .model-card")];
-    cards.forEach((card, index) => {
-      let toggle = card.querySelector(".mobile-model-toggle");
-      if (!toggle) {
-        toggle = document.createElement("button");
-        toggle.type = "button";
-        toggle.className = "mobile-model-toggle";
-        toggle.innerHTML = '<span>View model scope</span><i aria-hidden="true">↓</i>';
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", `Show scope for ${(card.querySelector(".model-code")?.textContent || `model ${index + 1}`).trim()}`);
-        card.append(toggle);
-        toggle.addEventListener("click", () => {
-          const opening = !card.classList.contains("mobile-model-expanded");
-          cards.forEach(item => {
-            item.classList.remove("mobile-model-expanded");
-            item.querySelector(".mobile-model-toggle")?.setAttribute("aria-expanded", "false");
-          });
-          if (opening) {
-            card.classList.add("mobile-model-expanded");
-            toggle.setAttribute("aria-expanded", "true");
-          }
-        });
-      }
-      if (!isMobile) {
-        card.classList.remove("mobile-model-expanded");
-        toggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-
   function applyEnglishLayer() {
     document.documentElement.lang = "en";
+    document.title = "BSTVC | Bayesian Spatiotemporal Interpretability Analysis";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", "BSTVC is an open-source Bayesian framework and desktop tool for local spatiotemporal interpretation, key-driver identification, and dynamic prediction.");
     wireEnglishDownload();
     const monitorTitle = document.querySelector("#monitor .monitor-heading h2");
     if (monitorTitle) monitorTitle.innerHTML = 'BSTVC Process Monitor:<br><span>Find the Right Thread Setting for Model Runs.</span>';
     translateTree(document.body);
-    wireInternationalNavigation();
-    wireOrganizationPanel();
-    removeLegacyCommunityPromotion();
-    wireTerminologyGlossary();
-    wireV3CopyAndLayout();
-    wireV3ContactLayout();
-    wireCitationTools();
-    applyLazyLoadingAndAccessibility();
-    normalizeEnglishTypography();
-    cleanCjkAccessibilityAttributes();
-    applyStructuredMetadata();
-    wireMobileModelDisclosure();
   }
 
   function scheduleTranslationSweeps() {
     let pass = 0;
     const timer = setInterval(() => {
       translateTree(document.body);
-      normalizeEnglishTypography();
-      wireV3CopyAndLayout();
-      wireV3ContactLayout();
-      cleanCjkAccessibilityAttributes();
       pass += 1;
       if (pass >= 16) clearInterval(timer);
     }, 250);

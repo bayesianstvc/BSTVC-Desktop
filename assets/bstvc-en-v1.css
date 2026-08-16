@@ -1,0 +1,211 @@
+/* BSTVC English Homepage V1 — isolated English typography and responsive fixes */
+:root {
+  --en-font-sans: Inter, "Segoe UI Variable", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+html[lang="en"] body,
+html[lang="en"] button,
+html[lang="en"] input,
+html[lang="en"] select,
+html[lang="en"] textarea {
+  font-family: var(--en-font-sans);
+}
+
+html[lang="en"] .hero h1,
+html[lang="en"] .section h2,
+html[lang="en"] .paradigm-section h2,
+html[lang="en"] .publication-section h2,
+html[lang="en"] .guide-hub h2,
+html[lang="en"] .monitor-section h2,
+html[lang="en"] .contact-section h2 {
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+html[lang="en"] p,
+html[lang="en"] li {
+  text-wrap: pretty;
+}
+
+@media (min-width: 1025px) {
+  html[lang="en"] .hero {
+    grid-template-columns: .78fr 1.22fr;
+    gap: 4%;
+  }
+
+  html[lang="en"] .hero-copy { max-width: 720px; }
+
+  html[lang="en"] .hero h1 {
+    font-size: clamp(50px, 4.65vw, 67px);
+    line-height: 1.015;
+    margin: 18px 0 18px;
+  }
+
+  html[lang="en"] .hero-lede {
+    max-width: 650px;
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.72;
+  }
+}
+
+.download-resource-card.is-coming-soon {
+  cursor: default;
+  opacity: .82;
+  border-style: dashed !important;
+}
+
+.download-resource-card.is-coming-soon:hover {
+  transform: none !important;
+}
+
+.download-resource-card.is-coming-soon .download-resource-action {
+  color: #a9c2c2 !important;
+}
+
+.download-version-note {
+  color: #89aaa9;
+  font: 8px/1.55 var(--en-font-sans);
+  letter-spacing: .04em;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  html[lang="en"] .nav-links { gap: 18px; font-size: 12px; }
+  html[lang="en"] .hero-copy { max-width: 670px; }
+}
+
+/* Section 12 mobile repair: remove the tall brand rail and keep the module compact. */
+@media (max-width: 560px) {
+  .monitor-section {
+    padding: 48px 0 56px !important;
+    overflow: clip !important;
+  }
+
+  .monitor-inner {
+    width: min(100% - 28px, 680px) !important;
+  }
+
+  .monitor-heading {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .monitor-heading > div:first-child {
+    display: block !important;
+    position: relative !important;
+    min-height: 0 !important;
+  }
+
+  .monitor-heading > div:first-child > .monitor-heading-brand {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 52px !important;
+    height: 52px !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .monitor-heading-brand img {
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 13px !important;
+  }
+
+  .monitor-heading-brand span { display: none !important; }
+
+  .monitor-heading h2 {
+    padding-right: 64px !important;
+    margin: 12px 0 0 !important;
+    font-size: clamp(29px, 9vw, 39px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .monitor-heading > .heading-aside {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.65 !important;
+  }
+
+  .monitor-layout,
+  .monitor-tabs,
+  .monitor-tab-panel {
+    min-width: 0 !important;
+  }
+
+  .monitor-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 24px !important;
+  }
+
+  .monitor-explainer,
+  .monitor-dashboard {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    padding: 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .monitor-explainer h3 {
+    font-size: 25px !important;
+    line-height: 1.12 !important;
+  }
+
+  .monitor-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .monitor-actions a { width: 100% !important; }
+
+  .monitor-dashboard {
+    overflow-x: auto !important;
+    scrollbar-width: thin;
+  }
+
+  .monitor-dashboard > * { min-width: 0 !important; }
+
+  .monitor-kpis {
+    grid-template-columns: repeat(3, minmax(86px, 1fr)) !important;
+    min-width: 286px !important;
+  }
+
+  .monitor-tabs .tab-buttons {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+    overflow: visible !important;
+  }
+
+  .monitor-tabs .tab-buttons button {
+    min-width: 0 !important;
+    padding-inline: 6px !important;
+    font-size: 9px !important;
+    white-space: normal !important;
+  }
+
+  .monitor-tab-panel {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 17px !important;
+  }
+
+  .monitor-tab-panel ul { padding-left: 18px !important; }
+}
+
+@media (max-width: 420px) {
+  html[lang="en"] .hero h1 { font-size: clamp(39px, 12vw, 52px) !important; }
+  html[lang="en"] .hero-lede { font-size: 14px !important; line-height: 1.75 !important; }
+  html[lang="en"] .hero-actions { align-items: stretch !important; }
+  html[lang="en"] .hero-actions > * { width: 100%; }
+  html[lang="en"] .signal-strip small { font-size: 8px !important; }
+}

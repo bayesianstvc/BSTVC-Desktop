@@ -1904,17 +1904,44 @@ html.bstvc-motion-static .hero-dynamic-background,html.bstvc-motion-static .capa
   const mobile = window.matchMedia?.('(max-width: 760px)').matches || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
   const memory = Number(navigator.deviceMemory || 8);
   const cores = Number(navigator.hardwareConcurrency || 8);
-  const lowPower = reduced || saveData || mobile || memory <= 4 || cores <= 4;
+  const lowPower = reduced || saveData || memory <= 4 || cores <= 4;
   const hero = document.querySelector('.hero-dynamic-background');
+  const logoFrames = frames.filter(frame => frame.dataset.motionFrame === 'bstvc-logo');
   const loadFrame = (frame) => {
     if (!frame || frame.dataset.motionLoaded === 'true') return;
     const source = frame.getAttribute('data-motion-src');
     if (!source) return;
     frame.dataset.motionLoaded = 'true';
+    frame.dataset.motionState = 'loading';
+    frame.classList.remove('motion-frame-failed');
+    frame.addEventListener('load', () => {
+      frame.classList.add('motion-frame-ready');
+      frame.classList.remove('motion-frame-failed');
+      frame.dataset.motionState = 'ready';
+      frame.parentElement?.classList.add('motion-stage-ready');
+    }, { once: true });
+    frame.addEventListener('error', () => {
+      frame.classList.remove('motion-frame-ready');
+      frame.classList.add('motion-frame-failed');
+      frame.dataset.motionState = 'fallback';
+      frame.parentElement?.classList.remove('motion-stage-ready');
+    }, { once: true });
     frame.setAttribute('src', source);
   };
   if (lowPower) {
     document.documentElement.classList.add('bstvc-motion-static');
+    return;
+  }
+  if (mobile) {
+    // The static WebP remains visible during first paint.  Once the page is
+    // complete and the browser is idle, load both logo scenes but keep the
+    // large animated background deferred on phones.
+    const startMobileLogos = () => {
+      const idle = window.requestIdleCallback || (callback => window.setTimeout(callback, 900));
+      idle(() => window.setTimeout(() => logoFrames.forEach(loadFrame), 260), { timeout: 2400 });
+    };
+    if (document.readyState === 'complete') startMobileLogos();
+    else window.addEventListener('load', startMobileLogos, { once: true });
     return;
   }
   const startHero = () => {

@@ -1620,3 +1620,381 @@ html[lang="en"] .footer-quiet-claim { white-space: normal; }
     display: none !important;
   }
 }
+
+/* V02 mobile: retain the complete research content while turning the two
+   longest sections into compact selection-and-detail flows. */
+@media (max-width: 760px) {
+  html[lang="en"] #paradigm {
+    padding: 62px 0 64px !important;
+  }
+
+  html[lang="en"] #paradigm .paradigm-title {
+    display: block !important;
+    margin-bottom: 20px !important;
+  }
+
+  html[lang="en"] #paradigm .paradigm-aside {
+    margin: 12px 0 0 !important;
+    font-size: 12px !important;
+    line-height: 1.62 !important;
+  }
+
+  html[lang="en"] #paradigm .law-grid {
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  html[lang="en"] #paradigm .law-card {
+    min-height: 146px !important;
+    padding: 14px 12px !important;
+  }
+
+  html[lang="en"] #paradigm .law-card strong {
+    margin: 7px 0 6px !important;
+    font-size: 13px !important;
+    line-height: 1.18 !important;
+  }
+
+  html[lang="en"] #paradigm .law-card p {
+    font-size: 10px !important;
+    line-height: 1.52 !important;
+  }
+
+  /* The six concise concepts form a touch-friendly horizontal rail rather
+     than three vertical rows. */
+  html[lang="en"] #paradigm .model-icon-grid {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 9px !important;
+    overflow-x: auto !important;
+    padding: 2px 1px 10px !important;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+
+  html[lang="en"] #models .model-choice-path > span,
+  html[lang="en"] #models .model-choice-path > i {
+    display: none !important;
+  }
+
+  html[lang="en"] #paradigm .model-icon-grid article {
+    flex: 0 0 min(42vw, 168px) !important;
+    scroll-snap-align: start;
+  }
+
+  html[lang="en"] #paradigm .model-icon-grid button {
+    min-height: 116px !important;
+    padding: 11px 9px !important;
+  }
+
+  html[lang="en"] #paradigm .model-icon-grid button > i {
+    margin-bottom: 7px !important;
+    font-size: 21px !important;
+  }
+
+  html[lang="en"] #paradigm .model-icon-grid button > span {
+    font-size: 8px !important;
+  }
+
+  html[lang="en"] #paradigm .model-icon-grid button > strong {
+    margin-top: 5px !important;
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+  }
+
+  html[lang="en"] #paradigm .interpretability-compare {
+    gap: 9px !important;
+    margin-top: 12px !important;
+  }
+
+  html[lang="en"] #paradigm .compare-label,
+  html[lang="en"] #paradigm .interpretable-model-mark,
+  html[lang="en"] #paradigm .core-paradigm-visual,
+  html[lang="en"] #paradigm .geo-evidence-route {
+    display: none !important;
+  }
+
+  html[lang="en"] #paradigm .compare-card {
+    padding: 16px !important;
+  }
+
+  html[lang="en"] #paradigm .compare-card h3 {
+    margin: 8px 0 !important;
+    font-size: 18px !important;
+    line-height: 1.12 !important;
+  }
+
+  html[lang="en"] #paradigm .compare-card p,
+  html[lang="en"] #paradigm .geo-path-detail p {
+    margin-bottom: 0 !important;
+    font-size: 10.5px !important;
+    line-height: 1.55 !important;
+  }
+
+  html[lang="en"] #paradigm .source-tabs {
+    margin-top: 20px !important;
+  }
+
+  html[lang="en"] #paradigm .source-panel {
+    padding: 16px !important;
+    gap: 0 !important;
+  }
+
+  html[lang="en"] #paradigm .source-copy h3 {
+    margin-bottom: 8px !important;
+    font-size: 19px !important;
+    line-height: 1.15 !important;
+  }
+
+  html[lang="en"] #paradigm .source-copy p {
+    margin-bottom: 0 !important;
+    font-size: 11px !important;
+    line-height: 1.6 !important;
+  }
+
+  html[lang="en"] #paradigm .source-native-visual {
+    display: none !important;
+  }
+
+  html[lang="en"] #models.models-section {
+    padding-top: 64px !important;
+    padding-bottom: 66px !important;
+  }
+
+  html[lang="en"] #models .section-heading-row {
+    display: block !important;
+  }
+
+  html[lang="en"] #models .heading-aside {
+    width: auto !important;
+    margin: 12px 0 20px !important;
+    font-size: 12px !important;
+    line-height: 1.62 !important;
+  }
+
+  /* Three short question cards occupy one horizontal decision rail. */
+  html[lang="en"] #models .model-choice-path {
+    display: flex !important;
+    grid-template-columns: none !important;
+    flex-wrap: nowrap !important;
+    gap: 9px !important;
+    overflow-x: auto !important;
+    padding: 2px 1px 10px !important;
+    scroll-snap-type: x proximity !important;
+    scrollbar-width: thin;
+  }
+
+  html[lang="en"] #models .model-choice-path > article {
+    flex: 0 0 min(78vw, 292px) !important;
+    min-height: 102px !important;
+    padding: 15px !important;
+    scroll-snap-align: start;
+  }
+
+  html[lang="en"] #models .model-choice-path > article b {
+    font-size: 12px !important;
+    line-height: 1.32 !important;
+  }
+
+  html[lang="en"] #models .model-choice-path > article strong {
+    margin-top: 9px !important;
+    font-size: 12px !important;
+  }
+
+  /* Keep the currently selected GeoAI explanation at full reading contrast. */
+  html[lang="en"] #paradigm .source-panel[data-tab-panel] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  html[lang="en"] #paradigm .source-panel[data-tab-panel] .source-copy,
+  html[lang="en"] #paradigm .source-panel[data-tab-panel] .source-copy h3,
+  html[lang="en"] #paradigm .source-panel[data-tab-panel] .source-copy p {
+    opacity: 1 !important;
+  }
+
+  html[lang="en"] #paradigm .source-panel[data-tab-panel] .source-copy h3 {
+    color: #eefaf8 !important;
+  }
+
+  html[lang="en"] #paradigm .source-panel[data-tab-panel] .source-copy p {
+    color: #bbd1d2 !important;
+  }
+
+  /* Compact cards make the six-model catalog scannable.  The scope opens
+     on demand in a full-width card, so no model information is discarded. */
+  html[lang="en"] #models .model-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 9px !important;
+    margin-top: 20px !important;
+  }
+
+  html[lang="en"] #models .model-grid > .model-card,
+  html[lang="en"] #models .model-card,
+  html[lang="en"] #models .model-card:nth-child(n) {
+    min-height: 164px !important;
+    padding: 13px !important;
+  }
+
+  html[lang="en"] #models .model-card-top {
+    gap: 7px !important;
+    font-size: 7px !important;
+  }
+
+  html[lang="en"] #models .model-code {
+    margin: 18px 0 8px !important;
+    font-size: 24px !important;
+  }
+
+  html[lang="en"] #models .model-card h3 {
+    margin: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.18 !important;
+  }
+
+  html[lang="en"] #models .model-card .recommended-start {
+    display: none !important;
+  }
+
+  html[lang="en"] #models .model-card p,
+  html[lang="en"] #models .model-card .model-scope,
+  html[lang="en"] #models .model-card .card-line,
+  html[lang="en"] #models .model-card .card-footer {
+    display: none !important;
+  }
+
+  html[lang="en"] #models .mobile-model-toggle {
+    color: var(--teal-deep);
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+    padding: 10px 0 0;
+    border-top: 1px solid rgba(42, 130, 134, .16);
+    font-size: 9px;
+    font-weight: 750;
+    display: flex;
+  }
+
+  html[lang="en"] #models .mobile-model-toggle i {
+    font-size: 13px;
+    font-style: normal;
+    transition: transform .2s ease;
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded {
+    grid-column: 1 / -1 !important;
+    min-height: 0 !important;
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded p,
+  html[lang="en"] #models .model-card.mobile-model-expanded .model-scope,
+  html[lang="en"] #models .model-card.mobile-model-expanded .card-line,
+  html[lang="en"] #models .model-card.mobile-model-expanded .card-footer {
+    display: block !important;
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded p {
+    min-height: 0 !important;
+    margin: 11px 0 12px !important;
+    font-size: 11px !important;
+    line-height: 1.58 !important;
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded .model-scope {
+    display: grid !important;
+    gap: 9px !important;
+    margin: 0 !important;
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded .model-scope div {
+    grid-template-columns: 54px minmax(0, 1fr) !important;
+    align-items: start !important;
+    column-gap: 7px !important;
+    padding-top: 9px;
+    border-top: 1px solid rgba(42, 130, 134, .15);
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded .model-scope dt {
+    margin-bottom: 3px;
+    color: #779096;
+    font-size: 8px;
+    letter-spacing: .09em;
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded .model-scope dd {
+    margin: 0;
+    color: #38535a;
+    font-size: 10px;
+    line-height: 1.45;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded .card-line {
+    height: 1px;
+    margin: 13px 0 9px !important;
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded .card-footer {
+    margin: 0 !important;
+    font-size: 8px !important;
+  }
+
+  html[lang="en"] #models .model-card.mobile-model-expanded .mobile-model-toggle i {
+    transform: rotate(180deg);
+  }
+
+  /* The three detailed principles remain complete but use one screen-wide
+     horizontal reading track instead of a long vertical stack. */
+  html[lang="en"] #models .model-logic {
+    display: flex !important;
+    grid-template-columns: none !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    padding: 2px 1px 10px !important;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+
+  html[lang="en"] #models .model-logic-card,
+  html[lang="en"] #models .model-logic > article {
+    flex: 0 0 calc(100% - 26px) !important;
+    min-height: 0 !important;
+    padding: 17px !important;
+    scroll-snap-align: start;
+  }
+
+  html[lang="en"] #models .model-logic-card strong {
+    margin: 8px 0 !important;
+    font-size: 17px !important;
+    line-height: 1.15 !important;
+  }
+
+  html[lang="en"] #models .model-logic-card p {
+    margin: 0 !important;
+    font-size: 11px !important;
+    line-height: 1.58 !important;
+  }
+}
+
+@media (min-width: 761px) {
+  html[lang="en"] #models .mobile-model-toggle { display: none !important; }
+}
+
+/* A loaded iframe replaces, rather than overlaps, its static WebP fallback. */
+.capability-logo-stage .motion-static-fallback,
+.download-logo-stage .motion-static-fallback {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .22s ease, visibility .22s ease;
+}
+
+.capability-logo-stage.motion-stage-ready .motion-static-fallback,
+.download-logo-stage.motion-stage-ready .motion-static-fallback {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
+}

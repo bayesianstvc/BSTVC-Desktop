@@ -1,0 +1,23 @@
+{
+  "product": "BSTVC English Homepage",
+  "version": "V02",
+  "date": "2026-08-16",
+  "sourceVersion": "20260814-BSTVC英文主页首次载入与地图修复-V01-离线包",
+  "scope": "Mobile Logo motion and compact layouts for sections 03 and 04 only",
+  "published": false,
+  "previewEntry": "index.html",
+  "verification": {
+    "mobileViewport": "390x844",
+    "paradigmHeightPx": { "before": 3299, "after": 1900 },
+    "modelsHeightPx": { "before": 3097, "after": 1279 },
+    "mobileHorizontalOverflow": false,
+    "logoIframesReady": true,
+    "reducedMotionStaticFallback": true,
+    "desktopRegressionPassed": true
+  },
+  "sha256": {
+    "index.html": "EF2ED7C95C0441709AD4D1E55949CDCA9DBE1D66A3E53D155E1B67441A0601EA",
+    "assets/bstvc-en-v4.css": "48C67462F726BECFE6C656F8C6B0B688C3245DD315F0DE1D430533917A67E869",
+    "assets/bstvc-en-v4.js": "34E1479CE8EB56BC530B251C7B0D21E7384946A95C9DD70B72F9783B29388911"
+  }
+}
