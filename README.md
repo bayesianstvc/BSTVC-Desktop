@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-logo-motion.gif?v=20260802" alt="Animated BSTVC Desktop logo" width="150" />
+<img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-logo-latest-motion.gif" alt="Latest animated BSTVC logo" width="220" />
 
 # BSTVC Desktop
 
@@ -14,7 +14,7 @@
 
 [![Download BSTVC Desktop](https://img.shields.io/badge/DOWNLOAD-BSTVC%20Desktop%20EN%20v2026.8.1-0878d1?style=for-the-badge&logo=windows11&logoColor=white)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe)
 
-**[English website](https://bayesianstvc.github.io/BSTVC-Desktop)** · **[中文网站](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)**
+**[BSTVC brand website](https://bayesianstvc.github.io/)** · **[English website](https://bayesianstvc.github.io/BSTVC-Desktop)** · **[中文网站](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)**
 
 </div>
 
