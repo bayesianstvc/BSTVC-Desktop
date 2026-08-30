@@ -14,7 +14,7 @@
 
 [![Download BSTVC Desktop](https://img.shields.io/badge/DOWNLOAD-BSTVC%20Desktop%20EN%20v2026.8.1-0878d1?style=for-the-badge&logo=windows11&logoColor=white)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe)
 
-**[桌面端英文官网](https://bayesianstvc.github.io/BSTVC-Desktop/)** · **[桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)** · **[BSTVC brand website](https://bayesianstvc.github.io/)**
+**[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/)** · **[桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)** · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
 </div>
 
@@ -168,6 +168,6 @@ For an extended publication and application record, visit the **[BSTVC brand web
 
 HEOA–West China Health & Medical Geography Group
 
-[桌面端英文官网](https://bayesianstvc.github.io/BSTVC-Desktop/) · [桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) · [Download](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1) · [User guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · **[BSTVC brand website](https://bayesianstvc.github.io/)**
+[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/) · [桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) · [Download](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1) · [User guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
 </div>
