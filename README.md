@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-logo-latest-motion-upload.gif" alt="Latest animated BSTVC logo" width="220" />
+<img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-logo-latest-motion-cropped.gif" alt="Latest animated BSTVC logo" width="220" />
 
 # BSTVC Desktop
 
