@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/bayesianstvc/BSTVC-Desktop/main/README-assets/bstvc-logo-latest-motion-cropped.gif" alt="Latest animated BSTVC logo" width="220" />
 
-# BSTVC Desktop
+# [BSTVC Desktop](https://bayesianstvc.github.io/BSTVC-Desktop/)
 
 ### Bayesian spatiotemporal interpretability—without a coding-first workflow
 
@@ -14,7 +14,7 @@
 
 [![Download BSTVC Desktop](https://img.shields.io/badge/DOWNLOAD-BSTVC%20Desktop%20EN%20v2026.8.1-0878d1?style=for-the-badge&logo=windows11&logoColor=white)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe)
 
-**[BSTVC brand website](https://bayesianstvc.github.io/)** · **[English website](https://bayesianstvc.github.io/BSTVC-Desktop)** · **[中文网站](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)**
+**[桌面端英文官网](https://bayesianstvc.github.io/BSTVC-Desktop/)** · **[桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)** · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
 </div>
 
@@ -144,10 +144,10 @@ BSTVC is designed for spatiotemporal panel and areal research in GIScience, spat
 
 - **Status:** actively developed and maintained.
 - **Bug reports and feature requests:** [BSTVC-Desktop Issues](https://github.com/bayesianstvc/BSTVC-Desktop/issues)
-- **Statistical framework:** [Bayesian STVC model homepage](https://chaosong.blog/bayesian-stvc/)
+- **Statistical framework:** [BSTVC brand website](https://bayesianstvc.github.io/)
 - **R package:** [bayesianstvc/BSTVC-R](https://github.com/bayesianstvc/BSTVC-R)
 - **Desktop development and usage support:** [Xianteng Tang](https://tangxxxxt.github.io/)
-- **Project leadership and statistical methodology:** [Chao Song](https://chaosong.blog/)
+- **Project leadership and statistical methodology:** [Chao Song](https://homepage.songchao-bstvc.chatgpt.site/)
 
 We welcome reproducible bug reports, feature proposals, documentation improvements, code contributions, and new empirical applications.
 
@@ -158,7 +158,7 @@ We welcome reproducible bug reports, feature proposals, documentation improvemen
 3. Wan, Q., Tang, Z., Pan, J., et al. (2022). Spatiotemporal heterogeneity in associations of national population ageing with socioeconomic and environmental factors at the global scale. *Journal of Cleaner Production, 373*, 133781.
 4. Song, C., Shi, X., Bo, Y., Wang, J., Wang, Y., & Huang, D. (2019). Exploring spatiotemporal nonstationary effects of climate factors on hand, foot, and mouth disease using a Bayesian spatiotemporally varying coefficients (STVC) model in Sichuan, China. *Science of the Total Environment, 648*, 550–560.
 
-For an extended publication and application record, visit the **[BSTVC model homepage](https://chaosong.blog/bayesian-stvc/)**.
+For an extended publication and application record, visit the **[BSTVC brand website](https://bayesianstvc.github.io/)**.
 
 ---
 
@@ -168,6 +168,6 @@ For an extended publication and application record, visit the **[BSTVC model hom
 
 HEOA–West China Health & Medical Geography Group
 
-[English website](https://bayesianstvc.github.io/BSTVC-Desktop) · [中文网站](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) · [Download](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1) · [User guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html)
+[桌面端英文官网](https://bayesianstvc.github.io/BSTVC-Desktop/) · [桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) · [Download](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1) · [User guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
 </div>
