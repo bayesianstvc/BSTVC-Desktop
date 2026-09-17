@@ -6,7 +6,7 @@
 
 ### Bayesian spatiotemporal interpretability—without a coding-first workflow
 
-**A visual research environment for local spatiotemporal interpretability, global attribution, and dynamic prediction within a unified Bayesian full-map framework.**
+**A visual research environment for local spatiotemporal interpretability, global contribution, and dynamic prediction within a unified Bayesian full-map framework.**
 
 [![Release](https://img.shields.io/github/v/release/bayesianstvc/BSTVC-Desktop?display_name=tag&sort=semver&style=flat-square&color=2457d6)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-1674ea?style=flat-square)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe)
@@ -108,7 +108,7 @@ BSTVC Desktop organizes model output around a transparent evidence chain:
 
 - **Local effects:** spatial coefficients (SCs) and temporal coefficients (TCs).
 - **Uncertainty:** Bayesian credible intervals (CrIs), which should not be reduced to a conventional significance-test label.
-- **Global attribution:** STVPI and factor-specific explainable percentages.
+- **Global contribution:** STVPI and factor-specific explainable percentages.
 - **Prediction:** fitted values, smoothing, missing-value estimates, and future projections.
 - **Model evaluation:** DIC and WAIC for fit/complexity balance, effective parameters (`pD`), and logarithmic score (`LS`) for predictive accuracy.
 
@@ -117,7 +117,7 @@ BSTVC Desktop organizes model output around a transparent evidence chain:
 1. **Install** the English Windows x64 release.
 2. **Prepare** a spatial map and model-ready spatiotemporal panel table.
 3. **Validate** map-unit identifiers and observation order in **Data Check**.
-4. **Start with STVC** for a first local spatiotemporal analysis, then extend to STIVC or STVPI when the research question requires interaction or global attribution.
+4. **Start with STVC** for a first local spatiotemporal analysis, then extend to STIVC or STVPI when the research question requires interaction or global contribution.
 5. **Read estimates with uncertainty** and compare candidate models using multiple evaluation criteria.
 6. **Export** result tables for mapping, interpretation, and reproducible reporting.
 
