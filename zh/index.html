@@ -1983,9 +1983,24 @@ html{scroll-behavior:smooth}
   const status = section.querySelector('[data-film-status]');
   const qualityButtons = Array.from(section.querySelectorAll('[data-quality]'));
   const labels = { '720p': '720P · 1280 × 720', '1080p': '1080P · 1920 × 1080', '4k': '4K · 3840 × 2160' };
-  let quality = '1080p';
-  const filmUrl = () => './film/index.html?quality=' + encodeURIComponent(quality);
+  const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '') || window.innerWidth <= 720;
+  const mobileQuality = '720p';
+  let quality = isMobile ? mobileQuality : '1080p';
+  const effectiveQuality = () => isMobile ? mobileQuality : quality;
+  const filmUrl = () => './film/index.html?quality=' + encodeURIComponent(effectiveQuality()) + (isMobile ? '&mobile=1' : '');
+  qualityButtons.forEach((button) => button.setAttribute('aria-checked', String(button.dataset.quality === quality)));
+  if (isMobile) {
+    inlineButton.textContent = '打开手机兼容播放页';
+    newPage.textContent = '手机兼容播放页 ↗';
+    newPage.href = filmUrl();
+    status.textContent = '手机端自动使用 720P 兼容渲染，点击播放后立即进入独立影片页。';
+  }
   const mountFilm = () => {
+    if (isMobile) {
+      status.textContent = '正在打开手机兼容播放页（720P）…';
+      window.location.assign(filmUrl());
+      return;
+    }
     host.hidden = false;
     poster.hidden = true;
     host.innerHTML = '<iframe src="' + filmUrl() + '" title="BSTVC 90 秒宣传片 · ' + labels[quality] + '" allow="fullscreen; autoplay" allowfullscreen></iframe><button class="film-stop" type="button" data-film-stop>退出播放</button>';
@@ -2004,6 +2019,10 @@ html{scroll-behavior:smooth}
     quality = next;
     qualityButtons.forEach((button) => button.setAttribute('aria-checked', String(button.dataset.quality === quality)));
     newPage.href = filmUrl();
+    if (isMobile) {
+      status.textContent = '手机端为保证快速启动与稳定播放，统一使用 720P 兼容渲染；点击播放即可进入。';
+      return;
+    }
     if (!host.hidden) {
       mountFilm();
       status.textContent = '已切换到 ' + labels[quality] + '，影片从头重新载入。';
