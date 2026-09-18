@@ -574,3 +574,628 @@
     box-shadow: inset 0 0 20px #36dfc511;
   }
 }
+
+/* BSTVC V59 / Orbital Continuum
+   The hero and the film are one cinematic environment. The hero texture stays
+   visible through the overlap; an atmospheric horizon, two beta-ribbon arcs
+   and a shared star field carry the eye directly into the full-width film. */
+
+.hero-stage {
+  --orbital-cyan: #58e8ee;
+  --orbital-teal: #2fdacb;
+  --orbital-violet: #9c5dff;
+  --orbital-magenta: #ed5fc8;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-stage::after {
+  background:
+    linear-gradient(180deg, transparent 0 68%, #0208161c 84%, #02081642 100%),
+    linear-gradient(90deg, #02081614 0%, #02081647 40%, #020816d1 72%, #020816f0 100%);
+}
+
+.hero-credit {
+  position: relative;
+  z-index: 5;
+  padding-bottom: clamp(26px, 3vw, 48px) !important;
+}
+
+.film-section {
+  --orbital-cyan: #58e8ee;
+  --orbital-teal: #2fdacb;
+  --orbital-violet: #9c5dff;
+  --orbital-magenta: #ed5fc8;
+  z-index: 2;
+  margin-top: clamp(-152px, -9vw, -104px);
+  padding-top: clamp(270px, 21vw, 360px);
+  overflow: clip;
+  background:
+    radial-gradient(ellipse at 50% 6%, #387fd42e 0, transparent 31%),
+    radial-gradient(circle at 86% 23%, #5b3fb334 0, transparent 27%),
+    linear-gradient(180deg, #02081400 0, #02081436 12%, #020814 36%, #061625 69%, #020814 100%);
+}
+
+.film-section::before {
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 10%, #bdfcff30 0 1px, transparent 1.8px),
+    radial-gradient(circle at 16% 30%, #7bdcff29 0 1px, transparent 1.7px),
+    radial-gradient(circle at 78% 19%, #e2b5ff2e 0 1px, transparent 1.6px),
+    radial-gradient(circle at 35% 73%, #8fe9ff1f 0 1px, transparent 1.7px),
+    radial-gradient(ellipse at 50% 20%, #1b77a521 0, transparent 48%);
+  background-size: 167px 119px, 233px 173px, 281px 211px, 347px 251px, 100% 100%;
+  opacity: .88;
+  mask-image: linear-gradient(to bottom, #000 0, #000 78%, transparent 100%);
+}
+
+.film-section::after {
+  inset: clamp(335px, 31vw, 505px) 0 0;
+  opacity: .2;
+  background-image:
+    linear-gradient(90deg, transparent, #76e6df12 48%, transparent 72%),
+    linear-gradient(180deg, #76e6df0d 1px, transparent 1px);
+  background-size: 100% 100%, 100% 96px;
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 72%, transparent);
+}
+
+.film-continuity {
+  z-index: 0;
+  top: 0;
+  height: clamp(390px, 40vw, 610px);
+  opacity: 1;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #02081400 0 8%, #0208142e 33%, #020814d6 88%, #020814 100%),
+    linear-gradient(90deg, #0208144d 0, transparent 24%, transparent 76%, #02081452 100%),
+    url("./bstvc-film-poster.png") center 47% / 126% auto no-repeat;
+  filter: saturate(1.08) contrast(1.03);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 76%, transparent 100%);
+}
+
+.film-continuity::before {
+  top: clamp(28px, 4vw, 62px);
+  left: -18vw;
+  width: 116vw;
+  height: clamp(170px, 19vw, 292px);
+  aspect-ratio: auto;
+  border: 0;
+  border-bottom: clamp(20px, 2.6vw, 42px) solid #20d7e48f;
+  border-radius: 0 0 50% 50%;
+  transform: rotate(-5.5deg);
+  filter: drop-shadow(0 0 8px #3ce6efaa) drop-shadow(0 0 36px #1bbbdc70);
+  opacity: .86;
+}
+
+.film-continuity::after {
+  top: clamp(85px, 10vw, 154px);
+  right: -17vw;
+  width: 101vw;
+  height: clamp(178px, 20vw, 310px);
+  aspect-ratio: auto;
+  border: 0;
+  border-bottom: clamp(13px, 1.8vw, 30px) solid #a55cf078;
+  border-radius: 0 0 50% 50%;
+  transform: rotate(7deg);
+  filter: drop-shadow(0 0 10px #b466ff8c) drop-shadow(0 0 34px #e34cc553);
+  opacity: .78;
+}
+
+.film-continuity i:first-child {
+  top: clamp(125px, 14vw, 212px);
+  left: -10%;
+  width: 120%;
+  height: clamp(230px, 24vw, 370px);
+  aspect-ratio: auto;
+  border: 0;
+  border-top: 2px solid #8debf1d1;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background:
+    radial-gradient(ellipse at 50% 1%, #c7fbffb8 0 1px, #4fcff77d 2px, transparent 7px),
+    linear-gradient(180deg, #0f56805c 0, #07182ecf 23%, #020814f2 68%, #020814 100%);
+  box-shadow:
+    0 -4px 18px #77e4ff8f,
+    0 -18px 72px #168edc4d,
+    inset 0 25px 80px #1c74ad35;
+  opacity: .94;
+  transform: rotate(-1deg);
+}
+
+.film-continuity i:last-child {
+  inset: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 17% 24%, #e8fcff 0 1px, transparent 1.7px),
+    radial-gradient(circle at 74% 16%, #f5d6ff 0 1px, transparent 1.6px),
+    radial-gradient(circle at 42% 41%, #a9e8ff 0 1px, transparent 1.6px),
+    radial-gradient(circle at 88% 47%, #ffffff 0 1px, transparent 1.8px);
+  background-size: 131px 97px, 181px 127px, 223px 151px, 307px 211px;
+  opacity: .42;
+  mix-blend-mode: screen;
+}
+
+.film-shell {
+  position: relative;
+  z-index: 2;
+}
+
+.film-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.film-kicker {
+  justify-content: center;
+  margin-bottom: 12px;
+  text-align: center;
+  opacity: .82;
+}
+
+.film-kicker::before {
+  width: 42px;
+  background: linear-gradient(90deg, transparent, #6ce8dc);
+}
+
+.film-heading {
+  max-width: 1240px;
+  margin: 0 auto 16px;
+  text-align: center;
+  font-size: clamp(38px, 4.5vw, 66px);
+  text-shadow: 0 12px 42px #020814b8;
+}
+
+.film-heading span {
+  display: inline;
+}
+
+.film-lede {
+  max-width: 860px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.film-player {
+  width: 100%;
+  border-color: #8debf18f;
+  box-shadow:
+    0 44px 120px #000c,
+    0 -1px 0 #d6ffff7a,
+    0 0 0 1px #ffffff10 inset,
+    0 0 92px #2bd4bf29,
+    0 0 140px #6756d21d;
+}
+
+.film-player::before {
+  border-color: #c8fff52b;
+  box-shadow:
+    inset 0 0 42px #36dfc51d,
+    inset 0 1px 0 #d9ffff4f;
+}
+
+.film-player::after {
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #7ff5e9 24%, #d6ffff 50%, #a370ff 78%, transparent);
+  opacity: .9;
+  box-shadow: 0 0 24px #72e7e7a8;
+}
+
+.film-copy {
+  background: linear-gradient(180deg, #02081400, #0208144a);
+}
+
+@supports (animation-timeline: view()) {
+  .film-continuity {
+    animation: bstvc-orbital-field linear both;
+    animation-timeline: view(block);
+    animation-range: entry -16% cover 74%;
+  }
+
+  .film-continuity::before {
+    animation: bstvc-orbital-ribbon-cyan linear both;
+    animation-timeline: view(block);
+    animation-range: entry -10% cover 80%;
+  }
+
+  .film-continuity::after {
+    animation: bstvc-orbital-ribbon-violet linear both;
+    animation-timeline: view(block);
+    animation-range: entry -10% cover 80%;
+  }
+
+  .film-player {
+    animation: bstvc-film-emerge linear both;
+    animation-timeline: view(block);
+    animation-range: entry 2% cover 48%;
+  }
+}
+
+@keyframes bstvc-orbital-field {
+  from { background-position: center 40%; }
+  to { background-position: center 55%; }
+}
+
+@keyframes bstvc-orbital-ribbon-cyan {
+  from { transform: translate3d(-4vw, 18px, 0) rotate(-7deg); }
+  to { transform: translate3d(3vw, -8px, 0) rotate(-4deg); }
+}
+
+@keyframes bstvc-orbital-ribbon-violet {
+  from { transform: translate3d(4vw, 10px, 0) rotate(9deg); }
+  to { transform: translate3d(-3vw, -12px, 0) rotate(6deg); }
+}
+
+@keyframes bstvc-film-emerge {
+  from { opacity: .58; transform: translate3d(0, 42px, 0) scale(.987); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@media (max-width: 980px) {
+  .film-section {
+    margin-top: -94px;
+    padding-top: clamp(230px, 29vw, 300px);
+  }
+
+  .film-continuity {
+    height: clamp(340px, 52vw, 500px);
+    background-size: auto 100%;
+  }
+
+  .film-heading span {
+    display: block;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-stage::after {
+    background:
+      linear-gradient(180deg, transparent 0 72%, #0208161c 88%, #02081638 100%),
+      linear-gradient(180deg, #02081600 0, #02081632 48%, #020816b8 100%);
+  }
+
+  .hero-credit {
+    padding-bottom: 54px !important;
+  }
+
+  .film-section {
+    margin-top: -72px;
+    padding: 210px 12px 72px;
+    background:
+      radial-gradient(ellipse at 50% 5%, #387fd430 0, transparent 34%),
+      linear-gradient(180deg, #02081400 0, #02081438 13%, #020814 38%, #061625 72%, #020814 100%);
+  }
+
+  .film-continuity {
+    height: 330px;
+    background-position: 44% 52%;
+    background-size: auto 108%;
+    mask-image: linear-gradient(to bottom, transparent 0, #000 7%, #000 78%, transparent 100%);
+  }
+
+  .film-continuity::before {
+    top: 34px;
+    left: -48vw;
+    width: 165vw;
+    height: 164px;
+    border-bottom-width: 22px;
+    opacity: .82;
+  }
+
+  .film-continuity::after {
+    top: 82px;
+    right: -55vw;
+    width: 154vw;
+    height: 176px;
+    border-bottom-width: 14px;
+    opacity: .68;
+  }
+
+  .film-continuity i:first-child {
+    top: 124px;
+    left: -32%;
+    width: 164%;
+    height: 210px;
+    border-top-width: 1px;
+  }
+
+  .film-kicker {
+    margin-bottom: 10px;
+    font-size: 8px;
+  }
+
+  .film-heading {
+    margin-bottom: 12px;
+    font-size: clamp(31px, 9.5vw, 43px);
+    line-height: 1.08;
+  }
+
+  .film-lede {
+    margin-bottom: 18px;
+    font-size: 12px;
+    line-height: 1.72;
+  }
+
+  .film-player {
+    width: calc(100% + 8px);
+    margin-inline: -4px;
+    box-shadow:
+      0 28px 72px #000c,
+      0 -1px 0 #d6ffff6b,
+      0 0 46px #2bd4bf24;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .film-continuity,
+  .film-continuity::before,
+  .film-continuity::after,
+  .film-player {
+    animation: none !important;
+  }
+}
+
+/* BSTVC V60 / One continuous dynamic stage
+   The film is no longer introduced by a second static space image.  The live
+   hero motion layer stays fixed behind both acts, so the hero and the film are
+   literally rendered on the same moving canvas. */
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+  background: #020814;
+}
+
+.hero-stage {
+  background: transparent !important;
+}
+
+.hero-background-fallback,
+.hero-dynamic-background {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100vh !important;
+  transform: scale(1.006) !important;
+  transform-origin: center !important;
+  pointer-events: none !important;
+  transition: opacity .34s ease, visibility .34s step-end;
+}
+
+.site-shell.is-past-film .hero-background-fallback,
+.site-shell.is-past-film .hero-dynamic-background {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Once the original editorial stream begins, its paper plane owns the entire
+   viewport width. This prevents dark hero pixels from showing in the gutters
+   beside the first two constrained content sections. */
+.site-shell.is-past-film {
+  background: var(--paper);
+}
+
+.framework-section,
+.capability-section-light {
+  position: relative;
+  isolation: isolate;
+}
+
+.framework-section::before,
+.capability-section-light::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--paper);
+  pointer-events: none;
+}
+
+.hero-stage::after {
+  background:
+    linear-gradient(180deg, #02081600 0 76%, #02081617 91%, #02081626 100%),
+    linear-gradient(90deg, #02081614 0%, #02081647 40%, #020816d1 72%, #020816f0 100%);
+}
+
+.film-section {
+  z-index: 2;
+  margin-top: 0;
+  padding-top: clamp(92px, 9vw, 142px);
+  background:
+    radial-gradient(ellipse at 50% 12%, #3adce015 0, transparent 42%),
+    linear-gradient(180deg, #02081400 0, #02081412 13%, #02081452 38%, #020814d9 72%, #020814 100%);
+}
+
+.film-section::before {
+  background:
+    radial-gradient(circle at 50% 10%, #c6fbff28 0 1px, transparent 1.7px),
+    radial-gradient(circle at 16% 30%, #7bdcff20 0 1px, transparent 1.6px),
+    radial-gradient(circle at 78% 19%, #e2b5ff22 0 1px, transparent 1.5px);
+  background-size: 197px 139px, 257px 191px, 313px 233px;
+  opacity: .34;
+  mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 76%, transparent 100%);
+}
+
+.film-section::after {
+  inset: clamp(340px, 31vw, 500px) 0 0;
+  opacity: .16;
+}
+
+.film-continuity {
+  display: none;
+}
+
+.film-shell {
+  z-index: 3;
+}
+
+/* The shared motion layer ends visually with the film.  Every original module
+   after #film gets its own higher painting plane, so the fixed hero iframe can
+   never cover the site's reading content. */
+#film ~ * {
+  position: relative;
+  z-index: 4;
+}
+
+.film-kicker {
+  margin-bottom: 14px;
+}
+
+.film-heading {
+  text-shadow:
+    0 3px 0 #02081466,
+    0 18px 56px #020814e6;
+}
+
+.film-lede {
+  color: #d1e3e9;
+  text-shadow: 0 8px 28px #020814;
+}
+
+@media (max-width: 980px) {
+  .film-section {
+    margin-top: 0;
+    padding-top: clamp(78px, 11vw, 112px);
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-background-fallback,
+  .hero-dynamic-background {
+    height: 100svh !important;
+    min-height: 100svh !important;
+  }
+
+  .film-section {
+    margin-top: 0;
+    padding: 74px 12px 72px;
+    background:
+      radial-gradient(ellipse at 50% 8%, #3adce017 0, transparent 43%),
+      linear-gradient(180deg, #02081400 0, #02081420 16%, #0208147d 42%, #020814e8 72%, #020814 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-background-fallback,
+  .hero-dynamic-background {
+    transform: none !important;
+  }
+}
+
+/* V61 / Film control razor
+   The film remains the dominant object. Desktop controls collapse into one
+   compact rail, while the six destinations become the stronger second tier. */
+.film-section {
+  padding-bottom: 24px;
+}
+
+.film-chapters {
+  margin-top: 12px;
+}
+
+.film-chapters a {
+  min-height: 70px;
+  padding: 19px 17px 17px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.film-chapters a::before {
+  margin-bottom: 9px;
+  font-size: 9px;
+}
+
+.film-chapters a::after {
+  top: 17px;
+  right: 15px;
+  font-size: 13px;
+}
+
+@media (min-width: 981px) {
+  .film-copy {
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 12px;
+  }
+
+  .film-facts span:not(:first-child) {
+    display: none;
+  }
+
+  .film-facts span:first-child {
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .film-facts strong {
+    font-size: 16px;
+  }
+
+  .film-quality {
+    flex: 0 0 230px;
+    gap: 4px;
+  }
+
+  .film-quality button {
+    padding: 6px 7px;
+    font-size: 9px;
+  }
+
+  .film-actions {
+    flex: 0 0 390px;
+    gap: 4px;
+  }
+
+  .film-action {
+    min-height: 30px;
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+  .film-status {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    color: #78919b;
+    font-size: 8px;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .film-links {
+    display: none;
+  }
+
+  .film-chapters a {
+    min-height: 78px;
+    padding: 21px 18px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 980px) {
+  .film-section {
+    padding-bottom: 22px;
+  }
+
+  .film-chapters {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .film-chapters a {
+    min-height: 66px;
+    padding: 16px 13px 14px;
+    font-size: 12px;
+  }
+}

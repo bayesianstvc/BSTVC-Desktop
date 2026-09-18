@@ -181,4 +181,28 @@
   const beginBackgroundPreload = () => window.setTimeout(() => createVideo('background'), isMobile ? 120 : 280);
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', beginBackgroundPreload, { once: true });
   else beginBackgroundPreload();
+
+  // The live hero scene belongs only to the opening film experience. Once the
+  // original content stream reaches the top of the viewport, remove the fixed
+  // scene so it cannot bleed into the site's later reading sections.
+  const siteShell = document.querySelector('.site-shell');
+  const originalContentStart = document.querySelector('.signal-strip');
+  if (siteShell && originalContentStart) {
+    let stageFrame = 0;
+    const syncOpeningStage = () => {
+      stageFrame = 0;
+      // Switch painting planes while the opaque signal strip is passing below
+      // the top navigation. This keeps the hand-off invisible and guarantees
+      // that the first two reading sections never inherit the hero canvas.
+      const handoffLine = Math.min(96, window.innerHeight * 0.12);
+      siteShell.classList.toggle('is-past-film', originalContentStart.getBoundingClientRect().top <= handoffLine);
+    };
+    const scheduleOpeningStageSync = () => {
+      if (stageFrame) return;
+      stageFrame = window.requestAnimationFrame(syncOpeningStage);
+    };
+    syncOpeningStage();
+    window.addEventListener('scroll', scheduleOpeningStageSync, { passive: true });
+    window.addEventListener('resize', scheduleOpeningStageSync, { passive: true });
+  }
 })();
