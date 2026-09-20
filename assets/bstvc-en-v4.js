@@ -49,8 +49,8 @@
     ["利用 STVC / STIVC 分析影响因素在不同地点与时期的作用方向、强度和不确定性，回答“在哪里、何时、怎样影响”。", "Use STVC/STIVC to estimate the direction, magnitude, and uncertainty of covariate effects across places and periods—showing where, when, and how an effect operates."],
     ["TCs · SCs · 50/95% 可信区间", "TCs · SCs · 50/95% CREDIBLE INTERVALS"],
     ["全局时空可解释性", "Global Spatiotemporal Interpretability"],
-    ["利用 STVPI 量化解释因素的相对时空贡献，识别关键驱动因素及空间、时间变异来源。这些结果只能为时空归因研究提供重要证据，不构成归因或因果结论。", "Use STVPI to quantify each factor’s relative spatiotemporal contribution and identify key drivers and their spatial and temporal sources of variation. These results provide important evidence for spatiotemporal attribution research, but do not constitute attribution or causal conclusions."],
-    ["STVPI · 相对贡献 · 归因证据", "STVPI · RELATIVE CONTRIBUTION · ATTRIBUTION EVIDENCE"],
+    ["利用 STVPI 量化解释因素的相对时空贡献，识别关键驱动因素及空间、时间变异来源。这些结果只能为时空归因研究提供重要证据，不构成归因或因果结论。", "Use STVPI to quantify each factor’s relative spatiotemporal contribution and identify key drivers and their spatial and temporal sources of variation. These contribution estimates provide an evidence base for subsequent causal research; they do not establish causation."],
+    ["STVPI · 相对贡献 · 归因证据", "STVPI · RELATIVE CONTRIBUTION · CONTRIBUTION EVIDENCE"],
     ["时空动态预测", "Dynamic Spatiotemporal Prediction"],
     ["通过 STVI / STIVI 等模型开展缺失值填补、时空平滑与未来预测，构建连续可靠的时空数据。", "Use STVI/STIVI and related models for missing-value imputation, spatiotemporal smoothing, and forecasting to construct continuous, reliable spatiotemporal data."],
     ["预测 · 插补 · 时空平滑", "PREDICTION · IMPUTATION · SMOOTHING"],
@@ -689,7 +689,7 @@
     panel.innerHTML = `
       <div class="organization-brand">
         <img src="./assets/bstvc-logo-rounded.webp" alt="BSTVC organization logo" loading="lazy" decoding="async">
-        <div><span>GITHUB ORGANIZATION</span><strong>bayesianstvc</strong></div>
+        <div><span>RESEARCH ORGANIZATION · DEVELOPMENT TEAM</span><strong>bayesianstvc</strong></div>
       </div>
       <div class="organization-vision">
         <p class="community-kicker">BSTVC ORGANIZATION</p>
@@ -706,7 +706,7 @@
         <a href="https://github.com/bayesianstvc/BSTVC-Shiny" target="_blank" rel="noreferrer"><b>BSTVC-Shiny</b><span>Interactive application</span></a>
         <a href="https://github.com/bayesianstvc/BSTVC-Monitor" target="_blank" rel="noreferrer"><b>BSTVC-Monitor</b><span>Resource diagnostics</span></a>
       </div>
-      <a class="organization-cta" href="https://github.com/bayesianstvc" target="_blank" rel="noreferrer" aria-label="Explore the bayesianstvc organization on GitHub">Explore the BSTVC Organization <span>↗</span></a>`;
+      <a class="organization-cta" href="https://bayesianstvc.github.io/" target="_blank" rel="noreferrer" aria-label="Spatiotemporal Interpretability Research Organization and BSTVC development team">Visit our research organization <span>↗</span></a>`;
     if (preservedVisitorMap) panel.appendChild(preservedVisitorMap);
   }
 
@@ -1069,7 +1069,7 @@
   }
 
   function applyStructuredMetadata() {
-    document.title = "BSTVC | Spatiotemporal Interpretability";
+    document.title = "BSTVC | Desktop";
     document.querySelector('meta[name="description"]')?.setAttribute("content", "BSTVC is an open-source Bayesian framework and English desktop tool for ante-hoc spatiotemporal interpretability, key-driver identification, and dynamic prediction.");
   }
 

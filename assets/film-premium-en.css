@@ -1,0 +1,1267 @@
+
+.hero-actions .hero-film-cta{background:linear-gradient(120deg,#35dac1 0%,#69e6d1 58%,#99f0df 100%);color:#031418;box-shadow:0 16px 48px #23cdb13b;border-color:#aff8eb}
+.hero-actions .hero-film-cta:hover{box-shadow:0 20px 58px #23cdb15c}
+.hero-credit a{color:#8ce8d7;text-decoration-color:#8ce8d766;text-underline-offset:4px}
+.nav-links .nav-language{color:#b8d8d5}
+.film-section{position:relative;isolation:isolate;overflow:hidden;background:#020814;color:#edf7f7;padding:clamp(76px,9vw,132px) max(36px,50% - 620px)}
+.film-section:before{content:"";position:absolute;z-index:-2;inset:0;background:radial-gradient(circle at 82% 20%,#2845a53b,transparent 38%),radial-gradient(circle at 14% 72%,#dd744224,transparent 31%),linear-gradient(135deg,#020814,#07182a 58%,#020710)}
+.film-section:after{content:"";position:absolute;z-index:-1;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,transparent,#000 24%,#000 78%,transparent)}
+.film-shell{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(330px,.58fr);gap:clamp(34px,5vw,74px);align-items:center}
+.film-visual{min-width:0}
+.film-kicker{display:flex;align-items:center;gap:12px;margin:0 0 18px;color:#83e1d3;font:700 10px/1.4 Arial,sans-serif;letter-spacing:.2em}
+.film-kicker:before{content:"";width:34px;height:1px;background:#46d3bd}
+.film-heading{max-width:720px;margin:0 0 20px;font-size:clamp(38px,5vw,70px);font-weight:680;line-height:1.04;letter-spacing:-.055em}
+.film-heading span{display:block;color:#8be6d6}
+.film-lede{max-width:620px;margin:0 0 34px;color:#a9bcc7;font-size:15px;line-height:1.9}
+.film-player{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #86dfd05e;background:#000;box-shadow:0 34px 90px #0009,0 0 0 1px #fff05 inset}
+.film-poster{position:absolute;inset:0;border:0;padding:0;background:#000;color:#fff;cursor:pointer;width:100%;height:100%}
+.film-poster img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s}
+.film-poster:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0207160d 15%,#02071618 48%,#020716d9 100%)}
+.film-poster:hover img,.film-poster:focus-visible img{transform:scale(1.018);filter:saturate(1.08)}
+.film-poster-copy{position:absolute;z-index:2;left:clamp(18px,3.2vw,44px);right:clamp(18px,3.2vw,44px);bottom:clamp(18px,3.4vw,42px);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;text-align:left}
+.film-poster-copy span{display:block;color:#a7bcc8;font:10px/1.4 Arial,sans-serif;letter-spacing:.18em}
+.film-poster-copy strong{display:block;margin-top:8px;font-size:clamp(18px,2vw,28px);font-weight:570;letter-spacing:-.02em}
+.film-play-orb{display:grid;place-items:center;flex:0 0 auto;width:clamp(58px,6vw,78px);height:clamp(58px,6vw,78px);border:1px solid #b7fff1a8;border-radius:50%;background:#061c27cc;box-shadow:0 0 0 10px #06151e55,0 0 38px #56d9c65e;color:#aef7e9;font-size:22px;text-indent:4px;backdrop-filter:blur(10px)}
+.film-frame-host{position:absolute;inset:0;background:#000}
+.film-frame-host iframe{width:100%;height:100%;border:0;background:#000}
+.film-stop{position:absolute;z-index:3;top:12px;right:12px;border:1px solid #d8f8f066;border-radius:999px;background:#020814c7;color:#e8fffb;padding:8px 13px;font-size:11px;backdrop-filter:blur(12px)}
+.film-copy{align-self:center}
+.film-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 30px}
+.film-facts span{border-top:1px solid #82d9ca59;padding-top:12px;color:#7f99a9;font:9px/1.45 Arial,sans-serif;letter-spacing:.12em}
+.film-facts strong{display:block;margin-bottom:5px;color:#edfafa;font-size:19px;font-weight:500;letter-spacing:-.02em}
+.film-quality-label{display:block;margin-bottom:10px;color:#8297a4;font:10px/1.4 Arial,sans-serif;letter-spacing:.17em}
+.film-quality{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:15px}
+.film-quality button{border:1px solid #6ca49961;background:#081927;color:#94adb8;padding:11px 8px;font-size:12px;cursor:pointer;transition:.2s ease}
+.film-quality button:hover{border-color:#77ddcb;color:#e7fffb}
+.film-quality button[aria-checked="true"]{border-color:#8be8d7;background:#123a43;color:#c8fff5;box-shadow:0 0 0 1px #8be8d72e inset}
+.film-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.film-action{display:flex;justify-content:center;align-items:center;min-height:49px;border:1px solid #8ae1d16e;padding:12px 14px;color:#dffff8;font-size:12px;font-weight:700;cursor:pointer}
+.film-action-primary{border-color:#8de7d7;background:#2b9388;color:#fff}
+.film-action-secondary{background:#071827}
+.film-status{min-height:38px;margin:13px 0 25px;color:#7f96a4;font-size:11px;line-height:1.7}
+.film-links{border-top:1px solid #fff1;padding-top:22px;display:grid;gap:10px}
+.film-links a{display:flex;justify-content:space-between;gap:18px;color:#b9cecf;font-size:12px;line-height:1.55}
+.film-links a span:last-child{color:#6edbc8}
+.film-links a:hover{color:#fff}
+.footer-links{display:flex;flex-direction:column;gap:7px}
+@media(max-width:980px){.film-shell{grid-template-columns:1fr}.film-copy{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}.film-facts,.film-quality-label,.film-quality,.film-actions,.film-status{grid-column:1}.film-links{grid-column:2;grid-row:1 / span 5;border-top:0;border-left:1px solid #fff1;padding:0 0 0 25px}}
+@media(max-width:680px){.film-section{padding:68px 18px}.film-shell{gap:34px}.film-copy{display:block}.film-links{border-left:0;border-top:1px solid #fff1;padding:20px 0 0}.film-actions{grid-template-columns:1fr}.film-facts strong{font-size:16px}.film-heading{font-size:clamp(34px,11vw,48px)}.film-poster-copy{align-items:center}.film-poster-copy strong{font-size:16px}.film-play-orb{width:54px;height:54px}.hero-actions{align-items:flex-start!important;flex-direction:column!important;gap:14px!important}}
+@media(prefers-reduced-motion:reduce){.film-poster img{transition:none}}
+
+/* BSTVC V56 film module
+   The film is the primary visual object; supporting controls stay quiet. */
+
+.hero-stage {
+  background-color: #020814;
+}
+
+.hero-stage::after {
+  background:
+    linear-gradient(180deg, #02081600 34%, #0208169e 74%, #020814 100%),
+    linear-gradient(90deg, #0208161f 0%, #02081647 40%, #020816d1 72%, #020816f0 100%);
+}
+
+.film-section {
+  position: relative;
+  z-index: 0;
+  margin-top: -1px;
+  padding: clamp(70px, 7vw, 112px) max(24px, calc((100% - 1540px) / 2)) clamp(76px, 8vw, 120px);
+  background: linear-gradient(180deg, #020814 0%, #041323 15%, #061625 31%, #020814 100%);
+}
+
+.film-continuity {
+  position: absolute;
+  z-index: -1;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: clamp(160px, 18vw, 290px);
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .9;
+  mask-image: linear-gradient(to bottom, #000 0, #000 58%, transparent 100%);
+}
+
+.film-continuity::before,
+.film-continuity::after,
+.film-continuity i {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+.film-continuity::before {
+  top: -175%;
+  left: -10%;
+  width: 88%;
+  aspect-ratio: 1.8;
+  border: clamp(22px, 3.2vw, 52px) solid transparent;
+  border-bottom-color: #16d9d36b;
+  transform: rotate(8deg);
+  filter: drop-shadow(0 0 26px #1edcd54f);
+}
+
+.film-continuity::after {
+  top: -146%;
+  right: -16%;
+  width: 82%;
+  aspect-ratio: 1.9;
+  border: clamp(18px, 2.6vw, 42px) solid transparent;
+  border-bottom-color: #a64de262;
+  transform: rotate(-9deg);
+  filter: drop-shadow(0 0 30px #a64de248);
+}
+
+.film-continuity i:first-child {
+  top: 3%;
+  left: 9%;
+  width: clamp(78px, 10vw, 154px);
+  aspect-ratio: 1;
+  background: radial-gradient(circle at 33% 28%, #69d8ff8a 0 5%, #164a7cb8 18%, #06182e 64%, transparent 67%);
+  box-shadow: 0 0 65px #1c8cd440;
+  opacity: .72;
+}
+
+.film-continuity i:last-child {
+  inset: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 17% 24%, #b4f7ff 0 1px, transparent 1.6px),
+    radial-gradient(circle at 74% 16%, #f7c8ff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 42% 41%, #a9e8ff 0 1px, transparent 1.5px);
+  background-size: 128px 96px, 173px 121px, 211px 144px;
+  opacity: .32;
+}
+
+.film-section::before {
+  background:
+    radial-gradient(circle at 78% 14%, #2845a54a, transparent 36%),
+    radial-gradient(circle at 11% 72%, #dd744224, transparent 30%),
+    linear-gradient(180deg, #020814 0%, #061a2b 24%, #020814 78%);
+}
+
+.film-section::after {
+  opacity: .52;
+  background-image:
+    linear-gradient(#8be6d614 1px, transparent 1px),
+    linear-gradient(90deg, #8be6d614 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 78%, transparent 100%);
+}
+
+.film-shell {
+  display: block;
+  width: 100%;
+}
+
+.film-visual {
+  min-width: 0;
+}
+
+.film-kicker {
+  margin-bottom: 14px;
+  color: #86e8da;
+}
+
+.film-heading {
+  max-width: 980px;
+  margin-bottom: 14px;
+  font-size: clamp(40px, 4.6vw, 68px);
+  text-wrap: balance;
+}
+
+.film-lede {
+  max-width: 920px;
+  margin-bottom: 24px;
+  color: #b7cbd4;
+}
+
+.film-player {
+  border-color: #8be6d67a;
+  box-shadow:
+    0 38px 100px #000b,
+    0 0 0 1px #ffffff10 inset,
+    0 0 70px #2bd4bf1c;
+  isolation: isolate;
+}
+
+.film-player::before {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid #b4fff01c;
+  box-shadow: inset 0 0 38px #36dfc51a;
+}
+
+.film-player::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  top: 16px;
+  left: 16px;
+  width: 42px;
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(90deg, #8be6d6, transparent);
+  opacity: .75;
+}
+
+.film-poster {
+  z-index: 1;
+}
+
+.film-poster img {
+  filter: saturate(.96) contrast(1.04);
+}
+
+.film-poster::after {
+  background:
+    linear-gradient(180deg, #0207160d 12%, #02071618 44%, #020716e8 100%),
+    linear-gradient(90deg, #0207168a 0%, transparent 68%);
+}
+
+.film-poster-copy {
+  bottom: clamp(18px, 3.4vw, 42px);
+}
+
+.film-poster-copy strong {
+  margin-top: 8px;
+  font-size: clamp(18px, 2vw, 28px);
+  letter-spacing: -.025em;
+}
+
+.film-play-orb {
+  width: clamp(62px, 6vw, 82px);
+  height: clamp(62px, 6vw, 82px);
+  border-color: #b7fff1d0;
+  background: #061c27d9;
+  box-shadow: 0 0 0 10px #06151e55, 0 0 42px #56d9c66e;
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.film-poster:hover .film-play-orb,
+.film-poster:focus-visible .film-play-orb {
+  transform: scale(1.06);
+  background: #123e49ec;
+  box-shadow: 0 0 0 12px #06151e66, 0 0 50px #56d9c694;
+}
+
+.film-frame-host {
+  z-index: 2;
+  transition: opacity .32s ease;
+}
+
+.film-frame-host iframe,
+.film-frame-host video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.film-frame-host.is-preloading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.film-stop {
+  top: 14px;
+  right: 14px;
+  border-color: #d8f8f080;
+  background: #020814d9;
+  box-shadow: 0 8px 24px #0008;
+}
+
+.film-copy {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px clamp(14px, 2vw, 28px);
+  margin-top: 24px;
+  padding: 16px 0 0;
+  border-top: 1px solid #8be6d633;
+}
+
+.film-facts {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0;
+  margin: 0;
+}
+
+.film-facts span {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 0 13px;
+  border-top: 0;
+  border-right: 1px solid #ffffff14;
+  color: #90a6b0;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.film-facts span:first-child {
+  padding-left: 0;
+}
+
+.film-facts span:last-child {
+  border-right: 0;
+}
+
+.film-facts strong {
+  display: inline;
+  margin: 0;
+  color: #e9fffb;
+  font: 600 18px/1 Arial, sans-serif;
+  letter-spacing: -.04em;
+}
+
+.film-quality-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.film-quality {
+  flex: 0 0 280px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin: 0;
+}
+
+.film-quality button {
+  padding: 7px 8px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.film-actions {
+  flex: 0 0 420px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 0;
+}
+
+.film-action {
+  min-height: 34px;
+  padding: 7px 10px;
+  font-size: 10px;
+}
+
+.film-status {
+  flex: 1 1 260px;
+  min-height: 0;
+  margin: 0;
+  font-size: 10px;
+}
+
+.film-links {
+  display: flex;
+  flex: 1 0 100%;
+  justify-content: flex-end;
+  gap: clamp(14px, 2.4vw, 34px);
+  padding: 10px 0 0;
+  border-top: 1px solid #ffffff0f;
+  border-left: 0;
+}
+
+.film-chapters {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 20px;
+  border: 1px solid #8be6d626;
+  background: #8be6d612;
+}
+
+.film-chapters a {
+  position: relative;
+  min-width: 0;
+  padding: 15px 14px 14px;
+  background: #04101ccc;
+  color: #b7cbd4;
+  font-size: 11px;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.film-chapters a::before {
+  content: attr(data-index);
+  display: block;
+  margin-bottom: 7px;
+  color: #6b948f;
+  font: 8px/1 Arial, sans-serif;
+  letter-spacing: .16em;
+}
+
+.film-chapters a::after {
+  content: "↘";
+  position: absolute;
+  top: 13px;
+  right: 12px;
+  color: #6fe8d9;
+  opacity: .55;
+}
+
+.film-chapters a:hover,
+.film-chapters a:focus-visible {
+  z-index: 1;
+  color: #ecfffb;
+  background: #0a2833;
+  transform: translateY(-2px);
+}
+
+.film-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+}
+
+.is-mobile-film .film-copy {
+  padding-left: 0;
+}
+
+.is-mobile-film .film-player {
+  box-shadow: 0 26px 70px #000a, 0 0 0 1px #ffffff10 inset, 0 0 44px #2bd4bf1a;
+}
+
+.is-mobile-film .film-facts,
+.is-mobile-film .film-quality-label,
+.is-mobile-film .film-quality {
+  display: none;
+}
+
+.is-mobile-film .film-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 10px;
+}
+
+@media (max-width: 980px) {
+  .film-copy {
+    gap: 10px 14px;
+  }
+
+  .film-status {
+    flex-basis: 100%;
+  }
+
+  .film-links {
+    justify-content: flex-start;
+  }
+
+  .film-chapters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .film-section {
+    padding: 54px 14px 72px;
+  }
+
+  .film-shell {
+    display: block;
+  }
+
+  .film-visual,
+  .film-copy {
+    width: 100%;
+  }
+
+  .film-heading {
+    font-size: clamp(34px, 10vw, 46px);
+  }
+
+  .film-lede {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.78;
+  }
+
+  .film-player {
+    box-shadow: 0 24px 62px #000b, 0 0 0 1px #ffffff10 inset, 0 0 38px #2bd4bf18;
+  }
+
+  .film-poster-copy {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .film-poster-copy strong {
+    font-size: 17px;
+  }
+
+  .film-play-orb {
+    width: 58px;
+    height: 58px;
+    font-size: 18px;
+  }
+
+  .film-copy {
+    display: block;
+    margin-top: 22px;
+    padding: 0;
+    padding-top: 18px;
+    border: 0;
+    border-top: 1px solid #8be6d633;
+  }
+
+  .film-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+    margin-bottom: 22px;
+  }
+
+  .film-facts span {
+    display: block;
+    padding-top: 8px;
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 1px solid #ffffff14;
+    border-right: 0;
+    font-size: 9px;
+  }
+
+  .film-facts strong {
+    margin-bottom: 5px;
+    font-size: 19px;
+  }
+
+  .film-quality {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+  }
+
+  .film-quality button {
+    padding: 9px 8px;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .film-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .film-status {
+    min-height: 0;
+    margin-bottom: 18px;
+  }
+
+  .film-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .film-links a {
+    display: block;
+    font-size: 10px;
+  }
+
+  .film-links a span:last-child {
+    display: block;
+    margin-top: 5px;
+  }
+
+  .film-continuity {
+    height: 170px;
+    opacity: .7;
+  }
+
+  .film-chapters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 16px;
+  }
+
+  .film-chapters a {
+    padding: 13px 12px;
+    font-size: 10px;
+  }
+
+  .is-mobile-film .film-copy {
+    margin-top: 14px;
+    padding-top: 12px;
+  }
+
+  .is-mobile-film .film-status {
+    margin: 0 0 10px;
+    font-size: 9px;
+  }
+
+  .is-mobile-film .film-links {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .film-play-orb {
+    transition: none;
+  }
+
+  .film-continuity::before,
+  .film-continuity::after {
+    filter: none;
+  }
+
+  .film-player::before {
+    box-shadow: inset 0 0 20px #36dfc511;
+  }
+}
+
+/* BSTVC V59 / Orbital Continuum
+   The hero and the film are one cinematic environment. The hero texture stays
+   visible through the overlap; an atmospheric horizon, two beta-ribbon arcs
+   and a shared star field carry the eye directly into the full-width film. */
+
+.hero-stage {
+  --orbital-cyan: #58e8ee;
+  --orbital-teal: #2fdacb;
+  --orbital-violet: #9c5dff;
+  --orbital-magenta: #ed5fc8;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-stage::after {
+  background:
+    linear-gradient(180deg, transparent 0 68%, #0208161c 84%, #02081642 100%),
+    linear-gradient(90deg, #02081614 0%, #02081647 40%, #020816d1 72%, #020816f0 100%);
+}
+
+.hero-credit {
+  position: relative;
+  z-index: 5;
+  padding-bottom: clamp(26px, 3vw, 48px) !important;
+}
+
+.film-section {
+  --orbital-cyan: #58e8ee;
+  --orbital-teal: #2fdacb;
+  --orbital-violet: #9c5dff;
+  --orbital-magenta: #ed5fc8;
+  z-index: 2;
+  margin-top: clamp(-152px, -9vw, -104px);
+  padding-top: clamp(270px, 21vw, 360px);
+  overflow: clip;
+  background:
+    radial-gradient(ellipse at 50% 6%, #387fd42e 0, transparent 31%),
+    radial-gradient(circle at 86% 23%, #5b3fb334 0, transparent 27%),
+    linear-gradient(180deg, #02081400 0, #02081436 12%, #020814 36%, #061625 69%, #020814 100%);
+}
+
+.film-section::before {
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 10%, #bdfcff30 0 1px, transparent 1.8px),
+    radial-gradient(circle at 16% 30%, #7bdcff29 0 1px, transparent 1.7px),
+    radial-gradient(circle at 78% 19%, #e2b5ff2e 0 1px, transparent 1.6px),
+    radial-gradient(circle at 35% 73%, #8fe9ff1f 0 1px, transparent 1.7px),
+    radial-gradient(ellipse at 50% 20%, #1b77a521 0, transparent 48%);
+  background-size: 167px 119px, 233px 173px, 281px 211px, 347px 251px, 100% 100%;
+  opacity: .88;
+  mask-image: linear-gradient(to bottom, #000 0, #000 78%, transparent 100%);
+}
+
+.film-section::after {
+  inset: clamp(335px, 31vw, 505px) 0 0;
+  opacity: .2;
+  background-image:
+    linear-gradient(90deg, transparent, #76e6df12 48%, transparent 72%),
+    linear-gradient(180deg, #76e6df0d 1px, transparent 1px);
+  background-size: 100% 100%, 100% 96px;
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 72%, transparent);
+}
+
+.film-continuity {
+  z-index: 0;
+  top: 0;
+  height: clamp(390px, 40vw, 610px);
+  opacity: 1;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #02081400 0 8%, #0208142e 33%, #020814d6 88%, #020814 100%),
+    linear-gradient(90deg, #0208144d 0, transparent 24%, transparent 76%, #02081452 100%),
+    url("./bstvc-film-poster.png") center 47% / 126% auto no-repeat;
+  filter: saturate(1.08) contrast(1.03);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 76%, transparent 100%);
+}
+
+.film-continuity::before {
+  top: clamp(28px, 4vw, 62px);
+  left: -18vw;
+  width: 116vw;
+  height: clamp(170px, 19vw, 292px);
+  aspect-ratio: auto;
+  border: 0;
+  border-bottom: clamp(20px, 2.6vw, 42px) solid #20d7e48f;
+  border-radius: 0 0 50% 50%;
+  transform: rotate(-5.5deg);
+  filter: drop-shadow(0 0 8px #3ce6efaa) drop-shadow(0 0 36px #1bbbdc70);
+  opacity: .86;
+}
+
+.film-continuity::after {
+  top: clamp(85px, 10vw, 154px);
+  right: -17vw;
+  width: 101vw;
+  height: clamp(178px, 20vw, 310px);
+  aspect-ratio: auto;
+  border: 0;
+  border-bottom: clamp(13px, 1.8vw, 30px) solid #a55cf078;
+  border-radius: 0 0 50% 50%;
+  transform: rotate(7deg);
+  filter: drop-shadow(0 0 10px #b466ff8c) drop-shadow(0 0 34px #e34cc553);
+  opacity: .78;
+}
+
+.film-continuity i:first-child {
+  top: clamp(125px, 14vw, 212px);
+  left: -10%;
+  width: 120%;
+  height: clamp(230px, 24vw, 370px);
+  aspect-ratio: auto;
+  border: 0;
+  border-top: 2px solid #8debf1d1;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background:
+    radial-gradient(ellipse at 50% 1%, #c7fbffb8 0 1px, #4fcff77d 2px, transparent 7px),
+    linear-gradient(180deg, #0f56805c 0, #07182ecf 23%, #020814f2 68%, #020814 100%);
+  box-shadow:
+    0 -4px 18px #77e4ff8f,
+    0 -18px 72px #168edc4d,
+    inset 0 25px 80px #1c74ad35;
+  opacity: .94;
+  transform: rotate(-1deg);
+}
+
+.film-continuity i:last-child {
+  inset: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 17% 24%, #e8fcff 0 1px, transparent 1.7px),
+    radial-gradient(circle at 74% 16%, #f5d6ff 0 1px, transparent 1.6px),
+    radial-gradient(circle at 42% 41%, #a9e8ff 0 1px, transparent 1.6px),
+    radial-gradient(circle at 88% 47%, #ffffff 0 1px, transparent 1.8px);
+  background-size: 131px 97px, 181px 127px, 223px 151px, 307px 211px;
+  opacity: .42;
+  mix-blend-mode: screen;
+}
+
+.film-shell {
+  position: relative;
+  z-index: 2;
+}
+
+.film-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.film-kicker {
+  justify-content: center;
+  margin-bottom: 12px;
+  text-align: center;
+  opacity: .82;
+}
+
+.film-kicker::before {
+  width: 42px;
+  background: linear-gradient(90deg, transparent, #6ce8dc);
+}
+
+.film-heading {
+  max-width: 1240px;
+  margin: 0 auto 16px;
+  text-align: center;
+  font-size: clamp(38px, 4.5vw, 66px);
+  text-shadow: 0 12px 42px #020814b8;
+}
+
+.film-heading span {
+  display: inline;
+}
+
+.film-lede {
+  max-width: 860px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.film-player {
+  width: 100%;
+  border-color: #8debf18f;
+  box-shadow:
+    0 44px 120px #000c,
+    0 -1px 0 #d6ffff7a,
+    0 0 0 1px #ffffff10 inset,
+    0 0 92px #2bd4bf29,
+    0 0 140px #6756d21d;
+}
+
+.film-player::before {
+  border-color: #c8fff52b;
+  box-shadow:
+    inset 0 0 42px #36dfc51d,
+    inset 0 1px 0 #d9ffff4f;
+}
+
+.film-player::after {
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #7ff5e9 24%, #d6ffff 50%, #a370ff 78%, transparent);
+  opacity: .9;
+  box-shadow: 0 0 24px #72e7e7a8;
+}
+
+.film-copy {
+  background: linear-gradient(180deg, #02081400, #0208144a);
+}
+
+@supports (animation-timeline: view()) {
+  .film-continuity {
+    animation: bstvc-orbital-field linear both;
+    animation-timeline: view(block);
+    animation-range: entry -16% cover 74%;
+  }
+
+  .film-continuity::before {
+    animation: bstvc-orbital-ribbon-cyan linear both;
+    animation-timeline: view(block);
+    animation-range: entry -10% cover 80%;
+  }
+
+  .film-continuity::after {
+    animation: bstvc-orbital-ribbon-violet linear both;
+    animation-timeline: view(block);
+    animation-range: entry -10% cover 80%;
+  }
+
+  .film-player {
+    animation: bstvc-film-emerge linear both;
+    animation-timeline: view(block);
+    animation-range: entry 2% cover 48%;
+  }
+}
+
+@keyframes bstvc-orbital-field {
+  from { background-position: center 40%; }
+  to { background-position: center 55%; }
+}
+
+@keyframes bstvc-orbital-ribbon-cyan {
+  from { transform: translate3d(-4vw, 18px, 0) rotate(-7deg); }
+  to { transform: translate3d(3vw, -8px, 0) rotate(-4deg); }
+}
+
+@keyframes bstvc-orbital-ribbon-violet {
+  from { transform: translate3d(4vw, 10px, 0) rotate(9deg); }
+  to { transform: translate3d(-3vw, -12px, 0) rotate(6deg); }
+}
+
+@keyframes bstvc-film-emerge {
+  from { opacity: .58; transform: translate3d(0, 42px, 0) scale(.987); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@media (max-width: 980px) {
+  .film-section {
+    margin-top: -94px;
+    padding-top: clamp(230px, 29vw, 300px);
+  }
+
+  .film-continuity {
+    height: clamp(340px, 52vw, 500px);
+    background-size: auto 100%;
+  }
+
+  .film-heading span {
+    display: block;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-stage::after {
+    background:
+      linear-gradient(180deg, transparent 0 72%, #0208161c 88%, #02081638 100%),
+      linear-gradient(180deg, #02081600 0, #02081632 48%, #020816b8 100%);
+  }
+
+  .hero-credit {
+    padding-bottom: 54px !important;
+  }
+
+  .film-section {
+    margin-top: -72px;
+    padding: 210px 12px 72px;
+    background:
+      radial-gradient(ellipse at 50% 5%, #387fd430 0, transparent 34%),
+      linear-gradient(180deg, #02081400 0, #02081438 13%, #020814 38%, #061625 72%, #020814 100%);
+  }
+
+  .film-continuity {
+    height: 330px;
+    background-position: 44% 52%;
+    background-size: auto 108%;
+    mask-image: linear-gradient(to bottom, transparent 0, #000 7%, #000 78%, transparent 100%);
+  }
+
+  .film-continuity::before {
+    top: 34px;
+    left: -48vw;
+    width: 165vw;
+    height: 164px;
+    border-bottom-width: 22px;
+    opacity: .82;
+  }
+
+  .film-continuity::after {
+    top: 82px;
+    right: -55vw;
+    width: 154vw;
+    height: 176px;
+    border-bottom-width: 14px;
+    opacity: .68;
+  }
+
+  .film-continuity i:first-child {
+    top: 124px;
+    left: -32%;
+    width: 164%;
+    height: 210px;
+    border-top-width: 1px;
+  }
+
+  .film-kicker {
+    margin-bottom: 10px;
+    font-size: 8px;
+  }
+
+  .film-heading {
+    margin-bottom: 12px;
+    font-size: clamp(31px, 9.5vw, 43px);
+    line-height: 1.08;
+  }
+
+  .film-lede {
+    margin-bottom: 18px;
+    font-size: 12px;
+    line-height: 1.72;
+  }
+
+  .film-player {
+    width: calc(100% + 8px);
+    margin-inline: -4px;
+    box-shadow:
+      0 28px 72px #000c,
+      0 -1px 0 #d6ffff6b,
+      0 0 46px #2bd4bf24;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .film-continuity,
+  .film-continuity::before,
+  .film-continuity::after,
+  .film-player {
+    animation: none !important;
+  }
+}
+
+/* BSTVC V60 / One continuous dynamic stage
+   The film is no longer introduced by a second static space image.  The live
+   hero motion layer stays fixed behind both acts, so the hero and the film are
+   literally rendered on the same moving canvas. */
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+  background: #020814;
+}
+
+.hero-stage {
+  background: transparent !important;
+}
+
+.hero-background-fallback,
+.hero-dynamic-background {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100vh !important;
+  transform: scale(1.006) !important;
+  transform-origin: center !important;
+  pointer-events: none !important;
+  transition: opacity .34s ease, visibility .34s step-end;
+}
+
+.site-shell.is-past-film .hero-background-fallback,
+.site-shell.is-past-film .hero-dynamic-background {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Once the original editorial stream begins, its paper plane owns the entire
+   viewport width. This prevents dark hero pixels from showing in the gutters
+   beside the first two constrained content sections. */
+.site-shell.is-past-film {
+  background: var(--paper);
+}
+
+.framework-section,
+.capability-section-light {
+  position: relative;
+  isolation: isolate;
+}
+
+.framework-section::before,
+.capability-section-light::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--paper);
+  pointer-events: none;
+}
+
+.hero-stage::after {
+  background:
+    linear-gradient(180deg, #02081600 0 76%, #02081617 91%, #02081626 100%),
+    linear-gradient(90deg, #02081614 0%, #02081647 40%, #020816d1 72%, #020816f0 100%);
+}
+
+.film-section {
+  z-index: 2;
+  margin-top: 0;
+  padding-top: clamp(92px, 9vw, 142px);
+  background:
+    radial-gradient(ellipse at 50% 12%, #3adce015 0, transparent 42%),
+    linear-gradient(180deg, #02081400 0, #02081412 13%, #02081452 38%, #020814d9 72%, #020814 100%);
+}
+
+.film-section::before {
+  background:
+    radial-gradient(circle at 50% 10%, #c6fbff28 0 1px, transparent 1.7px),
+    radial-gradient(circle at 16% 30%, #7bdcff20 0 1px, transparent 1.6px),
+    radial-gradient(circle at 78% 19%, #e2b5ff22 0 1px, transparent 1.5px);
+  background-size: 197px 139px, 257px 191px, 313px 233px;
+  opacity: .34;
+  mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 76%, transparent 100%);
+}
+
+.film-section::after {
+  inset: clamp(340px, 31vw, 500px) 0 0;
+  opacity: .16;
+}
+
+.film-continuity {
+  display: none;
+}
+
+.film-shell {
+  z-index: 3;
+}
+
+/* The shared motion layer ends visually with the film.  Every original module
+   after #film gets its own higher painting plane, so the fixed hero iframe can
+   never cover the site's reading content. */
+#film ~ * {
+  position: relative;
+  z-index: 4;
+}
+
+.film-kicker {
+  margin-bottom: 14px;
+}
+
+.film-heading {
+  text-shadow:
+    0 3px 0 #02081466,
+    0 18px 56px #020814e6;
+}
+
+.film-lede {
+  color: #d1e3e9;
+  text-shadow: 0 8px 28px #020814;
+}
+
+@media (max-width: 980px) {
+  .film-section {
+    margin-top: 0;
+    padding-top: clamp(78px, 11vw, 112px);
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-background-fallback,
+  .hero-dynamic-background {
+    height: 100svh !important;
+    min-height: 100svh !important;
+  }
+
+  .film-section {
+    margin-top: 0;
+    padding: 74px 12px 72px;
+    background:
+      radial-gradient(ellipse at 50% 8%, #3adce017 0, transparent 43%),
+      linear-gradient(180deg, #02081400 0, #02081420 16%, #0208147d 42%, #020814e8 72%, #020814 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-background-fallback,
+  .hero-dynamic-background {
+    transform: none !important;
+  }
+}
+
+/* V61 / Film control razor
+   The film remains the dominant object. Desktop controls collapse into one
+   compact rail, while the six destinations become the stronger second tier. */
+.film-section {
+  padding-bottom: 24px;
+}
+
+.film-chapters {
+  margin-top: 12px;
+}
+
+.film-chapters a {
+  min-height: 70px;
+  padding: 19px 17px 17px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.film-chapters a::before {
+  margin-bottom: 9px;
+  font-size: 9px;
+}
+
+.film-chapters a::after {
+  top: 17px;
+  right: 15px;
+  font-size: 13px;
+}
+
+@media (min-width: 981px) {
+  .film-copy {
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 12px;
+  }
+
+  .film-facts span:not(:first-child) {
+    display: none;
+  }
+
+  .film-facts span:first-child {
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .film-facts strong {
+    font-size: 16px;
+  }
+
+  .film-quality {
+    flex: 0 0 230px;
+    gap: 4px;
+  }
+
+  .film-quality button {
+    padding: 6px 7px;
+    font-size: 9px;
+  }
+
+  .film-actions {
+    flex: 0 0 390px;
+    gap: 4px;
+  }
+
+  .film-action {
+    min-height: 30px;
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+  .film-status {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    color: #78919b;
+    font-size: 8px;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .film-links {
+    display: none;
+  }
+
+  .film-chapters a {
+    min-height: 78px;
+    padding: 21px 18px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 980px) {
+  .film-section {
+    padding-bottom: 22px;
+  }
+
+  .film-chapters {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .film-chapters a {
+    min-height: 66px;
+    padding: 16px 13px 14px;
+    font-size: 12px;
+  }
+}
+
+/* English adaptation: keep the reference player and preserve readable labels. */
+html[lang="en"] .hero-lede strong {color:#e4f5f3!important}
+html[lang="en"] .hero-actions .hero-film-cta {background:linear-gradient(120deg,#35dac1,#99f0df);color:#031418;border-color:#aff8eb}
+.hero-credit a {color:#a4e8df;text-decoration:none}
+.film-heading {font-size:clamp(32px,4.5vw,64px);line-height:1.08}
+.film-poster-copy strong {font-size:clamp(16px,2.2vw,30px)}
+.film-copy {flex-wrap:wrap;gap:12px}
+.film-actions {flex:1 1 410px}
+.film-action {font-size:11px;min-height:36px}
+.film-status {flex:1 1 100%;white-space:normal;font-size:11px}
+.film-section [hidden] {display:none!important}
+.film-chapters a {line-height:1.4}
+.is-mobile-film .film-quality {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;margin:0 0 12px}
+.is-mobile-film .film-quality button {min-height:40px}
+@media(max-width:680px){.film-heading{font-size:32px}.film-actions{flex-basis:100%}.film-action{min-height:42px;font-size:12px}.hero-credit a{display:inline-block;margin-top:7px}.film-chapters a{font-size:12px}}
