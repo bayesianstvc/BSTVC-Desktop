@@ -60,10 +60,11 @@
       pauseOutside(entry.target);
     }), {threshold:0});
     function scan() {
-      document.querySelectorAll('body *').forEach(el => {
+      const candidates = typeof document.getAnimations === 'function'
+        ? new Set(document.getAnimations().filter(a => typeof CSSAnimation === 'undefined' || a instanceof CSSAnimation).map(a => a.effect?.target).filter(el => el instanceof Element))
+        : [...document.querySelectorAll('body *')].filter(el => ['', '::before','::after'].some(p => getComputedStyle(el,p || null).animationName !== 'none'));
+      candidates.forEach(el => {
         if (observed.has(el) || ['SCRIPT','STYLE'].includes(el.tagName)) return;
-        const animated = ['', '::before','::after'].some(p => getComputedStyle(el,p || null).animationName !== 'none');
-        if (!animated) return;
         pauseOutside(el);
         observed.add(el); animatedNodes.add(el); observer.observe(el);
       });
@@ -72,6 +73,8 @@
     const sync = () => { pending = false; animatedNodes.forEach(el => { if (el.isConnected) pauseOutside(el); }); };
     const schedule = () => { if (!pending) { pending = true; requestAnimationFrame(sync); } };
     addEventListener('scroll', schedule, {passive:true}); addEventListener('resize', schedule, {passive:true});
+    // Tabs and disclosures may reveal new animation owners after the initial load.
+    document.addEventListener('click', () => requestAnimationFrame(scan));
     scan(); setTimeout(scan, 1800); setTimeout(scan, 4500);
   }
 })();
