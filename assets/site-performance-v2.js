@@ -3,10 +3,9 @@
   const root = document.documentElement;
   const connection = navigator.connection;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const staticOnly = reduced || connection?.saveData || matchMedia('(max-width:760px)').matches ||
-    (navigator.deviceMemory || 8) <= 4 || (navigator.hardwareConcurrency || 8) <= 4;
-  // Decorative iframe scenes are optional; unknown or slow connections keep the lightweight still.
-  const allowScenes = !staticOnly && connection?.downlink >= 5;
+  // Keep the three brand scenes on every device; load only while visible.
+  // A missing network estimate is not a request to disable the site's motion.
+  const allowScenes = !reduced && !connection?.saveData;
   let filmPlaying = false;
   const motionFrames = [...document.querySelectorAll('[data-motion-src]')];
   const visibleFrames = new Set();
@@ -16,6 +15,7 @@
       frame.dataset.motionLoaded = 'true'; frame.dataset.motionState = 'loading';
       frame.onload = () => {
         if (frame.dataset.motionLoaded !== 'true') return;
+        frame.classList.remove('motion-frame-failed');
         frame.classList.add('motion-frame-ready'); frame.parentElement?.classList.add('motion-stage-ready');
         frame.dataset.motionState = 'ready'; frame.dataset.animationActive = 'true';
       };
@@ -26,8 +26,8 @@
       frame.dataset.motionState = 'fallback'; frame.dataset.animationActive = 'false';
     }
   }
+  root.classList.toggle('bstvc-motion-static', !allowScenes);
   if (!allowScenes) {
-    root.classList.add('bstvc-motion-static');
     motionFrames.forEach(f => { f.dataset.animationActive = 'false'; });
   } else if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -37,6 +37,8 @@
       updateFrame(frame);
     }), {threshold:.01});
     motionFrames.forEach(f => observer.observe(f.classList.contains('hero-dynamic-background') ? f.closest('.hero-stage') : f.parentElement));
+  } else {
+    motionFrames.forEach(f => { visibleFrames.add(f); updateFrame(f); });
   }
   function visibility() {
     root.classList.toggle('page-inactive', document.hidden);

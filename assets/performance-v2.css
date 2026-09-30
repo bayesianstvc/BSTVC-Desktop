@@ -12,3 +12,21 @@ html.bstvc-force-motion.film-is-playing body *,html.bstvc-force-motion.film-is-p
 #film .film-quality{display:flex!important;gap:4px}
 @media(max-width:720px){#film .film-quality{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;width:100%}.film-quality [data-quality]{min-width:0!important;font-size:11px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+/* Keep the navigation above the hero copy, including the expanded touch menu. */
+html[lang="en"] .hero-stage>.topbar{z-index:70!important}
+html[lang="en"] #site-nav a{white-space:nowrap;flex-shrink:0;flex-wrap:nowrap;align-items:center}
+html[lang="en"] #site-nav .nav-cta{display:inline-flex;gap:8px}
+html[lang="en"] #site-nav .nav-cta span{margin-left:0}
+@media(min-width:1181px){
+  html[lang="en"] .hero-stage>.topbar{width:min(1440px,calc(100% - 48px))!important;gap:24px}
+  html[lang="en"] #site-nav{display:flex;flex-direction:row;flex-wrap:nowrap;gap:clamp(10px,1vw,18px);font-size:12px}
+  html[lang="en"] .menu-toggle{display:none!important}
+}
+@media(max-width:1180px){
+  html[lang="en"] .hero-stage>.topbar{width:calc(100% - 32px)!important}
+  html[lang="en"] .menu-toggle{display:block!important;flex-shrink:0}
+  html[lang="en"] #site-nav{display:none!important;position:fixed;z-index:120;top:76px;left:16px;right:16px;width:auto;max-height:calc(100dvh - 92px);overflow-y:auto;overscroll-behavior:contain;flex-direction:column;align-items:stretch;gap:0;padding:12px;background:#09182a;border:1px solid #90bee133;box-shadow:0 16px 30px #02081673}
+  html[lang="en"] #site-nav.is-open{display:flex!important}
+  html[lang="en"] #site-nav a{display:flex;min-height:45px;padding:13px 12px;touch-action:manipulation}
+}

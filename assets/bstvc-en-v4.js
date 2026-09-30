@@ -663,20 +663,20 @@
       link.target = "_blank";
       link.rel = "noreferrer";
       link.setAttribute("hreflang", "zh-CN");
-      link.setAttribute("aria-label", "打开中文 BSTVC 主页");
+      link.setAttribute("aria-label", "Open Chinese BSTVC homepage (opens in a new tab)");
       link.innerHTML = "中文主页 <span aria-hidden=\"true\">↗</span>";
     }
 
     document.querySelectorAll('.footer-links a[href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/"]').forEach(link => {
       link.innerHTML = "中文主页 <span aria-hidden=\"true\">↗</span>";
-      link.setAttribute("aria-label", "打开中文 BSTVC 主页");
+      link.setAttribute("aria-label", "Open Chinese BSTVC homepage (opens in a new tab)");
     });
 
     document.querySelector(".bstvc-brand-equation")?.remove();
 
     const footerLinks = document.querySelector(".footer-links");
     if (footerLinks && !footerLinks.querySelector("[hreflang='zh-CN']")) {
-      footerLinks.insertAdjacentHTML("beforeend", '<a href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/" target="_blank" rel="noreferrer" hreflang="zh-CN" aria-label="打开中文 BSTVC 主页">中文主页 <span aria-hidden="true">↗</span></a>');
+      footerLinks.insertAdjacentHTML("beforeend", '<a href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/" target="_blank" rel="noreferrer" hreflang="zh-CN" aria-label="Open Chinese BSTVC homepage (opens in a new tab)">中文主页 <span aria-hidden="true">↗</span></a>');
     }
   }
 
