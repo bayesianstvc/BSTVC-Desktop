@@ -69,7 +69,10 @@
       if (automatic && quality !== '360p' && shown) switchSource(levels[levels.indexOf(quality)-1], true);
       else { message('Unable to load. Choose Auto or another quality, then press play to retry.'); playButton.hidden = false; player.classList.remove('is-loading'); }
     });
-    video.addEventListener('ended', () => { clearRecovery(); message('Film complete. Replay or explore the research themes below.'); });
+    video.addEventListener('ended', () => {
+      clearRecovery(); message('Film complete. Replay or explore the research themes below.');
+      document.dispatchEvent(new CustomEvent('bstvc:film-playback', {detail:{playing:false}}));
+    });
     video.addEventListener('timeupdate', () => {
       if (!shown || restoring || video.seeking || video.readyState < 2) return;
       position = video.currentTime;
@@ -132,6 +135,8 @@
       video.pause(); video.removeAttribute('src'); video.onloadedmetadata = null; ++generation; video.load();
     }
     host.hidden = true; poster.hidden = false; player.classList.remove('is-playing','is-loading');
+    // load() can cancel the queued native pause event; clear the page state explicitly.
+    document.dispatchEvent(new CustomEvent('bstvc:film-playback', {detail:{playing:false}}));
     playButton.hidden = false; stop.hidden = true; message('Paused. Press play to resume.'); poster.focus();
   });
   document.addEventListener('visibilitychange', () => { if (document.hidden) { video?.pause(); clearRecovery(); } });
