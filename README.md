@@ -32,12 +32,28 @@
 |:--|:--|:--|
 | **BSTVC Desktop — English installer** | Windows 10/11 users who want the complete English graphical workflow | **[Download `setup.exe`](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe)** |
 | **Release v2026.8.1** | Version notes, installer assets, and release history | [Open the GitHub Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1) |
+| **English online user guide** | Complete workflows for continuous, binary, and count responses; figures, search, and troubleshooting | [Open the English guide](https://bayesianstvc.github.io/BSTVC-Desktop/guide/) |
+| **Three English case datasets** | Original data, complete maps, verified ready panels, and companion instructions | [Choose a case](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#choose) · [GitHub data Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/examples-en-2026.10.02) |
 | **English official website** | Product overview, methods, workflow, outputs, and download guidance | [bayesianstvc.github.io/BSTVC-Desktop](https://bayesianstvc.github.io/BSTVC-Desktop) |
 | **中文官方网站** | 中文方法介绍、案例、下载与使用支持 | [bayesianstvc.github.io/BSTVC-Desktop/zh/](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) |
 | **中文下载资源** | 中文界面安装包、离线帮助文档和实例数据 | [百度网盘](https://pan.baidu.com/s/5h7zSPjXEvBINShxLVLjirA) |
 | **中文在线用户手册** | 中文操作流程、参数说明、结果输出与当前版本边界 | [打开在线帮助文档](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) |
 
 > **Recommended starting point:** Download the English installer, open **Overview**, then follow the three-step path: **Upload Data and Map → Run Data Order Check → Run Models and Export Result Tables**.
+
+## Learn with three English case studies
+
+Start with the compact count case, or choose the response family relevant to your work. Each ZIP contains the original supplied data and all map components, an English `START-HERE.html` and `README.md`, a file manifest, and the optional R visualization companion. Binary and count packages also contain ready-to-import panel CSVs verified against the original wide workbooks. These additions reshape data without changing values or imputing missingness.
+
+| Response | Case | Guide and data |
+|:--|:--|:--|
+| **Continuous** | Global healthy life expectancy — 177 map units; 2000–2020 | [Walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/continuous.html) · [Download ZIP](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/examples-en-2026.10.02/Case-01-Continuous-Global-HALE.zip) |
+| **Binary (0/1)** | COVID-19 occurrence — 31 provinces; 12 months in 2020 | [Walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/binary.html) · [Download ZIP](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/examples-en-2026.10.02/Case-02-Binary-China-COVID-19.zip) |
+| **Count** | Acute hepatitis B — 5 US states; 2012–2023 | [Walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/count.html) · [Download ZIP](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/examples-en-2026.10.02/Case-03-Count-US-Hepatitis-B.zip) |
+
+**[Download all three cases](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/examples-en-2026.10.02/BSTVC-English-Case-Studies-All.zip)** · **[Release notes and SHA-256 checksums](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/examples-en-2026.10.02)** · **[Optional English R visualization](https://bayesianstvc.github.io/BSTVC-Desktop/guide/visualization.html)**
+
+The original COVID-19 workbook is wide despite its `Panel` filename. The guide gives both the conversion route and the ready-panel route. Missingness is retained and documented. Historical figures in the guide are source illustrations, not newly reproduced model outputs.
 
 ## Why BSTVC Desktop?
 
@@ -121,7 +137,7 @@ BSTVC Desktop organizes model output around a transparent evidence chain:
 5. **Read estimates with uncertainty** and compare candidate models using multiple evaluation criteria.
 6. **Export** result tables for mapping, interpretation, and reproducible reporting.
 
-For detailed Chinese instructions, see the **[online BSTVC Desktop User Guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html)**.
+For complete English instructions, follow the **[online BSTVC Desktop User Guide](https://bayesianstvc.github.io/BSTVC-Desktop/guide/)**. The [Chinese guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) remains available for Chinese-language readers.
 
 ## Desktop or R package?
 

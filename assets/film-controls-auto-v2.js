@@ -23,7 +23,7 @@
   function initialQuality() {
     if (connection?.saveData || /(^|slow-)2g/.test(connection?.effectiveType || '') ||
         (connection?.downlink > 0 && connection.downlink < .8) || connection?.rtt > 500) return '360p';
-    if (!mobile && connection?.downlink >= 5 && (navigator.hardwareConcurrency || 4) >= 4 &&
+    if (!mobile && connection?.downlink >= 12 && connection?.rtt < 200 && (navigator.hardwareConcurrency || 4) >= 4 &&
         (navigator.deviceMemory || 4) >= 4) return '1080p';
     return '480p'; // Unknown networks start small. 4K is an explicit choice.
   }
@@ -39,13 +39,23 @@
   function message(text) { status.textContent = `${automatic ? 'Auto · ' : ''}${quality.toUpperCase()} · ${text}`; }
   function clearRecovery() { clearTimeout(recoveryTimer); recoveryTimer = 0; }
   function recoverSoon() {
-    if (!shown || !automatic || recoveryTimer || quality === '360p') return;
+    if (!shown || !automatic || recoveryTimer) return;
     recoveryTimer = setTimeout(() => {
       recoveryTimer = 0;
-      if (!shown || !automatic || !video || video.paused || video.ended || video.readyState >= 3) return;
+      if (!shown || !automatic || !video || video.ended || video.readyState >= 3 ||
+          (video.paused && !player.classList.contains('is-loading'))) return;
+      if (quality === '360p') {
+        message('The connection is taking longer. Press play to retry, or try again when the network improves.');
+        playButton.hidden = false;
+        player.classList.remove('is-loading');
+        // Abandon the stalled request so retry creates a fresh network request.
+        video.pause(); video.removeAttribute('src'); video.onloadedmetadata = null; ++generation; video.load();
+        document.dispatchEvent(new CustomEvent('bstvc:film-playback', {detail:{playing:false}}));
+        return;
+      }
       switchSource(levels[levels.indexOf(quality)-1], true);
       message('Using a smaller file for smoother playback.');
-    }, 4000);
+    }, quality === '360p' ? 15000 : 4000);
   }
   function ensureVideo() {
     if (video) return video;
@@ -61,7 +71,7 @@
     video.addEventListener('waiting', () => { message('Buffering…'); recoverSoon(); });
     video.addEventListener('stalled', recoverSoon);
     video.addEventListener('pause', () => {
-      if (video.paused) clearRecovery();
+      if (video.paused && !player.classList.contains('is-loading')) clearRecovery();
       document.dispatchEvent(new CustomEvent('bstvc:film-playback', {detail:{playing:false}}));
     });
     video.addEventListener('error', () => {

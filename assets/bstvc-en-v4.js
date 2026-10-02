@@ -580,7 +580,7 @@
     const title = section.querySelector("h2");
     if (title) title.innerHTML = 'Download BSTVC Desktop.<br><span>Make spatiotemporal relationships interpretable.</span>';
     const intro = section.querySelector(".download-copy > p:not(.section-kicker)");
-    if (intro) intro.textContent = "English desktop release for Windows 10/11, with direct GitHub access to the installer, source repository, reproducible case interface, and supporting tools.";
+    if (intro) intro.textContent = "English desktop release for Windows 10/11, with direct GitHub access to the installer, source repository, three case datasets, an English user guide, and supporting tools.";
 
     const actions = section.querySelector(".download-actions");
     if (actions) actions.innerHTML = `
@@ -598,18 +598,18 @@
         <p>Releases, source, issue tracking, and version history</p>
         <span class="download-resource-action">View GitHub Project <i>↗</i></span>
       </a>
-      <div class="download-resource-card is-coming-soon" data-resource="ENGLISH GUIDE" role="status" aria-label="English user guide coming soon">
-        <span class="download-resource-meta"><i>03</i><b>USER GUIDE</b><em>SOON</em></span>
+      <a class="download-resource-card" data-resource="ENGLISH GUIDE" href="./guide/" aria-label="Open the English BSTVC Desktop user guide">
+        <span class="download-resource-meta"><i>03</i><b>USER GUIDE</b><em>EN</em></span>
         <strong>English User Guide</strong>
-        <p>The module and integration point are reserved for the forthcoming English guide.</p>
-        <span class="download-resource-action">Coming soon · Link reserved</span>
-      </div>
-      <div class="download-resource-card is-coming-soon" data-resource="CASE DATASET" data-release-placeholder="https://github.com/bayesianstvc/BSTVC-Desktop/releases" role="status" aria-label="Case dataset download interface reserved for a future GitHub Release">
-        <span class="download-resource-meta"><i>04</i><b>CASE DATASET</b><em>SOON</em></span>
-        <strong>Reproducible Case Dataset</strong>
-        <p>Reserved interface for example data, maps, and expected outputs</p>
-        <span class="download-resource-action">Future GitHub Release · Interface reserved</span>
-      </div>
+        <p>Complete continuous, binary, and count walkthroughs · Search · Figures · Troubleshooting</p>
+        <span class="download-resource-action">Read the online guide <i>→</i></span>
+      </a>
+      <a class="download-resource-card" data-resource="CASE DATASET" href="./guide/#choose">
+        <span class="download-resource-meta"><i>04</i><b>CASE DATASETS</b><em>ZIP</em></span>
+        <strong>Three English Case Studies</strong>
+        <p>Global HALE · COVID-19 occurrence · Acute hepatitis B. Original data, complete maps, ready panels, and English instructions.</p>
+        <span class="download-resource-action">Choose a case &amp; download <i>→</i></span>
+      </a>
       <a class="download-resource-card" data-resource="MONITOR" href="https://github.com/bayesianstvc/BSTVC-Monitor" target="_blank" rel="noreferrer">
         <span class="download-resource-meta"><i>05</i><b>AUXILIARY TOOL</b><em>WIN</em></span>
         <strong>BSTVC Process Monitor</strong>
@@ -642,11 +642,13 @@
     }
 
     document.querySelectorAll("a[data-online-guide], a[href*='bstvc-user-guide.html']").forEach(link => {
-      link.removeAttribute("href");
+      link.href = "./guide/";
       link.removeAttribute("target");
-      link.setAttribute("aria-disabled", "true");
-      link.classList.add("is-coming-soon");
-      link.innerHTML = "English User Guide <span>· Coming soon</span>";
+      link.removeAttribute("aria-disabled");
+      link.setAttribute("aria-label", "Open the English BSTVC Desktop user guide");
+      link.removeAttribute("title");
+      link.classList.remove("is-coming-soon");
+      link.innerHTML = "English User Guide <span>→</span>";
     });
   }
 

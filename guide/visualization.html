@@ -1,0 +1,158 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R visualization | BSTVC Desktop User Guide</title><meta name="description" content="Optional, transparent figure creation from exported BSTVC workbooks. Desktop fitting remains a graphical workflow."><link rel="canonical" href="https://bayesianstvc.github.io/BSTVC-Desktop/guide/visualization.html"><link rel="icon" href="../assets/bstvc-favicon.png"><link rel="stylesheet" href="guide.css?v=20261002-1"><script src="guide.js?v=20261002-1" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a><header class="guide-header"><a class="wordmark" href="index.html"><b>BSTVC</b><span>User Guide</span></a><div class="header-actions"><a href="../">Desktop website ↗</a><a class="primary-button" href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe">Download software</a><button type="button" class="contents-button" aria-expanded="false" aria-controls="guide-sidebar">Contents</button></div></header><aside class="sidebar" id="guide-sidebar" aria-label="Guide navigation"><label for="guide-search">Search this guide</label><input type="search" id="guide-search" placeholder="Field, module, or topic" autocomplete="off"><p class="search-status" id="search-status" role="status"></p><div class="search-results" id="search-results" hidden></div><nav aria-label="Chapters"><a href="index.html">Start here</a><a href="prepare.html">Install &amp; prepare</a><a href="continuous.html">Continuous: global HALE</a><a href="binary.html">Binary: COVID-19</a><a href="count.html">Count: hepatitis B</a><a href="results.html">Understand results</a><a href="visualization.html" aria-current="page">R visualization</a><a href="troubleshooting.html">Troubleshooting</a></nav><small>English desktop v2026.8.1<br>Revised 2 October 2026<br><a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/examples-en-2026.10.02">Case downloads &amp; checksums ↗</a></small></aside><main id="main" class="content" tabindex="-1"><h1>R visualization</h1><p class="lede">Optional, transparent figure creation from exported BSTVC workbooks. Desktop fitting remains a graphical workflow.</p><nav class="on-page" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#start">1. Prepare an exported workbook</a></li><li><a href="#configure">2. Set the case and load the result</a></li><li><a href="#coefficients">3. Plot coefficients and posterior uncertainty</a></li><li><a href="#contribution">4. Plot relative contribution</a></li><li><a href="#accuracy">5. Choose accuracy metrics for the response</a></li><li><a href="#maps">6. Map predictions with consistent legends</a></li><li><a href="#script">Complete companion script</a></li><li><a href="#next">Continue with the evidence</a></li></ul></nav><section id="start"><h2>1. Prepare an exported workbook</h2><p>First finish one of the three desktop cases and select Download All Tables. The raw input CSV or wide workbook is not a model result workbook. Install R and use your preferred R editor if you need customized figures. R is optional; use the exported tables directly if you prefer GIS or another analysis environment.</p><p><a class="primary-button" href="bstvc-visualization.R" download>Download the English R companion</a></p><p>The companion consolidates the source manual’s figure workflows into one script with explicit case settings, portable file selectors, schema checks, ID joins, and response-scale checks. It does not fit models. Its plots will reflect your selected result workbook rather than reproduce the historical illustrations automatically.</p><aside class="callout"><strong>Run in your own R environment.</strong><p>The supplied data were checked structurally and numerically, and the script syntax was checked. A new full desktop fit and end-to-end execution against freshly exported workbooks are separate steps. If your export uses different headers, inspect it and update the named mapping instead of relabeling columns blindly.</p></aside></section><section id="configure"><h2>2. Set the case and load the result</h2><p>Install the listed packages once, then open the script. Set <code>case_type</code> to <code>continuous</code>, <code>binary</code>, or <code>count</code>. Run it in your R editor and choose the full result workbook when prompted. It uses worksheet names, not uncertain sheet positions. Near the end, choose the matching map’s .shp file.</p><div class="code-block"><button type="button" class="copy-code">Copy code</button><pre><code># Install once if needed:
+install.packages(c(&quot;readxl&quot;, &quot;ggplot2&quot;, &quot;dplyr&quot;, &quot;tidyr&quot;, &quot;sf&quot;, &quot;scales&quot;, &quot;pROC&quot;))
+# In bstvc-visualization.R, choose the case:
+case_type &lt;- &quot;count&quot;  # &quot;continuous&quot;, &quot;binary&quot;, or &quot;count&quot;
+# If your manually converted count panel uses Year rather than YEAR,
+# update settings$time to the exact column name in your result workbook.</code></pre></div><p>Time is reconstructed from the source indices: global 2000–2020, binary months 1–12, count 2012–2023. Check that these settings match your actual run. Save images into a separate output folder next to the workbook, and retain the script with your report.</p></section><section id="coefficients"><h2>3. Plot coefficients and posterior uncertainty</h2><p>The temporal plot uses <code>time_index</code>, <code>explain_variable</code>, <code>mean</code>, and the four quantile columns. Light shading shows 95% credible intervals; darker shading shows 50%. The optional LOESS display retains the original points. It does not create new posterior estimates.</p><p>The spatial plot selects exported <code>predictor_mean</code> columns and joins them to the map by the shared spatial key. The script checks that identifiers match, and that map/spatial result keys are unique. Review interval information alongside any mean-only maps.</p><p>In a GIS workflow, load the map, join the coefficient table using its shared key, verify match counts, and select the intended mean or interval column. Use labels and legends that state the coefficient scale.</p></section><section id="contribution"><h2>4. Plot relative contribution</h2><p>The source STVPI workflow has seven columns: ID, four posterior quantiles, posterior mean, and component name. The companion checks this structure and the proportion scale before creating a contribution plot. Outer and inner interval segments show 95% and 50% credible intervals. If your workbook differs, inspect its original headers and confirm each mapping.</p><p>Use relative contribution labels for the binary and count workflows. Read the <a href="results.html#contribution">current STVPI boundary</a> before labeling a total explainable percentage.</p></section><section id="accuracy"><h2>5. Choose accuracy metrics for the response</h2><p>The script keeps pairs with finite observed and predicted values. These metrics describe the supplied workbook; they do not automatically constitute held-out validation.</p><div class="table-wrap"><table><thead><tr><th scope="col">Response</th><th scope="col">Display / metrics</th><th scope="col">Check first</th></tr></thead><tbody><tr><td>Continuous</td><td>Observed–predicted scatter, RMSE, R²</td><td>Use response-scale predict_y, not an already transformed value transformed again</td></tr><tr><td>Binary</td><td>ROC and AUC with positive class 1</td><td>Both classes are present; probabilities lie between 0 and 1</td></tr><tr><td>Count</td><td>Scatter, MAE, mean Poisson deviance, deviance pseudo-R²</td><td>Observed counts are integers; predicted means are strictly positive and on the count scale</td></tr></tbody></table></div><div class="code-block"><button type="button" class="copy-code">Copy code</button><pre><code># Count deviance: handle the y = 0 term explicitly.
+y &lt;- c(0, 2, 5)
+mu &lt;- c(0.5, 2.5, 4.5)
+terms &lt;- mu - y
+positive &lt;- y &gt; 0
+terms[positive] &lt;- y[positive] * log(y[positive] / mu[positive]) -
+  (y[positive] - mu[positive])
+mean_poisson_deviance &lt;- mean(2 * terms)
+mae &lt;- mean(abs(y - mu))</code></pre></div><p>For binary evaluation, the script uses <code>levels = c(0, 1)</code> and <code>direction = "&lt;"</code> for ROC calculation. Higher predicted probabilities therefore correspond to the declared event class. For count pseudo-R², the mean-only reference uses the same evaluated observations; a constant/all-zero response can make that denominator undefined, which is reported as NA.</p></section><section id="maps"><h2>6. Map predictions with consistent legends</h2><p>Join <code>local.prediction</code> to the map using the spatial key, keeping one result row per location–time combination. Facet by the exact exported time field. Use a common probability range of 0–1 for binary maps. For continuous and count maps, choose a consistent scale that supports comparisons between periods. Display missing values explicitly.</p><p>Check the joined row count and duplicate keys before plotting. Do not interpret an empty polygon as zero or replace unmatched identifiers with the nearest label. Export figures at a suitable resolution and state the source, model, period, outcome scale, and uncertainty in captions.</p></section><section id="script"><h2>Complete companion script</h2><p>You can inspect and copy the full script below. The download above contains the same text. Set your case before running, and confirm exported field names.</p><details><summary>Show the complete R script</summary><div class="code-block"><button type="button" class="copy-code">Copy code</button><pre><code># BSTVC Desktop: optional English visualization companion.
+# Use exported workbooks, not raw case input tables. No model fitting occurs here.
+# Install packages once if needed:
+# install.packages(c(&quot;readxl&quot;, &quot;ggplot2&quot;, &quot;dplyr&quot;, &quot;tidyr&quot;, &quot;sf&quot;, &quot;scales&quot;, &quot;pROC&quot;))
+# Select continuous, binary, or count; retain the settings matching your own run.
+case_type &lt;- &quot;count&quot;
+settings &lt;- switch(case_type,
+ continuous = list(id = &quot;ISO_A3&quot;, time = &quot;Year&quot;, first = 2000, ntime = 21),
+ binary = list(id = &quot;gb&quot;, time = &quot;Month&quot;, first = 1, ntime = 12),
+ count = list(id = &quot;GEOID&quot;, time = &quot;YEAR&quot;, first = 2012, ntime = 12),
+ stop(&quot;Choose continuous, binary, or count.&quot;))
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(sf)
+require_fields &lt;- function(data, fields, label) {
+ missing &lt;- setdiff(fields, names(data))
+ if (length(missing)) stop(label, &quot;: missing fields: &quot;, paste(missing, collapse = &quot;, &quot;))
+}
+cat(&quot;Select your exported BSTVC result workbook.\n&quot;)
+workbook &lt;- file.choose()
+sheet_names &lt;- excel_sheets(workbook)
+expected_sheets &lt;- c(&quot;model.evaluation&quot;, &quot;local.prediction&quot;, &quot;time.coefficients&quot;, &quot;space.coefficients&quot;, &quot;STVPI&quot;)
+if (!all(expected_sheets %in% sheet_names)) stop(&quot;Select a full exported result workbook containing the expected sheets.&quot;)
+read_sheet &lt;- function(name) as.data.frame(read_excel(workbook, sheet = name))
+evaluation &lt;- read_sheet(&quot;model.evaluation&quot;)
+prediction &lt;- read_sheet(&quot;local.prediction&quot;)
+temporal &lt;- read_sheet(&quot;time.coefficients&quot;)
+spatial &lt;- read_sheet(&quot;space.coefficients&quot;)
+contribution &lt;- read_sheet(&quot;STVPI&quot;)
+print(evaluation)
+str(prediction)
+output_folder &lt;- file.path(dirname(workbook), paste0(&quot;BSTVC-figures-&quot;, case_type))
+dir.create(output_folder, showWarnings = FALSE)
+save_plot &lt;- function(p, name, width = 12, height = 8) {
+ print(p)
+ ggsave(file.path(output_folder, name), p, width = width, height = height, dpi = 300, bg = &quot;white&quot;)
+}
+# 1. Temporal coefficients with posterior credible intervals.
+require_fields(temporal, c(&quot;time_index&quot;, &quot;explain_variable&quot;, &quot;mean&quot;, &quot;0.025quant&quot;, &quot;0.975quant&quot;, &quot;0.25quant&quot;, &quot;0.75quant&quot;), &quot;time.coefficients&quot;)
+if (anyNA(temporal$time_index) || any(!temporal$time_index %in% seq_len(settings$ntime))) stop(&quot;Check time_index and the selected case configuration.&quot;)
+temporal$Period &lt;- settings$first + temporal$time_index - 1
+temporal$explain_variable &lt;- sub(&quot;^time\\.&quot;, &quot;&quot;, temporal$explain_variable)
+temporal &lt;- arrange(temporal, explain_variable, Period)
+coefficient_label &lt;- switch(case_type, binary = &quot;Temporal coefficient (log-odds scale)&quot;, count = &quot;Temporal coefficient (log-mean scale)&quot;, &quot;Temporal coefficient (log-response scale)&quot;)
+p_time &lt;- ggplot(temporal, aes(Period, mean, fill = explain_variable, colour = explain_variable)) +
+ geom_ribbon(aes(ymin = .data[[&quot;0.025quant&quot;]], ymax = .data[[&quot;0.975quant&quot;]]), alpha = .12, colour = NA) +
+ geom_ribbon(aes(ymin = .data[[&quot;0.25quant&quot;]], ymax = .data[[&quot;0.75quant&quot;]]), alpha = .35, colour = NA) +
+ geom_line() + geom_point(size = 1) + facet_wrap(~explain_variable, scales = &quot;free_y&quot;, ncol = 3) +
+ labs(x = settings$time, y = coefficient_label, title = &quot;Temporal associations and posterior uncertainty&quot;) +
+ theme_minimal(base_size = 12) + theme(legend.position = &quot;none&quot;)
+save_plot(p_time, &quot;01-temporal-credible-intervals.png&quot;)
+# Optional display smoother. It does not replace posterior means or credible intervals.
+p_smooth &lt;- ggplot(temporal, aes(Period, mean, colour = explain_variable)) +
+ geom_point(size = 1.5) + geom_smooth(method = &quot;loess&quot;, se = FALSE, span = 1) +
+ labs(x = settings$time, y = coefficient_label, colour = &quot;Predictor&quot;, title = &quot;Annual estimates with a descriptive smoother&quot;) + theme_minimal(base_size = 12)
+save_plot(p_smooth, &quot;02-temporal-display-smoother.png&quot;)
+# 2. Relative spatiotemporal contribution. Column order follows the supplied manual.
+if (ncol(contribution) != 7) stop(&quot;STVPI schema differs from the seven-column source example; inspect names before mapping columns.&quot;)
+names(contribution) &lt;- c(&quot;id&quot;, &quot;q025&quot;, &quot;q25&quot;, &quot;mean&quot;, &quot;q75&quot;, &quot;q975&quot;, &quot;effect_name&quot;)
+for (v in c(&quot;q025&quot;, &quot;q25&quot;, &quot;mean&quot;, &quot;q75&quot;, &quot;q975&quot;)) {
+ if (!is.numeric(contribution[[v]])) stop(&quot;STVPI quantiles must be numeric; inspect the workbook.&quot;)
+}
+# Source STVPI exports are proportions. Do not divide these values by 100 again.
+if (any(contribution$mean &lt; 0 | contribution$mean &gt; 1, na.rm = TRUE)) stop(&quot;STVPI scale differs from the source proportion scale; verify before plotting.&quot;)
+p_stvpi &lt;- ggplot(contribution, aes(mean, reorder(effect_name, mean))) +
+ geom_segment(aes(x = q025, xend = q975, yend = effect_name), linewidth = .7, colour = &quot;#b1cfc9&quot;) +
+ geom_segment(aes(x = q25, xend = q75, yend = effect_name), linewidth = 2, colour = &quot;#087f79&quot;) +
+ geom_point(size = 2, colour = &quot;#15343c&quot;) + scale_x_continuous(labels = scales::label_percent()) +
+ labs(x = &quot;Relative contribution&quot;, y = &quot;Modeled component&quot;, title = &quot;Spatiotemporal contribution with posterior uncertainty&quot;) + theme_minimal(base_size = 12)
+save_plot(p_stvpi, &quot;03-spatiotemporal-contribution.png&quot;, height = max(8, nrow(contribution) * .25))
+# 3. Prediction accuracy on the exported response scale.
+require_fields(prediction, c(&quot;y&quot;, &quot;predict_y&quot;, settings$id, settings$time), &quot;local.prediction&quot;)
+if (!is.numeric(prediction$y) || !is.numeric(prediction$predict_y)) stop(&quot;Observed and predicted values must be numeric.&quot;)
+observed &lt;- prediction[is.finite(prediction$y) &amp; is.finite(prediction$predict_y), , drop = FALSE]
+if (!nrow(observed)) stop(&quot;No observed/predicted pairs are available for evaluation.&quot;)
+y &lt;- observed$y
+mu &lt;- observed$predict_y
+if (case_type == &quot;binary&quot;) {
+ if (any(!y %in% c(0, 1)) || any(mu &lt; 0 | mu &gt; 1)) stop(&quot;Binary y must be 0/1 and predict_y must contain probabilities.&quot;)
+ if (length(unique(y)) != 2) stop(&quot;ROC/AUC needs both response classes.&quot;)
+ roc_result &lt;- pROC::roc(y, mu, levels = c(0, 1), direction = &quot;&lt;&quot;, quiet = TRUE)
+ print(pROC::auc(roc_result))
+ roc_data &lt;- data.frame(FPR = 1 - roc_result$specificities, TPR = roc_result$sensitivities)
+ p_accuracy &lt;- ggplot(roc_data, aes(FPR, TPR)) + geom_path(colour = &quot;#087f79&quot;) +
+  geom_abline(slope = 1, intercept = 0, linetype = &quot;dashed&quot;, colour = &quot;grey60&quot;) + coord_equal() +
+  labs(x = &quot;False-positive rate&quot;, y = &quot;Sensitivity&quot;, title = &quot;ROC curve: positive class = 1&quot;) + theme_minimal(base_size = 12)
+} else {
+ if (case_type == &quot;continuous&quot;) {
+  sst &lt;- sum((y - mean(y))^2)
+  metrics &lt;- c(RMSE = sqrt(mean((y - mu)^2)), R_squared = if (sst &gt; 0) 1 - sum((y - mu)^2) / sst else NA_real_)
+ } else {
+  if (any(y &lt; 0 | y != floor(y)) || any(mu &lt;= 0)) stop(&quot;Count metrics require non-negative integer observations and strictly positive response-scale mean predictions.&quot;)
+  deviance_terms &lt;- mu - y
+  positive &lt;- y &gt; 0
+  deviance_terms[positive] &lt;- y[positive] * log(y[positive] / mu[positive]) - (y[positive] - mu[positive])
+  mean_deviance &lt;- mean(2 * deviance_terms)
+  null_mu &lt;- mean(y)
+  null_deviance &lt;- if (null_mu &gt; 0) {
+   null_terms &lt;- null_mu - y
+   null_terms[positive] &lt;- y[positive] * log(y[positive] / null_mu) - (y[positive] - null_mu)
+   mean(2 * null_terms)
+  } else 0
+  metrics &lt;- c(MAE = mean(abs(y - mu)), Mean_Poisson_Deviance = mean_deviance,
+   Deviance_pseudo_R_squared = if (null_deviance &gt; 0) 1 - mean_deviance / null_deviance else NA_real_)
+ }
+ print(metrics)
+ p_accuracy &lt;- ggplot(observed, aes(y, predict_y)) + geom_point(alpha = .55, colour = &quot;#087f79&quot;) +
+  geom_abline(slope = 1, intercept = 0, linetype = &quot;dashed&quot;, colour = &quot;grey60&quot;) +
+  labs(x = &quot;Observed response&quot;, y = &quot;Predicted response&quot;, title = &quot;Observed and predicted values&quot;) + theme_minimal(base_size = 12)
+}
+save_plot(p_accuracy, &quot;04-prediction-accuracy.png&quot;)
+cat(&quot;These metrics describe the selected workbook. Independent validation requires a suitable held-out design.\n&quot;)
+# 4. Geographic joins must use shared IDs, never row position.
+cat(&quot;Select the matching .shp file. Keep all companion files beside it.\n&quot;)
+map &lt;- st_read(file.choose(), quiet = TRUE)
+require_fields(map, settings$id, &quot;map&quot;)
+require_fields(spatial, settings$id, &quot;space.coefficients&quot;)
+map[[settings$id]] &lt;- as.character(map[[settings$id]])
+spatial[[settings$id]] &lt;- as.character(spatial[[settings$id]])
+prediction[[settings$id]] &lt;- as.character(prediction[[settings$id]])
+if (anyDuplicated(map[[settings$id]]) || anyDuplicated(spatial[[settings$id]])) stop(&quot;Map and spatial coefficient identifiers must each be unique.&quot;)
+if (!setequal(map[[settings$id]], spatial[[settings$id]]) || !setequal(map[[settings$id]], prediction[[settings$id]])) stop(&quot;Map and result identifiers do not match.&quot;)
+means &lt;- grep(&quot;_mean$&quot;, names(spatial), value = TRUE)
+if (!length(means)) stop(&quot;No predictor_mean spatial columns found; inspect your output schema.&quot;)
+mapped_coefficients &lt;- left_join(map, spatial, by = settings$id)
+mapped_coefficients &lt;- pivot_longer(mapped_coefficients, cols = all_of(means), names_to = &quot;Predictor&quot;, values_to = &quot;Coefficient&quot;)
+mapped_coefficients$Predictor &lt;- sub(&quot;_mean$&quot;, &quot;&quot;, mapped_coefficients$Predictor)
+p_space &lt;- ggplot(mapped_coefficients) + geom_sf(aes(fill = Coefficient), colour = &quot;white&quot;, linewidth = .1) +
+ facet_wrap(~Predictor, ncol = 3) + scale_fill_viridis_c(na.value = &quot;grey90&quot;) +
+ labs(title = &quot;Spatial associations&quot;, x = NULL, y = NULL) + theme_minimal(base_size = 12)
+save_plot(p_space, &quot;05-spatial-coefficient-maps.png&quot;, width = 14, height = 10)
+if (anyDuplicated(prediction[c(settings$id, settings$time)])) stop(&quot;Prediction rows must have unique location-time keys.&quot;)
+mapped_prediction &lt;- left_join(map, prediction, by = settings$id)
+p_prediction &lt;- ggplot(mapped_prediction) + geom_sf(aes(fill = predict_y), colour = &quot;white&quot;, linewidth = .1) +
+ facet_wrap(stats::reformulate(settings$time), ncol = 4) +
+ labs(title = &quot;Predicted response across time&quot;, x = NULL, y = NULL, fill = &quot;Predicted response&quot;) + theme_minimal(base_size = 12)
+if (case_type == &quot;binary&quot;) {
+ p_prediction &lt;- p_prediction + scale_fill_viridis_c(limits = c(0, 1), na.value = &quot;grey90&quot;)
+} else {
+ p_prediction &lt;- p_prediction + scale_fill_viridis_c(na.value = &quot;grey90&quot;)
+}
+save_plot(p_prediction, &quot;06-predicted-response-maps.png&quot;, width = 14, height = 10)
+cat(&quot;Figures saved in: &quot;, output_folder, &quot;\n&quot;, sep = &quot;&quot;)</code></pre></div></details></section><section id="next"><h2>Continue with the evidence</h2><p>Before publishing figures, review <a href="results.html#report">the reporting checklist</a>. If the script stops on a missing field, use <a href="troubleshooting.html#exports">the export troubleshooting steps</a>; the check is intended to prevent a plausible-looking plot built from the wrong table.</p></section><nav class="chapter-nav" aria-label="Chapter navigation"><a href="results.html">← Understand results</a><a href="troubleshooting.html">Troubleshooting →</a></nav><footer class="guide-footer"><p>BSTVC Desktop · English User Guide · <a href="../">Desktop website</a> · <a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe">Download software</a> · <a href="https://bayesianstvc.github.io/">Research organization &amp; development team</a></p><p>Contribution and conditional association do not establish causal attribution. Source illustrations and historical model outputs are identified in captions.</p></footer></main><dialog class="image-dialog" aria-label="Enlarged guide illustration"><button type="button">Close image</button><div><img alt=""></div></dialog></body></html>
