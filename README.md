@@ -163,7 +163,7 @@ BSTVC is designed for spatiotemporal panel and areal research in GIScience, spat
 - **Statistical framework:** [BSTVC brand website](https://bayesianstvc.github.io/)
 - **R package:** [bayesianstvc/BSTVC-R](https://github.com/bayesianstvc/BSTVC-R)
 - **Desktop development and usage support:** [Xianteng Tang](https://tangxxxxt.github.io/)
-- **Project leadership and statistical methodology:** [Chao Song](https://homepage.songchao-bstvc.chatgpt.site/)
+- **Project leadership and statistical methodology:** [Chao Song](https://chaosong.blog/)
 
 We welcome reproducible bug reports, feature proposals, documentation improvements, code contributions, and new empirical applications.
 
