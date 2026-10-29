@@ -578,20 +578,18 @@
     const section = document.querySelector("#download");
     if (!section) return;
     const title = section.querySelector("h2");
-    if (title) title.innerHTML = 'Download BSTVC Desktop.<br><span>Make spatiotemporal relationships interpretable.</span>';
+    if (title) title.innerHTML = 'BSTVC Desktop installer update.<br><span>V2 will be provided later.</span>';
     const intro = section.querySelector(".download-copy > p:not(.section-kicker)");
-    if (intro) intro.textContent = "English desktop release for Windows 10/11, with direct GitHub access to the installer, source repository, three case datasets, an English user guide, and supporting tools.";
+    if (intro) intro.textContent = "The English Windows installer v2026.8.1 has been withdrawn because it contains a bug. Please do not use this installer. A new V2 installer will be provided later.";
 
     const actions = section.querySelector(".download-actions");
     if (actions) actions.innerHTML = `
-      <a class="download-resource-card download-resource-primary" data-resource="DOWNLOAD" href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe" target="_blank" rel="noreferrer" aria-label="Download BSTVC Desktop English installer for Windows x64">
-        <span class="download-resource-meta"><i>01</i><b>ENGLISH DESKTOP</b><em>WIN</em></span>
-        <strong>Download BSTVC Desktop</strong>
-        <p>English installer · Windows x64 · Version 2026.8.1 · Released 1 August 2026</p>
-        <span class="download-resource-url">BSTVC_desktop_EN_win_x64_26.08.01_setup.exe</span>
-        <span class="download-resource-sha"><b>SHA-256</b><code>4f98423277254676d88eb64072e01920a597eaeddfaed1ee889bdcc0585c977c</code></span>
-        <span class="download-resource-action">Download from GitHub Release <i>↗</i></span>
-      </a>
+      <div class="download-resource-card download-resource-primary is-coming-soon" data-resource="INSTALLER STATUS" role="status" aria-label="Installer withdrawn; V2 coming soon">
+        <span class="download-resource-meta"><i>01</i><b>ENGLISH DESKTOP</b><em>V2 SOON</em></span>
+        <strong>Installer withdrawn · V2 coming soon</strong>
+        <p>The English Windows installer v2026.8.1 has been removed because it contains a bug. Please do not use this installer.</p>
+        <span class="download-resource-action">A new V2 installer will be provided later.</span>
+      </div>
       <a class="download-resource-card" data-resource="DESKTOP REPOSITORY" href="https://github.com/bayesianstvc/BSTVC-Desktop" target="_blank" rel="noreferrer">
         <span class="download-resource-meta"><i>02</i><b>DESKTOP</b><em>GITHUB</em></span>
         <strong>BSTVC-Desktop Repository</strong>

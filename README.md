@@ -8,11 +8,13 @@
 
 **A visual research environment for local spatiotemporal interpretability, global contribution, and dynamic prediction within a unified Bayesian full-map framework.**
 
-[![Release](https://img.shields.io/github/v/release/bayesianstvc/BSTVC-Desktop?display_name=tag&sort=semver&style=flat-square&color=2457d6)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1)
-[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-1674ea?style=flat-square)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe)
+[![Installer withdrawn](https://img.shields.io/badge/installer-withdrawn-d97706?style=flat-square)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1)
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-1674ea?style=flat-square)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1)
 [![Interface](https://img.shields.io/badge/interface-English%20%7C%20中文-7c4dff?style=flat-square)](https://bayesianstvc.github.io/BSTVC-Desktop)
 
-[![Download BSTVC Desktop](https://img.shields.io/badge/DOWNLOAD-BSTVC%20Desktop%20EN%20v2026.8.1-0878d1?style=for-the-badge&logo=windows11&logoColor=white)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe)
+[![V2 coming soon](https://img.shields.io/badge/INSTALLER-V2%20coming%20soon-d97706?style=for-the-badge)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1)
+
+**Installer withdrawn:** The English Windows installer v2026.8.1 has been withdrawn because it contains a bug. Please do not use this installer. A new V2 installer will be provided later.
 
 **[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/)** · **[桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)** · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
@@ -30,8 +32,8 @@
 
 | Resource | Recommended for | Access |
 |:--|:--|:--|
-| **BSTVC Desktop — English installer** | Windows 10/11 users who want the complete English graphical workflow | **[Download `setup.exe`](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.8.1/BSTVC_desktop_EN_win_x64_26.08.01_setup.exe)** |
-| **Release v2026.8.1** | Version notes, installer assets, and release history | [Open the GitHub Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1) |
+| **BSTVC Desktop — English installer** | Windows 10/11 users who want the complete English graphical workflow | **Withdrawn because of a bug. V2 coming soon.** |
+| **Release v2026.8.1 — withdrawn** | Withdrawal notice and release history | [Open the GitHub Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1) |
 | **English online user guide** | Complete workflows for continuous, binary, and count responses; figures, search, and troubleshooting | [Open the English guide](https://bayesianstvc.github.io/BSTVC-Desktop/guide/) |
 | **Three English case datasets** | Original data, complete maps, verified ready panels, and companion instructions | [Choose a case](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#choose) · [GitHub data Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/examples-en-2026.10.02) |
 | **English official website** | Product overview, methods, workflow, outputs, and download guidance | [bayesianstvc.github.io/BSTVC-Desktop](https://bayesianstvc.github.io/BSTVC-Desktop) |
@@ -39,7 +41,7 @@
 | **中文下载资源** | 中文界面安装包、离线帮助文档和实例数据 | [百度网盘](https://pan.baidu.com/s/5h7zSPjXEvBINShxLVLjirA) |
 | **中文在线用户手册** | 中文操作流程、参数说明、结果输出与当前版本边界 | [打开在线帮助文档](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) |
 
-> **Recommended starting point:** Download the English installer, open **Overview**, then follow the three-step path: **Upload Data and Map → Run Data Order Check → Run Models and Export Result Tables**.
+> **Installer update:** The faulty English installer has been withdrawn. Please wait for V2. The online guide and case datasets remain available.
 
 ## Learn with three English case studies
 
