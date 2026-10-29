@@ -1031,13 +1031,12 @@ html.bstvc-motion-static .hero-dynamic-background,html.bstvc-motion-static .capa
   const downloadActions = document.querySelector(".download-actions");
   if (downloadActions) {
     downloadActions.innerHTML = `
-      <a class="download-resource-card download-resource-primary" data-resource="DOWNLOAD" href="https://pan.baidu.com/s/5h7zSPjXEvBINShxLVLjirA" target="_blank" rel="noreferrer">
-        <span class="download-resource-meta"><i>01</i><b>DIRECT DOWNLOAD</b><em>ZIP</em></span>
-        <strong>下载 BSTVC 中文桌面版</strong>
-        <p>Windows 10/11 · 安装包、中文手册与三类真实案例</p>
-        <span class="download-resource-url">pan.baidu.com/s/5h7zSPjXEvBINShxLVLjirA</span>
-        <span class="download-resource-action">百度网盘免费下载 <i>↗</i></span>
-      </a>
+      <div class="download-resource-card download-resource-primary is-coming-soon" data-resource="INSTALLER STATUS" role="status" aria-label="Installer withdrawn; V2 coming soon">
+        <span class="download-resource-meta"><i>01</i><b>ENGLISH DESKTOP</b><em>V2 SOON</em></span>
+        <strong>Installer withdrawn · V2 coming soon</strong>
+        <p>The English Windows installer v2026.8.1 has been removed because it contains a bug. Please do not use this installer.</p>
+        <span class="download-resource-action">A new V2 installer will be provided later.</span>
+      </div>
       <a class="download-resource-card" data-online-guide data-resource="GUIDE" href="${onlineGuideHref}" target="_blank" rel="noreferrer">
         <span class="download-resource-meta"><i>02</i><b>USER GUIDE</b><em>HTML</em></span>
         <strong>在线用户手册</strong>
