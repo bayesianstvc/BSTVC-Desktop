@@ -1,0 +1,7 @@
+"case","interval_level","n_all","observed_y_missing","invalid_with_missing_y","invalid_with_observed_y","valid_with_missing_y","width_v1_below_1e_minus8","ratio_above_2"
+"c2",50,372,0,0,0,0,5,34
+"c2",95,372,0,0,0,0,1,18
+"c3",50,60,0,0,0,0,0,0
+"c3",95,60,0,0,0,0,0,0
+"c6",50,3717,273,253,0,20,253,0
+"c6",95,3717,273,253,0,20,253,0

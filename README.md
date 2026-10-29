@@ -38,10 +38,10 @@
 | **Three English case datasets** | Original data, complete maps, verified ready panels, and companion instructions | [Choose a case](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#choose) · [GitHub data Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/examples-en-2026.10.02) |
 | **English official website** | Product overview, methods, workflow, outputs, and download guidance | [bayesianstvc.github.io/BSTVC-Desktop](https://bayesianstvc.github.io/BSTVC-Desktop) |
 | **中文官方网站** | 中文方法介绍、案例、下载与使用支持 | [bayesianstvc.github.io/BSTVC-Desktop/zh/](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) |
-| **中文下载资源** | 中文界面安装包、离线帮助文档和实例数据 | [百度网盘](https://pan.baidu.com/s/5h7zSPjXEvBINShxLVLjirA) |
-| **中文在线用户手册** | 中文操作流程、参数说明、结果输出与当前版本边界 | [打开在线帮助文档](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) |
+| **中文桌面版 V2（26.10.25）** | 中文 Windows 安装包与实例数据；操作说明请阅读在线用户手册 | [百度网盘](https://pan.baidu.com/s/5h7zSPjXEvBINShxLVLjirA) |
+| **中文在线用户手册** | 中文操作流程、参数说明、结果解读与 V2 说明 | [打开在线用户手册](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · [快速开始](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#quick-start) · [V1/V2 比较](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#v2-comparison) |
 
-> **Installer update:** The faulty English installer has been withdrawn. Please wait for V2. The online guide and case datasets remain available.
+> **Installer update:** The faulty English installer has been withdrawn. Please wait for V2. The online guide and case datasets remain available. The Chinese V2 (26.10.25) installer is listed separately above; Chinese usage instructions are provided in the [online user guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html).
 
 ## Learn with three English case studies
 
@@ -132,7 +132,7 @@ BSTVC Desktop organizes model output around a transparent evidence chain:
 
 ## Quick start
 
-1. **Install** the English Windows x64 release.
+1. **Check installer availability.** The English Windows installer is withdrawn; wait for the replacement V2 before installing. Use the online guide and case datasets to prepare in the meantime.
 2. **Prepare** a spatial map and model-ready spatiotemporal panel table.
 3. **Validate** map-unit identifiers and observation order in **Data Check**.
 4. **Start with STVC** for a first local spatiotemporal analysis, then extend to STIVC or STVPI when the research question requires interaction or global contribution.
@@ -161,10 +161,11 @@ BSTVC is designed for spatiotemporal panel and areal research in GIScience, spat
 ## Project status and support
 
 - **Status:** actively developed and maintained.
+- **Official feedback email:** [bstvc.research@gmail.com](mailto:bstvc.research@gmail.com) for method, desktop, and R package questions. See the [Chinese feedback checklist](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#feedback) for reproducible reports.
 - **Bug reports and feature requests:** [BSTVC-Desktop Issues](https://github.com/bayesianstvc/BSTVC-Desktop/issues)
 - **Statistical framework:** [BSTVC brand website](https://bayesianstvc.github.io/)
 - **R package:** [bayesianstvc/BSTVC-R](https://github.com/bayesianstvc/BSTVC-R)
-- **Desktop development and usage support:** [Xianteng Tang](https://tangxxxxt.github.io/)
+- **Desktop development:** [Xianteng Tang](https://tangxxxxt.github.io/)
 - **Project leadership and statistical methodology:** [Chao Song](https://chaosong.blog/)
 
 We welcome reproducible bug reports, feature proposals, documentation improvements, code contributions, and new empirical applications.

@@ -3,87 +3,340 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#071923">
-  <title>BSTVC 在线用户手册 · 中文版</title>
-  <style>
-    :root{color-scheme:dark;--ink:#071923;--teal:#5ad8c6;--text:#e8f5f0;--muted:#9ab7b5}
-    *{box-sizing:border-box}html,body{height:100%;margin:0;background:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",Arial,sans-serif}
-    .guide-shell{position:relative;isolation:isolate;height:100%;display:grid;grid-template-rows:auto 1fr;background:#071923;overflow:hidden}.guide-shell::before{content:"";position:absolute;z-index:-1;inset:-4%;background-image:linear-gradient(135deg,#071923e8,#0b2630dc 54%,#071923ef),url("./bstvc-background-fallback.webp");background-size:cover;background-position:center;filter:saturate(.7) brightness(.68);animation:guideBreath 18s ease-in-out infinite alternate}
-    .guide-bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px clamp(14px,3vw,42px);border-bottom:1px solid #8be3d51f;background:#071923d9;backdrop-filter:blur(12px);z-index:2}
-    .guide-brand{display:flex;align-items:center;gap:11px;min-width:0}.guide-brand img{width:28px;height:28px;object-fit:contain;border-radius:7px}.guide-brand strong{font-size:13px;letter-spacing:.08em;white-space:nowrap}.guide-brand small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
-    .guide-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:0}.guide-actions a,.guide-actions button{border:1px solid #78d8ca42;color:var(--text);padding:8px 11px;font-family:inherit;font-size:10px;line-height:1.2;text-decoration:none;white-space:nowrap;background:transparent;cursor:pointer}.guide-actions a:hover,.guide-actions button:hover{border-color:var(--teal);color:var(--teal)}.guide-search{display:flex;align-items:center;min-width:0;border:1px solid #78d8ca42;background:#04151e80}.guide-search:focus-within{border-color:var(--teal)}.guide-search input{width:168px;min-width:0;border:0;outline:0;padding:8px 9px;color:var(--text);background:transparent;font:inherit;font-size:10px;line-height:1.2}.guide-search input::placeholder{color:#789694}.guide-search button{border:0!important;border-left:1px solid #78d8ca2e!important;padding:8px 9px!important;color:var(--teal)!important}
-    .guide-frame{width:100%;height:100%;border:0;background:#fff;display:block}
-    .quick-start-popover{position:absolute;right:clamp(12px,3vw,42px);top:62px;width:min(360px,calc(100% - 24px));padding:18px;background:#0a2732f5;border:1px solid #70d9ca55;box-shadow:0 18px 45px #00121e80;z-index:3}.quick-start-popover[hidden]{display:none}.quick-start-popover span{color:var(--teal);letter-spacing:.14em;font:8px/1.3 Arial,sans-serif}.quick-start-popover h2{margin:7px 0 10px;color:var(--text);font-size:17px}.quick-start-popover ol{margin:0;padding-left:19px;color:#b9d2d0;font-size:11px;line-height:1.85}.quick-start-popover li::marker{color:var(--teal)}
-    @keyframes guideBreath{0%{transform:scale(1);opacity:.62}100%{transform:scale(1.035);opacity:.82}}
-    @media (max-width:900px){.guide-bar{flex-wrap:wrap}.guide-actions{width:100%;justify-content:flex-start;overflow-x:auto}.guide-search{flex:1 0 190px}.guide-search input{width:100%}}
-    @media (max-width:560px){.guide-bar{padding:10px 12px;gap:9px}.guide-brand small{display:none}.guide-actions a,.guide-actions button{padding:7px 8px;font-size:9px}.guide-actions>a:last-child{display:none}.quick-start-popover{top:96px}.guide-search{order:-1;flex-basis:100%}}
-    @media (prefers-reduced-motion:reduce){.guide-shell::before{animation:none}}
-  </style>
+  <meta name="theme-color" content="#071c29">
+  <title>BSTVC 中文在线用户手册 | V2</title>
+  <meta name="description" content="BSTVC 中文版 V2 在线用户手册：安装、面板数据、时空建模、结果解读，及三个真实案例的 V1/V2 可信区间比较与可复现 R 分析。">
+  <link rel="canonical" href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html">
+  <link rel="icon" href="./bstvc-favicon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="BSTVC 中文在线用户手册 · V2">
+  <meta property="og:description" content="从第一次建模到 V1/V2 实验：把时间、空间分量与不确定性读清楚。附真实案例、图表与可复现 R 代码。">
+  <meta property="og:url" content="https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html">
+  <meta property="og:image" content="https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-logo-circle.png">
+  <link rel="stylesheet" href="./guide-v2/guide.css">
+  <script src="./guide-v2/guide.js" defer></script>
 </head>
 <body>
-  <main class="guide-shell">
-    <header class="guide-bar">
-      <div class="guide-brand"><img src="./bstvc-favicon.png" alt="BSTVC"><div><strong>BSTVC / 在线用户手册</strong><small>贝叶斯时空变系数 · 中文桌面版 2026.7</small></div></div>
-      <nav class="guide-actions" aria-label="用户手册操作"><label class="guide-search"><input id="guide-search-input" type="search" autocomplete="off" placeholder="搜索章节或关键词" aria-label="搜索用户手册章节"><button type="button" id="guide-search-button">搜索</button></label><button type="button" id="quick-start-toggle" aria-expanded="false">5分钟快速开始</button><button type="button" id="guide-top-button">回到目录 ↑</button><a href="../index.html">返回 BSTVC 官网</a><a href="./bstvc-user-guide-source-2026.7.html" target="_blank" rel="noreferrer">单独打开原始手册 ↗</a></nav>
-    </header>
-    <aside class="quick-start-popover" id="quick-start-popover" hidden><span>5 MIN QUICK START / 5分钟快速开始</span><h2>用四步完成第一次 BSTVC 建模</h2><ol><li>准备 CSV / XLSX 数据与完整 Shapefile 文件集合。</li><li>核对空间顺序、唯一标识、Time 字段与 Space 字段。</li><li>按响应变量分布选择连续型、二分类或计数型模型。</li><li>从默认 6 线程开始运行，检查系数、可信区间与模型评价输出。</li></ol></aside>
-    <iframe class="guide-frame" src="./bstvc-user-guide-source-2026.7.html" title="BSTVC 桌面端中文版在线用户手册"></iframe>
+<a class="skip" href="#guide-main">跳到手册正文</a>
+<header class="guide-header" id="top">
+  <a class="brand" href="../index.html"><img src="./bstvc-favicon.png" alt="" width="64" height="64"><span><strong>BSTVC</strong><small>让时空可解释 · 中文在线手册</small></span></a>
+  <div class="header-actions"><span class="version-pill">V2 · 26.10.25</span><a href="#v2-comparison">V1 / V2 对比</a><a class="secondary-link" href="#feedback">问题反馈</a><a href="../index.html">返回官网 ↗</a></div>
+</header>
+<div class="layout">
+  <button class="mobile-menu" id="menu-toggle" type="button" aria-expanded="false" aria-controls="guide-sidebar">目录与全文搜索 <span aria-hidden="true">⌄</span></button>
+  <aside class="sidebar" id="guide-sidebar" aria-label="用户手册目录">
+    <form class="search-box" id="search-form" role="search"><label class="sidebar-label" for="guide-search">搜索手册</label><div class="search-control"><input id="guide-search" type="search" placeholder="章节、参数、报错…" autocomplete="off"><button type="submit" aria-label="查找下一个匹配">⌕</button></div><div id="search-status" role="status" aria-live="polite"></div></form>
+    <p class="sidebar-label">从这里开始</p>
+    <nav>
+      <a href="#quick-start">01　第一次建模</a><a href="#install">02　安装与界面</a>
+      <a href="#prepare">03　准备与检查数据</a><a href="#model">04　设置与运行模型</a>
+      <a href="#interpret">05　正确理解 V2 系数</a><a href="#outputs">06　六类结果与导出</a>
+      <a href="#cases">07　三例完整实操</a>
+      <a class="sub" href="#case-covid">中国 COVID-19 · 二分类</a>
+      <a class="sub" href="#case-hbv">美国乙肝 · 计数型</a>
+      <a class="sub" href="#case-hale">全球 HALE · 连续型</a>
+      <a href="#v2-comparison">08　V1 / V2：进步在哪里</a>
+      <a class="sub" href="#comparison-design">实验设计与公平比较</a>
+      <a class="sub" href="#component-intervals">时间 / 空间分量区间</a>
+      <a class="sub" href="#total-coefficients">总局部系数与例外</a>
+      <a href="#experiments">09　新增 R 复算实验</a><a href="#reproduce">10　R 代码与数据下载</a>
+      <a href="#troubleshooting">11　排错与研究规范</a><a href="#resources">12　官方资源与引用</a>
+      <a href="#feedback">13　统一问题反馈</a>
+    </nav>
+    <div class="sidebar-note">当前文档：2026-10-29<br>适用：BSTVC 中文版 V2<br>计算核心版本：26.10.25<br>在线地址固定，内容持续更新。</div>
+  </aside>
+  <main id="guide-main">
+    <div class="doc-hero">
+      <p class="eyebrow">BSTVC DESKTOP / CHINESE USER GUIDE</p>
+      <h1>从第一次建模，<br>到读懂<span>时空变化的证据。</span></h1>
+      <p class="lead">BSTVC 中文在线用户手册 · V2。把数据准备、界面操作、结果解读与三个真实案例放在一起；用可复现的 V1/V2 实验，说明新版改进了什么，以及哪些问题还需要进一步验证。</p>
+      <div class="hero-actions"><a class="button primary" href="#quick-start">第一次使用 →</a><a class="button" href="#v2-comparison">查看 V1 / V2 对比</a><a class="button" href="#reproduce">获取 R 分析代码</a></div>
+      <div class="hero-meta"><span>中文桌面版 V2 · 核心 26.10.25</span><span>更新于 2026-10-29</span><span>Windows · CSV / XLSX · Shapefile</span></div>
+    </div>
+    <p class="intro-note">这是中文用户手册的统一在线入口。安装与案例资料通过官网下载区获取；帮助内容以本页为准。新版实验证据来自中文 V03 案例基线与 2026-10-29 的 V2 验证，图表和数值均标明比较对象。</p>
+
+    <section class="doc-section" id="quick-start">
+      <h2><span class="number">01 / QUICK START</span>第一次建模，按这六步进行</h2>
+      <p>可以先用中国 COVID-19 二分类案例熟悉流程，再处理自己的研究数据。使用桌面软件本身不需要单独安装 R，也不要求编写代码；后半部分的 R 代码用于复算与作图。</p>
+      <ol class="step-list">
+        <li><strong>准备一张面板表和一套地图文件。</strong>每行是一个“地区 × 时期”。地图保留 .shp、.dbf、.shx、.prj 及配套 .cpg，使用稳定的空间 ID。</li>
+        <li><strong>进入“数据输入”，读取并验证。</strong>选择 CSV / XLSX 与地图配套文件，点击“读取并验证输入”，核对行数、列数和地图单元数。</li>
+        <li><strong>进入“数据检查”，核对空间与时间。</strong>选择 Time、Space，检查面板键、地图匹配和顺序。若系统完成自动重排，建模时选择“检查后数据”。</li>
+        <li><strong>进入“BSTVC 时空建模”，选 Y、X 与响应类型。</strong>连续型、二分类和计数型应与结局相符。首次运行可从默认 6 线程开始；复现实验则使用本页记录的完整设置。</li>
+        <li><strong>点击“运行模型”，等待明确完成。</strong>保留运行消息。切换案例后，下方仍可能显示上一轮结果，必须等当前任务完成后再核对。</li>
+        <li><strong>下载全部表格，先看区间，再写结论。</strong>同时检查模型评价、系数分量、数据支持与拟合量。保留原表、地图、设置和本次导出的 XLSX。</li>
+      </ol>
+      <div class="toc-grid"><a href="#case-covid">二分类：COVID-19<span>31 个省级单元 × 12 个月 · 6 个 X</span></a><a href="#case-hbv">计数型：美国乙肝<span>5 个州 × 12 年 · 4 个 X</span></a><a href="#case-hale">连续型：全球 HALE<span>177 个国家 / 地区 × 21 年 · 12 个 X</span></a><a href="#interpret">先读懂 V2 的变化<span>时间偏离、空间水平与总局部系数</span></a></div>
+    </section>
+
+    <section class="doc-section" id="install">
+      <h2><span class="number">02 / INSTALL & INTERFACE</span>安装、启动与界面</h2>
+      <p>从<a href="../index.html#download">中文官网下载区</a>进入百度网盘，获取中文版 V2 安装包及案例资料。用户帮助统一使用本在线手册；旧 PDF、旧版随包 HTML 不作为当前操作说明。英文安装包的发布状态以英文站公告为准。</p>
+      <p>安装后打开 BSTVC。首次启动需要初始化内置计算环境，请等界面加载后再操作。建议把输入和结果分别放在简短的本地路径，例如 <code>D:\BSTVC_data</code> 与 <code>D:\BSTVC_results</code>；遇到路径或权限问题时，先用短 ASCII 路径定位原因，保留原件。</p>
+      <div class="table-wrap" tabindex="0" aria-label="界面功能表"><table><thead><tr><th>左侧入口</th><th>作用</th><th>操作前核对</th></tr></thead><tbody>
+        <tr><td>数据输入</td><td>读取表格、地图与可选空间矩阵</td><td>文件齐全、空间 ID 一致</td></tr>
+        <tr><td>数据检查</td><td>检查面板结构、空间匹配与顺序</td><td>当前数据与检查消息</td></tr>
+        <tr><td>BSTVC 时空建模</td><td>分析随地区与时期变化的系数</td><td>Y、X、Time、Space、响应类型与标准化</td></tr>
+        <tr><td>BSVC 空间建模</td><td>分析单个截面的空间变系数</td><td>截面与空间键；没有时间分量</td></tr>
+        <tr><td>数据转换 / 字段转换</td><td>将宽表转换为面板、整理字段</td><td>变量块、时间顺序、转换后行数</td></tr>
+        <tr><td>自定义空间矩阵</td><td>使用与研究设计一致的空间关系</td><td>维度、ID 顺序、连接性与定义</td></tr>
+      </tbody></table></div>
+      <p class="small">下列截图来自 V2 无头浏览器界面验证，不是旧版界面换标题。它们证明对应步骤曾执行；原生桌面窗口的完整人工验收与这条证据链是不同事项。</p>
+      <figure><a href="./guide-v2/images/v2-input.png" data-zoom><img src="./guide-v2/images/v2-input.png" alt="V2数据输入：表格、地图与读取验证" width="1600" height="1000" loading="lazy" decoding="async"></a><figcaption><strong>数据输入。</strong>COVID-19 的 372 行、9 列面板与 31 个地图单元。预览显示字段类型和缺失比例。点击图片可放大。</figcaption></figure>
+    </section>
+
+    <section class="doc-section" id="prepare">
+      <h2><span class="number">03 / DATA PREPARATION</span>准备数据：先把研究对象与键对齐</h2>
+      <h3>3.1　一行对应一个地区、一个时期</h3>
+      <p>面板需要空间键、时间键、响应变量 Y 和解释变量 X。ID 是表格与地图的连接依据，名称相似或行号相同不能代替键匹配。行政代码含前导零时保留完整编码，避免 Excel 自动改写。</p>
+      <div class="table-wrap" tabindex="0" aria-label="面板示例"><table><thead><tr><th>空间键</th><th>时间键</th><th>Y</th><th>X1</th><th>X2</th></tr></thead><tbody><tr><td>A</td><td>2020</td><td>原始观测值</td><td>原始数值</td><td>NA</td></tr><tr><td>B</td><td>2020</td><td>NA</td><td>原始数值</td><td>原始数值</td></tr><tr><td>A</td><td>2021</td><td>原始观测值</td><td>原始数值</td><td>原始数值</td></tr><tr><td>B</td><td>2021</td><td>原始观测值</td><td>原始数值</td><td>原始数值</td></tr></tbody></table></div>
+      <div class="callout"><span class="label">保留缺失信息</span><p>本页 V2 案例允许并保留原始 Y / X 中的 NA 及面板行。不要自动删成完整案例、把缺失 X 填成 0，或把未知 Y 当作 0。缺失会削弱某些地区、时期或变量的信息支持，需要在解释中说明；允许输入缺失不等于每个结果都有足够信息。</p></div>
+      <h3>3.2　宽表转换为面板</h3>
+      <p>若一行是一个地区、月份或年份分布在多列中，先使用“数据转换”。保留空间 ID，逐个配置 Y 与 X 的时间列块；每个块的列数与顺序必须对应时间序列。2020 年 1–12 月应有 12 列，不能将“1、10、11、12、2…”的字符串排序误作时间顺序。</p>
+      <ol><li>选择空间 ID，填写起止时间或明确时间序列。</li><li>分别选取每个变量的整段时间列，核对变量名与列范围。</li><li>执行转换，检查地区数 × 时期数、首末时间与抽查值。</li><li>保存转换结果，重新载入面板表后做数据检查。</li></ol>
+      <p class="small">本次比较的 COVID 与 HBV 使用相同的已转换面板，避免混入转换差异；本轮未重新验收 V2 的宽表转换按钮全过程。</p>
+      <h3>3.3　地图、邻接与数据检查</h3>
+      <p>一次选全 Shapefile 配套文件。核对地图键与表格键的类型、唯一性及集合；检查若重排了行，之后选择“检查后数据”。本页复现实验均使用默认 <strong>QUEEN-B</strong>：Queen 邻接的二元权重。</p>
+      <p>孤立地区和多个连通块需要记录。不要为消除报错直接删岛屿或地区，这会改变研究总体。先检查几何有效性、邻接规则和矩阵顺序，再按研究设计决定是否修复地图或使用自定义关系；修复另存并记录。</p>
+      <h3>3.4　用 R 做不改变数据的预检查</h3>
+      <p>下面只报告键和缺失状况，不填补、不删行、不拟合。字段名替换成自己的字段；读取 Excel 可使用已安装的 <code>readxl</code>。</p>
+      <div class="code-wrap"><div class="code-label">R / 只读预检查</div><button class="copy-code" type="button" data-copy>复制</button><pre><code>d &lt;- read.csv("panel.csv", check.names = FALSE, colClasses = "character",
+              na.strings = c("", "NA"))
+space &lt;- "region_id"
+time  &lt;- "year"
+y     &lt;- "outcome"
+xs    &lt;- c("X1", "X2")
+stopifnot(all(c(space, time, y, xs) %in% names(d)))
+stopifnot(!anyNA(d[c(space, time)]))
+if (anyDuplicated(d[c(space, time)])) stop("存在重复的地区×时期键，请先核对原始记录")
+print(c(rows = nrow(d), regions = length(unique(d[[space]])),
+        periods = length(unique(d[[time]]))))
+print(colSums(is.na(d[c(y, xs)])))
+# 保留原始数值、NA和所有行；不做complete.cases()筛选。</code></pre></div>
+    </section>
+
+    <section class="doc-section" id="model">
+      <h2><span class="number">04 / MODEL SETUP</span>设置与运行：每项选择都要有研究含义</h2>
+      <div class="table-wrap" tabindex="0" aria-label="建模参数"><table><thead><tr><th>参数</th><th>如何选择</th><th>常见错误</th></tr></thead><tbody>
+        <tr><td>数据来源</td><td>检查重排后用“检查后数据”</td><td>仍用原始顺序，结果与地图错位</td></tr>
+        <tr><td>响应变量 Y</td><td>研究结局，记录单位与定义</td><td>将率、人数、病例数混为一谈</td></tr>
+        <tr><td>解释变量 X</td><td>按研究问题选择，记录顺序与单位</td><td>只为训练 R² 加变量，或换顺序挑结果</td></tr>
+        <tr><td>响应类型</td><td>连续型 / 二分类 / 计数型与结局相符</td><td>把率当计数、多类标签当二分类</td></tr>
+        <tr><td>Time / Space</td><td>时间字段、与地图匹配的空间字段</td><td>把年份误选为 X</td></tr>
+        <tr><td>X 标准化</td><td>本页三例为“是”；注明标准化后的量纲</td><td>把系数解读为原单位 X 增加 1</td></tr>
+        <tr><td>空间权重</td><td>按空间关系选择；本页为 QUEEN-B</td><td>替换矩阵不核对 ID 顺序</td></tr>
+        <tr><td>线程数</td><td>从默认 6 开始；主比较为保持设置用 20</td><td>认为更多线程必然更快</td></tr>
+      </tbody></table></div>
+      <p>二分类 Y 使用明确的 0 / 1 编码。计数型保留非负整数计数，不要把病例数除以 10 或 100 当作数值修复；若需要暴露人口或观察时长，应明确模型是否支持相应暴露量或 offset，不能将计数与率混用。本页对数正态连续型路径要求观测 Y 为正；若含零或负值，先核对结局定义和模型适用性，不自动添加常数。</p>
+      <figure><a href="./guide-v2/images/v2-model-setup.png" data-zoom><img src="./guide-v2/images/v2-model-setup.png" alt="V2 COVID建模：检查后数据、二分类、六个X、标准化是、QUEEN-B、20线程" width="1600" height="1000" loading="lazy" decoding="async"></a><figcaption><strong>V2 建模参数。</strong>截图对应 COVID 复现实验；20 线程不是普遍性能建议。下方“下载全部表格”在运行完成后使用。</figcaption></figure>
+      <div class="callout note"><span class="label">保存一次运行的完整身份</span><p>记录软件与核心版本、数据、地图、空间键、Time、Y、X 及顺序、响应类型、标准化、权重、线程、日期和导出文件名。修改数据或设置后视为新运行，不混用上一轮结果。</p></div>
+    </section>
+
+    <section class="doc-section" id="interpret">
+      <h2><span class="number">05 / READING V2 COEFFICIENTS</span>V2 的系数，应该怎样读</h2>
+      <p>对于本页验证的时空变系数模型，局部系数可写作：</p>
+      <div class="equation">β<sub>j</sub>(i,t) = s<sub>j</sub>(i) + γ<sub>j</sub>(t)<small>总局部系数 = 空间系数分量 + 时间系数分量</small></div>
+      <div class="grid">
+        <div class="card"><span class="badge">TIME / 时间分量</span><h3>相对建模时期平均的偏离</h3><p>V2 时间分量以所建模时期的算术平均为零。正值表示该期相对平均更正向，负值表示更负向；单独不是某地某时的完整作用。</p></div>
+        <div class="card"><span class="badge">SPACE / 空间分量</span><h3>该分解下的地区系数水平</h3><p>空间分量包含时间中心化后分配给空间部分的平均水平。它不是围绕全局固定斜率的纯空间偏离，也不能直接视为因果效应。</p></div>
+        <div class="card"><span class="badge">TOTAL / 总局部系数</span><h3>某地、某时的完整局部斜率</h3><p>两分量后验均值可以相加；总系数可信区间需要联合后验或线性组合计算，不能直接相加两个边际区间的端点。</p></div>
+      </div>
+      <h3>5.1　V2 处理了哪一种分解歧义</h3>
+      <p>仅从相加关系看，<code>s + c</code> 与 <code>γ − c</code> 的和相同。缺少明确的常数分配约定时，两部分可能出现很大的相反偏移，单独解释很困难。V2 使用时间零和中心化，处理这一常数分配歧义，让时间分量具有“相对建模时期平均的偏离”这一参照。</p>
+      <div class="compare-flow"><div class="card"><h4 class="v1">V1：两本账可以搬动常数</h4><p>示意：空间 +415，时间 −411，总和 +4。</p><p>很大的分量均值不代表很大的完整作用。</p></div><span class="arrow" aria-hidden="true">→</span><div class="card"><h4 class="v2">V2：时间以平均为零</h4><p>空间记录该分解的平均水平，时间记录时期偏离。</p><p>读取分量有了明确参照。</p></div></div>
+      <p class="small">上面是常数搬移示意，不是某单元的新拟合值。零和约束不等于已证明所有数据、协变量和图结构下的完全可识别性，也不是数值收敛或后验校准的充分证明。</p>
+      <h3>5.2　可信区间与“零”的含义</h3>
+      <p>本页 95% 可信区间采用后验 2.5%–97.5% 分位数，50% 区间采用 25%–75% 分位数，描述给定模型、数据、先验和设置下的后验不确定性。宽度为上限减下限，不同量纲的原始宽度不能直接比较。</p>
+      <p>V2 时间分量区间不含零，表示相对建模时期平均水平的偏离获得相应后验支持；不等于证明“该因素在此期有作用”或因果归因。两版分量定义和零点不同，不能将不含零比例的变化称作真阳性或假阳性的变化。</p>
+      <h3>5.3　模型尺度与响应尺度</h3>
+      <p>本页 HALE 连续型路径使用对数正态模型，系数位于对数响应的线性预测尺度；二分类为 log odds 尺度，计数型为对数均值尺度。X 标准化后，系数对应标准化 X。指数变换后的连续型潜在拟合水平不能不加说明就称响应均值；解释时注明分布、变换和实际字段。</p>
+      <div class="callout warning"><span class="label">贡献与因果归因的边界</span><p>STVPI 等指标称“相对贡献”或“全局贡献”。它们与局部系数、区间和时空模式可以为时空归因研究提供重要证据；仅凭这些输出，不能确认因果归因。</p></div>
+    </section>
+
+    <section class="doc-section" id="outputs">
+      <h2><span class="number">06 / RESULTS & EXPORT</span>六类结果：先核字段，再组织证据</h2>
+      <p>运行完成后，在“结果模块”切换表格，使用“下载当前表”或“下载全部表格”。建议保存完整 XLSX，再生成论文图；字段以实际导出工作簿为准。</p>
+      <div class="table-wrap" tabindex="0" aria-label="结果表说明"><table><thead><tr><th>结果表</th><th>用途</th><th>解读边界</th></tr></thead><tbody>
+        <tr><td><code>model.evaluation</code></td><td>DIC、WAIC、LS、复杂度和运行记录</td><td>可比数据和尺度下判断；单个符号不能确定故障原因</td></tr>
+        <tr><td><code>time.coefficients</code></td><td>时间分量均值、标准差和分位数</td><td>V2 为相对时期平均的偏离，不是完整斜率</td></tr>
+        <tr><td><code>space.coefficients</code></td><td>空间分量及边际区间</td><td>按 ID 连地图；报告邻接和观测支持</td></tr>
+        <tr><td><code>summary.random.effects</code></td><td>随机效应超参数等概括</td><td>明确参数定义和尺度，不与局部斜率混读</td></tr>
+        <tr><td><code>STVPI</code></td><td>模型内变量相对贡献</td><td>核对分母、响应类型与残差处理；不能作因果归因</td></tr>
+        <tr><td><code>local.prediction</code></td><td>软件导出的局部拟合量与区间</td><td>不自动等于未来观测预测区间；核对缺失 Y、变换和异常输出</td></tr>
+      </tbody></table></div>
+      <h3>6.1　评价模型时，避免三个捷径</h3>
+      <ul><li><strong>训练 R² 高不等于样本外预测好。</strong>更多 X 不保证泛化改善；按研究问题选变量，以独立留出或时空阻断验证评价预测。</li><li><strong>负的 DIC 或复杂度不是单一故障诊断。</strong>结合模型、尺度、警告和数据支持核查，不用换变量顺序直到符号“正常”。</li><li><strong>区间更窄不一定代表模型更正确。</strong>定义、先验、约束与信息支持都会影响区间，不能将不同估计量的宽度变化直接称作精度提升。</li></ul>
+      <h3>6.2　作图时保留不确定性</h3>
+      <p>时间图同时展示均值和 50% / 95% 区间，按实际年份或月份标记。空间图按键连接，跨时期使用相同色标，区分缺失、信息不足与真实零。平滑曲线不能替代原始后验结果，也不要为视觉紧凑隐藏较宽区间。</p>
+      <div class="callout note"><span class="label">总局部系数区间</span><p>本页总系数来自额外的联合线性组合核查，不是目前六张常规导出表之一。只有边际表时可相加均值，不能重建正确总区间；第 09 节用实际结果说明端点相加为什么会出错。</p></div>
+    </section>
+
+    <section class="doc-section" id="cases">
+      <h2><span class="number">07 / THREE VERIFIED CASES</span>三种结局，三个完整案例</h2>
+      <p>三例使用中文案例资料和 V1 参考工作簿，在 V2 中完成无头浏览器输入、检查、建模与全部表格下载。共同设置为<strong>检查后数据、X 标准化“是”、QUEEN-B、20 线程</strong>；复现时保持数据、顺序和设置一致。</p>
+      <h3 id="case-covid">7.1　中国 COVID-19：二分类</h3>
+      <p><span class="status">V2 已验证</span> 31 省级单元 × 2020 年 12 个月，372 行。Y“疫情发生”为 0 / 1，Time“月份”，Space <code>gb</code>；使用中文转换面板与 <code>ChinaProv</code> 地图。</p>
+      <p><strong>X 顺序：</strong>PM25浓度、平均气温、植被指数、夜间灯光指数、迁入规模指数、迁出规模指数。</p>
+      <ol><li>读取表格与地图，点击“读取并验证输入”。</li><li>按“月份”与 gb 检查，选择“检查后数据”。</li><li>选择 Y、六个 X、“二分类 binary”和共同设置。</li><li>完成后下载全部表格：时间分量应为 <strong>6 × 12 = 72</strong> 项，空间分量 <strong>6 × 31 = 186</strong> 项。</li></ol>
+      <p>海南在 Queen 图中无邻居，需要单独诊断。迁移变量存在成片缺失，不能填零消除。其总系数与拟合量区间是不同对象，下面比较中分别处理。</p>
+      <h3 id="case-hbv">7.2　美国乙肝：计数型</h3>
+      <p><span class="status">V2 已验证</span> 阿巴拉契亚 5 州 × 2012–2023 年，60 行。Y“病例数”，Time“年份”，Space <code>GEOID</code>；使用中文转换面板与 <code>us_a5</code> 地图。</p>
+      <p><strong>X 顺序：</strong>人口密度、无保险率、贫困率、年降水量。</p>
+      <ol><li>读取面板与地图，按“年份”和 GEOID 检查。</li><li>选择 Y、四个 X、“计数型 count”和共同设置。</li><li>完成后下载全部表格：时间分量 <strong>4 × 12 = 48</strong> 项，空间分量 <strong>4 × 5 = 20</strong> 项。</li></ol>
+      <p>本例比较病例数的模型内关联。未加入或验证暴露量的计数模型不能自动解释为人口风险或发生率；不要将计数除以常数当作收敛处理。</p>
+      <h3 id="case-hale">7.3　全球 HALE：连续型</h3>
+      <p><span class="status">V2 已验证 · 12X</span> 177 国家 / 地区 × 2000–2020 年，3717 行。Y“健康调整预期寿命”，Time“年份”，Space <code>ISO_A3</code>，地图 <code>TestMap_Continuous</code>。</p>
+      <p><strong>X 顺序：</strong>孕产妇死亡率、高酒精使用、高体质指数、维生素A缺乏、女性就业人口比、城市人口比例、人均国民收入、卫生支出占GDP比重、每千人医师数、高温暴露、归一化植被指数、PM25年均浓度。</p>
+      <ol><li>载入中文面板和地图，核对 177 单元、21 年，保留 NA。</li><li>按“年份”和 ISO_A3 检查，选择连续型、12 个 X 和共同设置。</li><li>保存完整工作簿：时间分量 <strong>12 × 21 = 252</strong> 项，空间分量 <strong>12 × 177 = 2124</strong> 项。</li></ol>
+      <p>这是较大的案例。不要将 12X 结果与另一套原 6X 实验、旧训练 R² 或字段替换实验拼成同一个对照。地图包含多个连通块和孤立单元，空间区间变化并不一致。</p>
+      <details><summary>六案例资料中的其他扩展案例，怎样使用？</summary><div class="details-body"><p>中文 V03 资料还有非洲五岁以下死亡率、美国自杀二分类 / 计数型，以及 2016 年自杀状态的 BSVC 截面案例。可用于练习数据准备，但本轮未重新完成这些案例的 V2 比较，旧结果不能标为 V2 成绩。</p><p>地图修复保留原件和记录，派生二分类记录阈值，BSVC 仅报告空间分量。旧版“所有大计数必须关闭标准化”“加变量即可提高预测”“遇到岛屿就删除”等说法，不作为 V2 通用规则。</p></div></details>
+    </section>
+    <section class="doc-section" id="v2-comparison">
+      <h2><span class="number">08 / V1 → V2</span>我们的进步在哪里：把分量解释得更清楚</h2>
+      <p>V2 的重要进步，是为时间系数分量确立明确的中心化参照，减少时间、空间分量之间常数分配的歧义。在三个真实案例中，时间分量区间全部变窄，空间分量区间总体变窄。用户因此更容易阅读“哪个时期相对平均更强或更弱”，而不是被两组很大、方向相反的分量误导。</p>
+      <blockquote>更准确的表述是：<strong>V2 改进了时空系数分量的分解与解释，三个实证案例的分量可信区间明显收紧。</strong>这本身不等于证明完整局部斜率更精确、样本外预测更准，或所有模型的数值收敛问题已经解决。</blockquote>
+      <h3 id="comparison-design">8.1　实验设计：同一案例、同一设置、逐项配对</h3>
+      <div class="table-wrap" tabindex="0" aria-label="V1 V2实验设计"><table><thead><tr><th>项目</th><th>V1 基线</th><th>V2 新版</th></tr></thead><tbody>
+        <tr><td>软件 / 核心</td><td>中文旧版 25.01.28</td><td>中文新版 26.10.25</td></tr>
+        <tr><td>主要结果来源</td><td>2026-10-11 中文 V03 参考工作簿</td><td>2026-10-29 无头 GUI 建模并下载的工作簿</td></tr>
+        <tr><td>相同输入</td><td colspan="2">HALE 12X、COVID 6X、HBV 4X；每案相同面板、地图与变量顺序</td></tr>
+        <tr><td>相同设置</td><td colspan="2">检查后数据；X 标准化“是”；QUEEN-B；GUI 比较 20 线程；保留 NA</td></tr>
+        <tr><td>时间中心化</td><td>未采用新版时间零和约束</td><td>时间分量按建模时期平均为零</td></tr>
+        <tr><td>辅助核查</td><td colspan="2">V1 同机重跑；既有独立重建的联合线性组合；本页新增 R 逐键复算</td></tr>
+      </tbody></table></div>
+      <p>配对键为“案例 × 变量 × 时点”或“案例 × 变量 × 地区”，不按行号直接相除。先检查键唯一、键集合一致、区间有效和正宽度，再计算每项比值。</p>
+      <div class="equation">r<sub>k</sub> = W<sub>V2,k</sub> / W<sub>V1,k</sub><small>W = 后验区间上限 − 下限；中位收窄率 = 100 × [1 − median(r<sub>k</sub>)]</small></div>
+      <p class="small">这是逐项宽度比的中位数，不是两个总体中位宽度之比。95% 与 50% 区间来自同一后验，是互补描述，不是两次独立实验。</p>
+      <h3 id="component-intervals">8.2　95% 时间分量区间：372 项全部变窄</h3>
+      <div class="grid">
+        <div class="card"><span class="badge">GLOBAL HALE / 12X</span><h3>全球健康预期寿命</h3><div class="metric">98.55% <small>时间分量中位收窄</small></div><p>252 / 252 项变窄</p><div class="secondary">空间分量 <strong>37.73%</strong><br><span class="small">2048 / 2124 项变窄</span></div></div>
+        <div class="card"><span class="badge">CHINA COVID-19 / 6X</span><h3>中国 COVID-19</h3><div class="metric">93.63% <small>时间分量中位收窄</small></div><p>72 / 72 项变窄</p><div class="secondary">空间分量 <strong>86.67%</strong><br><span class="small">186 / 186 项变窄</span></div></div>
+        <div class="card"><span class="badge">US HEPATITIS B / 4X</span><h3>美国乙肝</h3><div class="metric">99.00% <small>时间分量中位收窄</small></div><p>48 / 48 项变窄</p><div class="secondary">空间分量 <strong>97.87%</strong><br><span class="small">20 / 20 项变窄</span></div></div>
+      </div>
+      <p>这些百分比描述两版<strong>实际导出分量</strong>的变化。由于分量定义与参照发生变化，不能写成“同一完整效应的精度提升了 99%”。接近 100% 的四舍五入值也不代表宽度为零。</p>
+      <figure><a href="./guide-v2/images/comparison-time-covid.png" data-zoom><img src="./guide-v2/images/comparison-time-covid.png" alt="中国COVID六变量V1 V2时间分量均值与95%可信区间" loading="lazy" decoding="async" width="2700" height="1800"></a><figcaption><strong>COVID 时间分量。</strong>橙色 V1、蓝色 V2。两版均值位置和零点定义不同，应先读区间宽度与 V2 相对平均的偏离。图源：中文三案例比较。</figcaption></figure>
+      <details><summary>查看 HALE 与 HBV 的全部时间分量图</summary><div class="details-body">
+        <figure><a href="./guide-v2/images/comparison-time-hale.png" data-zoom><img src="./guide-v2/images/comparison-time-hale.png" alt="HALE十二变量时间分量的V1 V2区间" loading="lazy" decoding="async" width="3300" height="2414"></a><figcaption>HALE：12 个变量 × 21 年；与原 6X 实验分开。</figcaption></figure>
+        <figure><a href="./guide-v2/images/comparison-time-hbv.png" data-zoom><img src="./guide-v2/images/comparison-time-hbv.png" alt="HBV四变量时间分量的V1 V2区间" loading="lazy" decoding="async" width="2700" height="1800"></a><figcaption>HBV：4 个变量 × 12 年。</figcaption></figure>
+      </div></details>
+      <h3>8.3　空间分量：总体收紧，保留地区例外</h3>
+      <p>2330 个空间分量区间中，2254 个变窄，约 96.74%。76 项变宽全部在 HALE 的孤立地区或小连通块，最大增宽约 <strong>1.65%</strong>。幅度虽小，没有重复精度实验时也不能直接称作数值误差。</p>
+      <p>HALE 大连通块的 1800 项全部变窄；孤立地区的 252 项中有 70 项变宽，小连通块的 72 项中有 6 项变宽。图连接性影响解释和不确定性，不能用全局百分比代替地区诊断。</p>
+      <details><summary>查看三案例空间分量比较图</summary><div class="details-body">
+        <figure><a href="./guide-v2/images/comparison-space-hale.png" data-zoom><img src="./guide-v2/images/comparison-space-hale.png" alt="HALE空间分量区间，区分孤立地区" loading="lazy" decoding="async" width="3300" height="3389"></a><figcaption>HALE：177 个国家 / 地区；每变量内部排序，不跨变量比较原始宽度。</figcaption></figure>
+        <figure><a href="./guide-v2/images/comparison-space-covid.png" data-zoom><img src="./guide-v2/images/comparison-space-covid.png" alt="COVID空间分量区间比较" loading="lazy" decoding="async" width="2850" height="2700"></a><figcaption>COVID：31 个省级单元。</figcaption></figure>
+        <figure><a href="./guide-v2/images/comparison-space-hbv.png" data-zoom><img src="./guide-v2/images/comparison-space-hbv.png" alt="HBV空间分量区间比较" loading="lazy" decoding="async" width="2850" height="2009"></a><figcaption>HBV：5 个州。</figcaption></figure>
+      </div></details>
+      <h3 id="total-coefficients">8.4　总局部系数：中位比接近 1，不代表每项相同</h3>
+      <p>总系数来自<strong>既有独立重建模型与联合线性组合</strong>，用于辅助理解分量变化，不能声称与 GUI 的每个后验字节相同。HALE 只计算了 2000、2010、2020 三年；COVID 与 HBV 覆盖全部时期。</p>
+      <div class="table-wrap" tabindex="0" aria-label="总系数比较"><table><thead><tr><th>案例</th><th>配对项数</th><th>宽度中位比 V2/V1</th><th>最小–最大比</th><th>比值 &lt; 0.9 项数</th></tr></thead><tbody>
+        <tr><td>HALE · 三年</td><td>6372</td><td>0.999201</td><td>0.507372–1.009705</td><td>180</td></tr>
+        <tr><td>COVID · 全时期</td><td>2232</td><td>0.961138</td><td>0.015802–1.019206</td><td>103</td></tr>
+        <tr><td>HBV · 全时期</td><td>240</td><td>0.999796</td><td>0.998985–1.001928</td><td>0</td></tr>
+      </tbody></table></div>
+      <p>COVID 海南的 72 项总系数区间全部变窄，宽度比中位数约 <strong>0.1311</strong>，即中位收窄约 86.89%。因此，本轮支持“大部分总系数宽度变化较小，部分地区明显改变”，不能笼统说所有总效应均不变。</p>
+      <h3>8.5　评价指标有变化，不作整体优越性结论</h3>
+      <div class="table-wrap" tabindex="0" aria-label="模型评价比较"><table><thead><tr><th>案例</th><th>DIC：V1 → V2</th><th>WAIC：V1 → V2</th><th>LS：V1 → V2</th></tr></thead><tbody>
+        <tr><td>HALE</td><td>14068.843 → 14076.147</td><td>16027.379 → 16030.968</td><td>2.203857 → 2.204488</td></tr>
+        <tr><td>COVID</td><td>298.174 → 306.376</td><td>297.161 → 303.152</td><td>0.980900 → 0.859148</td></tr>
+        <tr><td>HBV</td><td>538.143 → 537.961</td><td>564.259 → 563.943</td><td>7.101930 → 6.949491</td></tr>
+      </tbody></table></div>
+      <p>COVID 的 DIC、WAIC 增加而 LS 降低，方向并不一致。本轮没有独立留出或时空阻断验证，也未预设等价性界限；LS 来自 CPO 的逐观测留一预测得分，不能替代独立留出或时空阻断验证。因此不形成整体拟合、预测能力的优越性或等价性结论。不同日期和负载下的运行时间也不构成受控提速实验。</p>
+      <details><summary>辅助复现核查的实际边界</summary><div class="details-body"><p>两个小案例的 V1 参考与同机重跑数值非常接近。HALE V1 DIC 为 14068.843421，同机重跑为 14070.583642，差 1.740221；不能将“差小于 0.001”套用全部案例。</p><p>带联合线性组合的 HALE V1 独立重建 DIC 为 14070.946096，与 GUI 参考相差 2.102675，重建 HALE LS 为 NA。指标接近不是两条运行链完全相同的证明；新增数据保留这些差异，不以舍入或补值掩盖。</p></div></details>
+    </section>
+
+    <section class="doc-section" id="experiments">
+      <h2><span class="number">09 / NEW REPRODUCIBLE ANALYSES</span>新增 R 实验：改进与限制同时看清</h2>
+      <p>新编写的 R 代码重新读取两版导出数值及既有联合线性组合，严格按键连接，独立复算并作图。以下是对真实结果的新增<strong>后估计实验</strong>；没有重新拟合、改变模型、添加全局斜率或替换研究变量。</p>
+      <!-- R_EXPERIMENTS_START -->
+<p>这些实验重新读取中文版V03的三个参考案例及新版GUI导出表，按唯一键逐项配对并独立复算。HALE采用12个协变量的20线程基线；代码只分析既有结果，不运行模型拟合、抽样或私有算法。</p>
+<p><strong>解释边界：</strong>两版分量的中心化定义不同。区间收窄描述的是所导出的分量边际不确定性，不能单凭收窄推出准确率、收敛、覆盖率、因果识别或样本外预测的全面提升。</p>
+<p><strong>时间中心化核查：</strong>22个变量各自的V2时间分量posterior mean在全部时间点上的算术平均，最大绝对值为5.68411e-09；22项均小于本次明示数值容差10⁻⁸。这验证所导出均值的中心化口径相容，不是收敛、覆盖率或准确性证据，也没有重新中心化任何数值。</p>
+<p><strong>拟合量术语：</strong>本节沿用图表和文件中的历史fitted_mean标识，实际计算对象是软件导出的拟合量后验区间。HALE的exp(mu)一般不能直接解释为E[Y]，本次未补入对数正态均值修正或观测误差；这些区间也不是未来观测的预测区间。</p>
+<h3>9.1　中位收窄与逐项例外</h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>案例</th><th>分量</th><th>配对项</th><th>中位收窄百分比</th><th>变窄项</th><th>变宽项</th><th>最小宽度比</th><th>最大宽度比</th></tr></thead><tbody><tr><td>全球健康预期寿命（12X）</td><td>时间</td><td>252</td><td>98.55452%</td><td>252</td><td>0</td><td>0.000850857</td><td>0.641427</td></tr><tr><td>全球健康预期寿命（12X）</td><td>空间</td><td>2124</td><td>37.73135%</td><td>2048</td><td>76</td><td>0.00200224</td><td>1.01648</td></tr><tr><td>中国 COVID-19</td><td>时间</td><td>72</td><td>93.63251%</td><td>72</td><td>0</td><td>0.0143475</td><td>0.168989</td></tr><tr><td>中国 COVID-19</td><td>空间</td><td>186</td><td>86.66999%</td><td>186</td><td>0</td><td>0.0507545</td><td>0.983929</td></tr><tr><td>美国乙肝</td><td>时间</td><td>48</td><td>98.99652%</td><td>48</td><td>0</td><td>0.00290437</td><td>0.0387722</td></tr><tr><td>美国乙肝</td><td>空间</td><td>20</td><td>97.87364%</td><td>20</td><td>0</td><td>0.00262869</td><td>0.0536224</td></tr></tbody></table></div>
+<p>95%与50%区间分别由原始导出分位数计算；六组中位收窄百分比与参考报告一致。HALE空间分量中有76/2124项变宽，最大宽度比约1.01648，故“每一个区间都更窄”不成立。完整分变量与例外表见复现结果。</p>
+<figure><a href="./guide-v2/fig01_component_width_ecdf.png" data-zoom><img loading="lazy" src="./guide-v2/fig01_component_width_ecdf.png" alt="新增实验图1" decoding="async" width="3480" height="1560"></a><figcaption>图1　时间与空间分量：每一配对项的95%及50%区间宽度比分布。两级曲线几乎重合，不能把它们视作两次独立的准确性证明。 <a href="./guide-v2/fig01_component_width_ecdf.pdf">PDF</a></figcaption></figure>
+<h3>9.2　分量收窄不等同于总系数或导出拟合量同幅收窄</h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>案例</th><th>重建总系数配对项</th><th>重建总系数95宽度中位比</th><th>GUI导出拟合量有效项</th><th>GUI导出拟合量95宽度中位比</th></tr></thead><tbody><tr><td>全球健康预期寿命（12X）</td><td>6372</td><td>0.999201</td><td>3464/3717</td><td>1.000600</td></tr><tr><td>中国 COVID-19</td><td>2232</td><td>0.961138</td><td>372/372</td><td>0.992701</td></tr><tr><td>美国乙肝</td><td>240</td><td>0.999796</td><td>60/60</td><td>0.996639</td></tr></tbody></table></div>
+<p>总系数取自既有独立重建模型的lincomb结果，是辅助核查；HALE仅覆盖2000、2010、2020三个年份。它与GUI原拟合不是数值完全相同的对象：例如HALE V1重建DIC比GUI高2.10268，且HALE重建LS未提供。因此不能把该辅助核查称为GUI原拟合的完整复现。</p>
+<p>海南的总系数72项全部变窄，中位宽度比0.131108；与之同时，海南第12月导出拟合量95%区间宽度比高达7.039×10⁹。两个结果描述不同统计对象，不能互相替代。</p>
+<figure><a href="./guide-v2/fig02_component_total_fitted_widths.png" data-zoom><img loading="lazy" src="./guide-v2/fig02_component_total_fitted_widths.png" alt="新增实验图2" decoding="async" width="3480" height="1830"></a><figcaption>图2　分量、总系数和软件导出的拟合量属于不同对象。显示窗口为0.0005至2，COVID拟合量超界18项以三角形标出；完整尾部见图5。线段表示跨条目的分布，不是后验可信区间。 <a href="./guide-v2/fig02_component_total_fitted_widths.pdf">PDF</a></figcaption></figure>
+<h3>9.3　为什么不能把边际区间端点直接相加</h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>案例</th><th>版本</th><th>总系数项</th><th>端点相加宽度除以正确总系数宽度_中位倍数</th></tr></thead><tbody><tr><td>全球健康预期寿命（12X）</td><td>V1</td><td>6372</td><td>2.64103</td></tr><tr><td>全球健康预期寿命（12X）</td><td>V2</td><td>6372</td><td>1.04793</td></tr><tr><td>中国 COVID-19</td><td>V1</td><td>2232</td><td>13.23531</td></tr><tr><td>中国 COVID-19</td><td>V2</td><td>2232</td><td>1.30934</td></tr><tr><td>美国乙肝</td><td>V1</td><td>240</td><td>82.07316</td></tr><tr><td>美国乙肝</td><td>V2</td><td>240</td><td>1.35773</td></tr></tbody></table></div>
+<p>同一既有重建中，分量均值相加与lincomb均值的最大绝对差为9.144×10⁻¹³，支持索引配对的内部一致性；但边际区间端点相加忽略联合相关结构。宽度倍数从约1.05到82.07的中位差异说明，两种算法不能混用。现有总系数CSV未提供50%分位数，本次没有据正态近似补造。</p>
+<figure><a href="./guide-v2/fig03_endpoint_addition_error.png" data-zoom><img loading="lazy" src="./guide-v2/fig03_endpoint_addition_error.png" alt="新增实验图3" decoding="async" width="3480" height="1560"></a><figcaption>图3　端点相加错误示范：两个边际区间宽度之和除以既有lincomb总系数区间宽度。这个分子不构成总系数的95%可信区间。 <a href="./guide-v2/fig03_endpoint_addition_error.pdf">PDF</a></figcaption></figure>
+<h3>9.4　V2区间是否跨零，应按其自身定义读取</h3>
+<p>输出逐项的高于零、低于零、包含零状态及变量汇总。这里的区间排除零只是一项描述性后验区间性质；没有多重比较调整，也不构成两版“显著性改变”的检验。</p>
+<figure><a href="./guide-v2/fig04_v2_zero_exclusion.png" data-zoom><img loading="lazy" src="./guide-v2/fig04_v2_zero_exclusion.png" alt="新增实验图4" decoding="async" width="4080" height="2100"></a><figcaption>图4　仅描述V2：实心为95%区间，空心为50%区间。蓝色为时间分量，金色为空间分量。未做多重比较调整；不能解释为V1/V2显著性变化。 <a href="./guide-v2/fig04_v2_zero_exclusion.pdf">PDF</a></figcaption></figure>
+<h3>9.5　导出拟合量的异常分母与无效宽度</h3>
+<p>HALE 3717个地区年份中，3464项有正区间宽度；253项两版所有导出分位数均为1、宽度为0，均对应原导出Y缺失，因此宽度比保留为NA。全部273项Y缺失中另有20项仍有正宽度，不能机械地删除全部缺失Y行。</p>
+<p>COVID的372项均可计算宽度比，但95%中有18项大于2；第12月海南的极大比值来自极小V1分母。HALE、COVID与HBV的导出拟合量区间中位比接近1，仍不能代表极端项。这里的输出属于软件导出的拟合量后验区间，不能称未来观测的预测区间。</p>
+<figure><a href="./guide-v2/fig05_fitted_mean_full_distribution.png" data-zoom><img loading="lazy" src="./guide-v2/fig05_fitted_mean_full_distribution.png" alt="新增实验图5" decoding="async" width="3480" height="1770"></a><figcaption>图5　软件导出的拟合量后验区间宽度比的完整动态范围。海南第12月95%宽度从7.659×10⁻¹¹变为0.5391，中位数不能代表所有地区月份。 <a href="./guide-v2/fig05_fitted_mean_full_distribution.pdf">PDF</a></figcaption></figure>
+<p><a download href="./guide-v2/bstvc-v2-postestimation-reproducible.zip">下载R脚本与最少复现数据</a> · <a href="./guide-v2/postestimation-summary.json">机器可读汇总</a></p>
+
+<!-- R_EXPERIMENTS_END -->
+      <h3>9.6　异常输出，不能靠省略来处理</h3>
+      <div class="callout warning"><span class="label">保留检查清单，进一步核查软件导出链</span><p>HALE 的零宽输出不应被解释为“非常精确”；也不能机械删除全部缺失 Y 行。COVID 海南拟合量的极大比值由极小 V1 分母造成，与海南总系数收窄是不同对象。</p><p>这里属于拟合量后验区间的导出检查，不是未来观测覆盖率实验。对数正态路径中，指数变换的潜在水平也不应自动叫响应均值 E[Y]。本页保留全部键、无效标记和极端项，不用填零、删行或“预测区间不变”代替诊断。</p></div>
+    </section>
+
+    <section class="doc-section" id="reproduce">
+      <h2><span class="number">10 / R CODE & DATA</span>可复现的 R 代码与数值资料</h2>
+      <p>公开复算包包含必要的已导出数值、说明和新写的后估计脚本，不包含安装包、私有算法源码、模型对象或机器路径。脚本不下载依赖、不重拟合；使用 base R 即可复算本页统计与图表。</p>
+      <!-- R_DOWNLOADS_START -->
+<div class="hero-actions"><a class="button primary" download href="./guide-v2/bstvc-v2-postestimation-reproducible.zip">下载完整 R 复算包 · 约 1.3 MB</a><a class="button" download href="./guide-v2/reproduce_analysis.R">单独下载 R 脚本</a><a class="button" href="./guide-v2/reproduction-readme.md">阅读复算说明</a><a class="button" href="./guide-v2/postestimation-summary.json">数值汇总 JSON</a></div><p class="small">主要检查表：<a href="./guide-v2/results/component_summary_by_case.csv">分量宽度汇总 CSV</a> · <a href="./guide-v2/results/component_no_narrowing_items.csv">全部未收窄项 CSV</a> · <a href="./guide-v2/results/v2_time_centering_check.csv">时间中心化检查 CSV</a> · <a href="./guide-v2/results/fitted_mean_largest_ratios.csv">拟合量极端比值 CSV</a> · <a href="./guide-v2/results/gui_vs_existing_reconstruction_evaluation.csv">GUI 与辅助重建差异 CSV</a></p>
+<!-- R_DOWNLOADS_END -->
+      <p>解压 ZIP，在其目录执行下面的命令。若分析自己的 XLSX，需先按 README 的字段规范提取数值，保证键唯一与一对一连接。</p>
+      <div class="code-wrap"><div class="code-label">终端 / 在复算包目录执行</div><button class="copy-code" type="button" data-copy>复制</button><pre><code>Rscript reproduce_analysis.R . reproduced</code></pre></div>
+      <p>论文和报告保留输入表、脚本、运行信息与输出图，注明比较范围和异常处理。不要将舍入后的网页百分比当原始数据。95% 与 50% 分量均可复算；现有总系数只提供 95% 区间，不补造 50% 结果。</p>
+      <h3>建议的结果表述</h3>
+      <blockquote>“在相同中文案例输入与设置下，BSTVC V2（26.10.25）相对旧版（25.01.28）为时间分量提供零和中心化参照。三案例的 95% 时间分量区间逐项宽度比中位数对应收窄 93.63%–99.00%，空间分量对应收窄 37.73%–97.87%。这些结果描述实际导出分量的变化；分量定义改变、地区例外和导出异常均需报告，不能直接推断整体预测精度或后验校准改善。”</blockquote>
+    </section>
+
+    <section class="doc-section" id="troubleshooting">
+      <h2><span class="number">11 / TROUBLESHOOTING</span>遇到问题，先保存证据再调整</h2>
+      <div class="table-wrap" tabindex="0" aria-label="常见问题"><table><thead><tr><th>现象</th><th>先检查</th><th>建议处理</th></tr></thead><tbody>
+        <tr><td>地图读取失败</td><td>配套文件、投影、空间键、几何</td><td>一次选全；修复另存，不覆盖原地图</td></tr>
+        <tr><td>检查提示重排</td><td>地图与表格的键及顺序</td><td>阅读最终状态，按提示用检查后数据；仍有错误先定位</td></tr>
+        <tr><td>转换后行数 / 时期不对</td><td>时间块列数、排序、ID 是否进入变量块</td><td>回到原表逐块核对</td></tr>
+        <tr><td>下拉框没有字段</td><td>当前文件、工作表、是否还是宽表</td><td>重新载入后重新选参数</td></tr>
+        <tr><td>显示旧数字</td><td>本轮是否完成、案例与字段</td><td>完成后重新导出并命名</td></tr>
+        <tr><td>模型很慢</td><td>地区 × 时期 × X、内存与并行任务</td><td>记录资源；比较线程时控制其他负载</td></tr>
+        <tr><td>指标异常或报错</td><td>类型、数值、NA、尺度、邻接与警告</td><td>保存日志，不改 Y、删行或换顺序挑指标</td></tr>
+        <tr><td>区间很宽</td><td>局部数据支持、邻接与分量含义</td><td>诊断并报告不确定性，不隐藏区间</td></tr>
+        <tr><td>零宽或极大宽度比</td><td>分位数、变换、缺失 Y、极小分母</td><td>保留导出，单独核查，不自动称非常精确</td></tr>
+        <tr><td>R 复算不匹配</td><td>6X / 12X、版本、键、区间层级与设置</td><td>先核唯一键和原始分位数，不按行号强配</td></tr>
+      </tbody></table></div>
+      <h3>研究报告至少说明这些内容</h3>
+      <ul><li>研究总体、时空范围、来源、响应定义与单位。</li><li>软件 / 核心版本、分布、标准化、空间关系、X 顺序和设置。</li><li>缺失位置、连接性、地图修复和数据转换记录。</li><li>分量或总系数的准确名称、模型尺度与区间层级。</li><li>评价范围，区分训练拟合、交叉验证与独立预测。</li><li>异常与未运行项，不将后台 / 浏览器证据扩大为原生桌面或全产品验收。</li></ul>
+    </section>
+
+    <section class="doc-section" id="resources">
+      <h2><span class="number">12 / OFFICIAL RESOURCES</span>官方资源、方法依据与引用</h2>
+      <div class="table-wrap" tabindex="0" aria-label="官方链接"><table><thead><tr><th>资源</th><th>统一入口</th><th>说明</th></tr></thead><tbody>
+        <tr><td>中文桌面版</td><td><a href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/">中文官网 ↗</a></td><td>下载、功能与研究案例</td></tr>
+        <tr><td>当前中文手册</td><td><a href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html">中文在线手册 ↗</a></td><td>稳定地址，不依赖旧 PDF / 随包手册</td></tr>
+        <tr><td>品牌 / 模型官网</td><td><a href="https://bayesianstvc.github.io/">时空可解释研究组织 ↗</a></td><td>品牌、方法与项目</td></tr>
+        <tr><td>Desktop · English</td><td><a href="https://bayesianstvc.github.io/BSTVC-Desktop/">English website ↗</a></td><td><a href="https://bayesianstvc.github.io/BSTVC-Desktop/guide/">English online guide ↗</a></td></tr>
+        <tr><td>BSTVC R 包</td><td><a href="https://github.com/bayesianstvc/BSTVC-R">bayesianstvc / BSTVC-R ↗</a></td><td>公开 R 包与说明</td></tr>
+        <tr><td>进程监控</td><td><a href="https://github.com/bayesianstvc/BSTVC-Monitor">BSTVC Monitor ↗</a></td><td>辅助观察计算资源</td></tr>
+        <tr><td>宋超个人网站</td><td><a href="https://chaosong.blog/">chaosong.blog ↗</a></td><td>软件反馈使用统一邮箱</td></tr>
+      </tbody></table></div>
+      <p>论文引用采用所用方法论文与 R 包提供的正式信息，补充实际软件 / 核心版本、访问日期和设置。不要只写“最新版”，也不要用软件网页替代原始论文。</p>
+      <div class="footnotes"><p><strong>方法与输出定义：</strong>R-INLA 将 <code>summary.fitted.values</code> 定义为反链接后拟合量的后验边际概括，不自动包含新观测噪声；<code>constr</code> 为零和约束。参见 <a href="https://www.r-inla.org/learnmore/docs/reference/inla.html">INLA 输出定义</a>、<a href="https://www.r-inla.org/learnmore/docs/reference/f.html">约束参数</a>、<a href="https://inla.r-inla-download.org/r-inla.org/doc/latent/rw2.pdf">RW2</a>与<a href="https://inla.r-inla-download.org/r-inla.org/doc/likelihood/lognormal.pdf">对数正态分布</a>。它们说明一般定义，不代替具体软件运行验证。</p><p><strong>数值来源：</strong>中文 V03 三例参考结果、V2 GUI 导出、既有总系数线性组合核查，以及本页公开的新 R 后估计复算。保留范围、异常与可复算数值；不公开私有核心或开发环境。</p></div>
+    </section>
+
+    <section class="doc-section" id="feedback">
+      <h2><span class="number">13 / FEEDBACK</span>问题反馈，统一使用官网邮箱</h2>
+      <p>安装、操作、结果解释与软件问题，均使用：</p>
+      <p><a class="support-address" href="mailto:bstvc.research@gmail.com">bstvc.research@gmail.com</a></p>
+      <p>邮件标题建议“BSTVC V2｜问题简述”。附软件 / 核心版本、Windows 版本、操作步骤、设置、完整消息与截图。结果异常可提供能复现的最小示例和导出表；敏感数据先脱敏，不必发送安装包或私有模型对象。</p>
+      <div class="callout"><span class="label">反馈清单</span><p>我用什么版本？什么数据？选了哪些 Y / X / Time / Space？是否标准化、什么矩阵？期望什么、实际发生什么？这些信息比一句“不能运行”更容易定位。</p></div>
+    </section>
+    <footer class="doc-footer"><span>BSTVC · 让时空可解释<br>中文在线用户手册 · 2026-10-29</span><span><a href="https://bayesianstvc.github.io/">时空可解释研究组织 ↗</a>　<a href="../index.html">中文官网 ↗</a></span></footer>
   </main>
-  <script>
-    const frame = document.querySelector('.guide-frame');
-    const quickButton = document.querySelector('#quick-start-toggle');
-    const quickPanel = document.querySelector('#quick-start-popover');
-    const topButton = document.querySelector('#guide-top-button');
-    const searchInput = document.querySelector('#guide-search-input');
-    const searchButton = document.querySelector('#guide-search-button');
-    let searchQuery = '';
-    let searchMatches = [];
-    let searchIndex = -1;
-    quickButton?.addEventListener('click', () => {
-      const open = quickPanel.hasAttribute('hidden');
-      quickPanel.toggleAttribute('hidden', !open);
-      quickButton.setAttribute('aria-expanded', String(open));
-    });
-    topButton?.addEventListener('click', () => {
-      try {
-        const guideDocument = frame.contentDocument;
-        const contents = guideDocument?.querySelector('.toc, [class*="toc"], nav');
-        if (contents) contents.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        else frame.contentWindow.scrollTo({ top: 0, behavior: 'smooth' });
-      } catch (_) { frame.contentWindow.scrollTo(0, 0); }
-    });
-    const runGuideSearch = () => {
-      const query = searchInput?.value.trim() || '';
-      if (!query) return searchInput?.focus();
-      try {
-        if (query !== searchQuery) {
-          const candidates = Array.from(frame.contentDocument.querySelectorAll('h1, h2, h3, h4, .toc a, .toc-l1, .toc-l2'));
-          searchMatches = candidates.filter((item) => item.textContent.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
-          searchQuery = query;
-          searchIndex = -1;
-        }
-        if (!searchMatches.length) {
-          searchButton.textContent = '无结果';
-          window.setTimeout(() => { searchButton.textContent = '搜索'; }, 1200);
-          return;
-        }
-        searchIndex = (searchIndex + 1) % searchMatches.length;
-        const target = searchMatches[searchIndex];
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        target.animate([
-          { backgroundColor: 'rgba(90,216,198,0)', outlineColor: 'rgba(90,216,198,0)' },
-          { backgroundColor: 'rgba(90,216,198,.18)', outlineColor: 'rgba(90,216,198,.55)' },
-          { backgroundColor: 'rgba(90,216,198,0)', outlineColor: 'rgba(90,216,198,0)' }
-        ], { duration: 1100, easing: 'ease-out' });
-        searchButton.textContent = `${searchIndex + 1}/${searchMatches.length}`;
-      } catch (_) {
-        searchButton.textContent = '不可搜索';
-      }
-    };
-    searchButton?.addEventListener('click', runGuideSearch);
-    searchInput?.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') { event.preventDefault(); runGuideSearch(); }
-    });
-  </script>
+</div>
+<a class="back-top" href="#top">回到顶部 ↑</a>
+<dialog class="image-dialog" id="image-dialog" aria-labelledby="dialog-label"><div class="dialog-bar"><span id="dialog-label">图表</span><button type="button" id="dialog-close">关闭 ✕</button></div><img id="dialog-image" alt=""><p>可滚动查看原图；按 Esc 或点击“关闭”返回。</p></dialog>
 </body>
 </html>

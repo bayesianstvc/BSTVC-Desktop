@@ -1,0 +1,98 @@
+{
+  "scope": "Existing authorized result snapshots; hashes identify inputs and do not validate scientific inference",
+  "originalsBundled": false,
+  "privateModelCodeBundled": false,
+  "refittingPerformed": false,
+  "sourceFiles": [
+    {
+      "source": "data/v1_reference/Case6_HALE_12X_all_result_tables.xlsx",
+      "bytes": 840147,
+      "sha256": "7c704e53813deb5572511d701539b5a725744823262124f10a9f6959287dda1c"
+    },
+    {
+      "source": "data/v1_reference/Case2_COVID_all_result_tables.xlsx",
+      "bytes": 84128,
+      "sha256": "cba70af737cf2df1422590c6c844d03c1d98736baf31d87e40ba87945f884244"
+    },
+    {
+      "source": "data/v1_reference/Case3_HBV_all_result_tables.xlsx",
+      "bytes": 31636,
+      "sha256": "6a9a135d492f8fa0487e4267f4c505faf1eae2072376caddf1c95e35923d12e6"
+    },
+    {
+      "source": "out/v2_gui/c6/Case6_HALE_12X_V2_all_result_tables.xlsx",
+      "bytes": 839744,
+      "sha256": "2b69b3112895b4377e14f72be9f7a41a3e408a3058a045342b24662f1aab3ade"
+    },
+    {
+      "source": "out/v2_gui/c2/Case2_COVID_V2_all_result_tables.xlsx",
+      "bytes": 84318,
+      "sha256": "020a0b189457b40cb40670bf66834ac3ae88a525b598bec74497850671d1731d"
+    },
+    {
+      "source": "out/v2_gui/c3/Case3_HBV_V2_all_result_tables.xlsx",
+      "bytes": 31637,
+      "sha256": "a99de5faa3de786f81271e1a006452277d23b8b0f18634e923705e32aa9c87f2"
+    },
+    {
+      "source": "out/total_coef/c2_refit_components.csv",
+      "bytes": 44830,
+      "sha256": "7dd29a012b9a69f283bc88f725212270285b28ac629d19b4e40a4e977d46e295"
+    },
+    {
+      "source": "out/total_coef/c2_refit_evaluation.csv",
+      "bytes": 180,
+      "sha256": "c212224e5fc803b8905be878c3fc5bd70b761a5eef0c77d26e2fb7be1524fe90"
+    },
+    {
+      "source": "out/total_coef/c2_total_coef.csv",
+      "bytes": 516621,
+      "sha256": "a88817f5075b3f016ce4ffd6f1502c5a7f43c8196728858ea5479b6faca51486"
+    },
+    {
+      "source": "out/total_coef/c3_refit_components.csv",
+      "bytes": 11352,
+      "sha256": "ea277341819bc60af53d1b0f5553473ae60addd37d7eb4129faf32237f7692aa"
+    },
+    {
+      "source": "out/total_coef/c3_refit_evaluation.csv",
+      "bytes": 178,
+      "sha256": "7da6b96420ca64adaac1d6f007efb06462aa690e61127cdfc85399ca73f3d285"
+    },
+    {
+      "source": "out/total_coef/c3_total_coef.csv",
+      "bytes": 54058,
+      "sha256": "6513b3d48316abb1828971da0dca137e3614f7b445b605c2778a154429b8de34"
+    },
+    {
+      "source": "out/total_coef/c6_refit_components_V1.csv",
+      "bytes": 220403,
+      "sha256": "91bc5ef3ec67a60bc6417d39a7585df42388863cb7a7c7c5f804efaa61d0468d"
+    },
+    {
+      "source": "out/total_coef/c6_refit_components_V2.csv",
+      "bytes": 223535,
+      "sha256": "7c6ddd031d2e59eda3336fe42b97779fc078d0be9815471e5f0d65a95b12c0f7"
+    },
+    {
+      "source": "out/total_coef/c6_refit_evaluation_V1.csv",
+      "bytes": 91,
+      "sha256": "835ac97740a93181573a4338c685b4ee25f219ab432a560bf208301395bef0c3"
+    },
+    {
+      "source": "out/total_coef/c6_refit_evaluation_V2.csv",
+      "bytes": 91,
+      "sha256": "452658f6c86100e1fd6e9780bcfe18804c66c846c322d86049039b4c1e657e98"
+    },
+    {
+      "source": "out/total_coef/c6_total_coef_V1.csv",
+      "bytes": 797279,
+      "sha256": "15094a67f7ed2f87aac1a5e9f2af626926a32802b3a1a42ca391c40ba6442213"
+    },
+    {
+      "source": "out/total_coef/c6_total_coef_V2.csv",
+      "bytes": 797609,
+      "sha256": "1f321f2e36badaf4e06e6257347eaef1ec41a6a98106bde84d5b889e7f8e0d0b"
+    }
+  ]
+}
