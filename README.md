@@ -8,13 +8,17 @@
 
 **A visual research environment for local spatiotemporal interpretability, global contribution, and dynamic prediction within a unified Bayesian full-map framework.**
 
-[![Installer withdrawn](https://img.shields.io/badge/installer-withdrawn-d97706?style=flat-square)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1)
-[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-1674ea?style=flat-square)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1)
+[![Desktop V2](https://img.shields.io/badge/desktop-V2%2026.10.25-0878d1?style=flat-square)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.10.25)
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-1674ea?style=flat-square)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.10.25)
 [![Interface](https://img.shields.io/badge/interface-English%20%7C%20中文-7c4dff?style=flat-square)](https://bayesianstvc.github.io/BSTVC-Desktop)
 
-[![V2 coming soon](https://img.shields.io/badge/INSTALLER-V2%20coming%20soon-d97706?style=for-the-badge)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1)
+[![Download English V2](https://img.shields.io/badge/DOWNLOAD-English%20Desktop%20V2-0878d1?style=for-the-badge)](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC_desktop_EN_win_x64_26.10.25_setup.exe)
 
-**Installer withdrawn:** The English Windows installer v2026.8.1 has been withdrawn because it contains a bug. Please do not use this installer. A new V2 installer will be provided later.
+**BSTVC Desktop V2 is available.** Package version **26.10.25**, published **4 November 2026**.
+
+[What is new in V2](https://bayesianstvc.github.io/BSTVC-Desktop/v2/) · [中文 V2 更新与讲解视频](https://bayesianstvc.github.io/BSTVC-Desktop/zh/v2/)
+
+The supplied three-case comparison reports narrower temporal and spatial 95% credible intervals. These case-specific width comparisons do not by themselves establish accuracy, calibration, or causal effects.
 
 **[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/)** · **[桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)** · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
@@ -32,8 +36,8 @@
 
 | Resource | Recommended for | Access |
 |:--|:--|:--|
-| **BSTVC Desktop — English installer** | Windows 10/11 users who want the complete English graphical workflow | **Withdrawn because of a bug. V2 coming soon.** |
-| **Release v2026.8.1 — withdrawn** | Withdrawal notice and release history | [Open the GitHub Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1) |
+| **BSTVC Desktop — English installer** | Windows 10/11 users who want the complete English graphical workflow | **[Download English V2 installer](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC_desktop_EN_win_x64_26.10.25_setup.exe)** |
+| **English V2 — 26.10.25** | Installer, checksums, and release notes | [Open the GitHub Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.10.25) |
 | **English online user guide** | Complete workflows for continuous, binary, and count responses; figures, search, and troubleshooting | [Open the English guide](https://bayesianstvc.github.io/BSTVC-Desktop/guide/) |
 | **Three English case datasets** | Original data, complete maps, verified ready panels, and companion instructions | [Choose a case](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#choose) · [GitHub data Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/examples-en-2026.10.02) |
 | **English official website** | Product overview, methods, workflow, outputs, and download guidance | [bayesianstvc.github.io/BSTVC-Desktop](https://bayesianstvc.github.io/BSTVC-Desktop) |
@@ -41,7 +45,9 @@
 | **中文桌面版 V2（26.10.25）** | 中文 Windows 安装包与实例数据；操作说明请阅读在线用户手册 | [百度网盘](https://pan.baidu.com/s/5h7zSPjXEvBINShxLVLjirA) |
 | **中文在线用户手册** | 中文操作流程、参数说明、结果解读与 V2 说明 | [打开在线用户手册](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · [快速开始](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#quick-start) · [V1/V2 比较](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#v2-comparison) |
 
-> **Installer update:** The faulty English installer has been withdrawn. Please wait for V2. The online guide and case datasets remain available. The Chinese V2 (26.10.25) installer is listed separately above; Chinese usage instructions are provided in the [online user guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html).
+> **Get started:** Download V2, follow the [English guide](https://bayesianstvc.github.io/BSTVC-Desktop/guide/), or explore the [V2 update](https://bayesianstvc.github.io/BSTVC-Desktop/v2/). Case datasets remain available in their separate data Release.
+
+**SHA-256 (English installer):** `63c7873b351037de85282ac7da0febbdc6363d3579f4f39bf68b4eeca31ff0b7` · 547,613,237 bytes.
 
 ## Learn with three English case studies
 
@@ -187,6 +193,6 @@ For an extended publication and application record, visit the **[BSTVC brand web
 
 HEOA–West China Health & Medical Geography Group
 
-[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/) · [桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) · [Download](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.8.1) · [User guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · **[BSTVC brand website](https://bayesianstvc.github.io/)**
+[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/) · [桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) · [Download](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.10.25) · [User guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
 </div>

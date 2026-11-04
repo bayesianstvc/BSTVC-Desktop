@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BSTVC V2 更新特色 · 三个公开案例的可信区间对比</title>
+  <meta name="description" content="从全球健康预期寿命、中国 COVID-19、美国乙肝三个公开案例，了解 BSTVC V2 的时间与空间可信区间变化，观看中文演示并下载对应语言桌面版。">
+  <meta name="theme-color" content="#061b27">
+  <link rel="canonical" href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/v2/">
+  <link rel="alternate" hreflang="en" href="https://bayesianstvc.github.io/BSTVC-Desktop/v2/">
+  <link rel="alternate" hreflang="zh-CN" href="https://bayesianstvc.github.io/BSTVC-Desktop/zh/v2/">
+  <link rel="alternate" hreflang="x-default" href="https://bayesianstvc.github.io/BSTVC-Desktop/v2/">
+  <link rel="icon" href="../../assets/bstvc-favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../../assets/v2/v2.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BSTVC V2 · 从三个案例，读懂区间变化">
+  <meta property="og:description" content="同一批公开案例数据，两个版本，时间与空间两个维度。查看可信区间对比，观看中文演示，获取 BSTVC 桌面版。">
+  <meta property="og:url" content="https://bayesianstvc.github.io/BSTVC-Desktop/zh/v2/">
+  <meta property="og:image" content="https://bayesianstvc.github.io/BSTVC-Desktop/assets/v2/reading-credible-intervals.png">
+  <meta property="og:image:alt" content="读懂可信区间的双语解释示意图；为 AI 生成示意，不是案例数据图。">
+  <meta property="og:locale" content="zh_CN">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="BSTVC 桌面版中文首页">
+        <img src="../../assets/bstvc-logo-rounded.webp" width="44" height="44" alt="">
+        <span><span class="brand-name">BSTVC</span><span class="brand-sub">桌面版 · VERSION 2</span></span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#comparison">三案例对比</a>
+        <a href="../../zh/assets/bstvc-user-guide.html">用户指南</a>
+        <a href="#download">获取桌面版</a>
+        <a class="language" href="/BSTVC-Desktop/v2/" lang="en" hreflang="en">English ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="release-line">V2 更新 · <time datetime="2026-11-04">2026 年 11 月 4 日</time></p>
+          <h1 id="hero-title"><span class="product">BSTVC V2.</span><span class="line">从三个案例，</span><span class="line">读懂区间变化。</span></h1>
+          <p class="hero-lede">同一个因素与研究结果的关联，如何随时间、地区变化？从三个公开案例出发，对照 V1 与 V2 报告的可信区间，了解这次更新。</p>
+          <div class="actions">
+            <a class="button button-primary" href="#video">观看中文演示 <span aria-hidden="true">▷</span></a>
+            <a class="button button-outline" href="#download">获取桌面版 <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-footnote">图形界面开展分析 · 免费下载 · 科研使用</p>
+        </div>
+        <figure class="hero-figure">
+          <a href="../../assets/v2/reading-credible-intervals.png" aria-label="查看可信区间解释示意图大图">
+            <img src="../../assets/v2/reading-credible-intervals.png" width="1536" height="1024" fetchpriority="high" alt="双语解释示意：从同一数据查看时间、空间区间；关注宽度、结果一致性和研究背景。更窄的区间本身不能证明更准确。">
+          </a>
+          <figcaption><strong>帮助理解，不是研究数据。</strong> 此图为 AI 生成的解释示意，未绘制案例统计数据。点击可查看大图。</figcaption>
+        </figure>
+      </div>
+    </section>
+    <div class="evidence-strip" aria-label="材料报告的案例汇总值">
+      <div class="container evidence-grid">
+        <div class="evidence-item"><span class="value">94–99%</span><span class="label">时间区间宽度汇总值缩小</span><span class="detail">三个案例的中位数摘要 · 约数</span></div>
+        <div class="evidence-item"><span class="value">38–98%</span><span class="label">空间区间宽度汇总值缩小</span><span class="detail">三个案例的中位数摘要 · 约数</span></div>
+        <div class="evidence-item"><span class="value">3</span><span class="label">个公开案例</span><span class="detail">连续型 · 二分类 · 计数型结果示例</span></div>
+      </div>
+    </div>
+    <section class="section" id="comparison" aria-labelledby="comparison-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="section-number">01 / 看案例</span><h2 id="comparison-title">同一批案例数据，<br>两个版本，两个维度。</h2></div>
+          <p class="section-intro">所附对比材料使用同一批案例数据和相同公开分析设置，分别比较<strong>时间与空间回归系数的 95% 贝叶斯可信区间宽度</strong>。观察具体案例中的变化，也保留不同地区的例外。</p>
+        </div>
+        <table class="comparison-table">
+          <caption>V2 相对 V1 的区间宽度缩小比例。下列为素材报告的四舍五入案例汇总值，按各案例全部解释变量取中位数。</caption>
+          <thead><tr><th scope="col">公开案例与范围</th><th scope="col">结果类型</th><th scope="col">时间区间宽度缩小</th><th scope="col">空间区间宽度缩小</th></tr></thead>
+          <tbody>
+            <tr><td><strong>全球健康预期寿命</strong><small>177 个国家／地区 · 2000–2020 年<br>12 个解释变量</small></td><td>连续型</td><td class="numeric" data-label="时间区间宽度缩小"><span class="percent"><span class="approx">约</span>99%</span></td><td class="numeric" data-label="空间区间宽度缩小"><span class="percent"><span class="approx">约</span>38%</span></td></tr>
+            <tr><td><strong>中国 COVID-19</strong><small>31 个省级单元 · 2020 年 1–12 月<br>6 个解释变量</small></td><td>二分类</td><td class="numeric" data-label="时间区间宽度缩小"><span class="percent"><span class="approx">约</span>94%</span></td><td class="numeric" data-label="空间区间宽度缩小"><span class="percent"><span class="approx">约</span>87%</span></td></tr>
+            <tr><td><strong>美国乙肝</strong><small>阿巴拉契亚 5 个州 · 2012–2023 年<br>4 个解释变量</small></td><td>计数型</td><td class="numeric" data-label="时间区间宽度缩小"><span class="percent"><span class="approx">约</span>99%</span></td><td class="numeric" data-label="空间区间宽度缩小"><span class="percent"><span class="approx">约</span>98%</span></td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">材料报告：<strong>372 个时间区间全部变窄</strong>；<strong>2,330 个空间区间中 96.7% 变窄</strong>。健康预期寿命案例中，与邻国共享边界的 150 个国家区间全部变窄，无共享边界的地区两版基本持平。汇总比例不表示每个变量、每个地区都会按同一比例收窄。</p>
+        <div class="source-figures">
+          <h3>展开查看原始对比图</h3>
+          <p>保留本批材料原图：橙色为 V1，蓝色为 V2。每个案例分别展示时间与空间；点击图片可查看大图。</p>
+          <details class="case-figures" open>
+            <summary>全球健康预期寿命 <small>时间汇总约缩小 99% · 空间汇总约缩小 38%</small></summary>
+            <div class="figure-pair">
+              <figure class="data-figure"><a href="../../assets/v2/hale-temporal.png"><img src="../../assets/v2/hale-temporal.png" width="1080" height="1000" loading="lazy" alt="全球健康预期寿命时间回归系数原图：V2 区间宽度案例汇总约缩小 99%，图中以孕产妇死亡率为例。​"></a><figcaption><strong>时间回归系数。</strong> 2000–2020 年，以孕产妇死亡率为示例；百分比为本案例 12 个解释变量的汇总摘要。</figcaption></figure>
+              <figure class="data-figure"><a href="../../assets/v2/hale-spatial.png"><img src="../../assets/v2/hale-spatial.png" width="1080" height="1000" loading="lazy" alt="全球健康预期寿命空间回归系数原图：177 个国家或地区，区间宽度汇总约缩小 38%；原图标明最宽的 6 个区间在画面边缘截断。​"></a><figcaption><strong>空间回归系数。</strong> 177 个国家／地区，以孕产妇死亡率为示例。原图注明最宽的 6 个区间在边缘截断；无共享边界地区是整体收窄趋势中的例外。</figcaption></figure>
+            </div>
+          </details>
+          <details class="case-figures">
+            <summary>中国 COVID-19 <small>时间汇总约缩小 94% · 空间汇总约缩小 87%</small></summary>
+            <div class="figure-pair">
+              <figure class="data-figure"><a href="../../assets/v2/covid-temporal.png"><img src="../../assets/v2/covid-temporal.png" width="1080" height="1000" loading="lazy" alt="中国 COVID-19 时间回归系数原图：V2 的区间宽度案例汇总约缩小 94%。"></a><figcaption><strong>时间回归系数。</strong> 2020 年 1–12 月；本案例 6 个解释变量的区间宽度汇总约缩小 94%。</figcaption></figure>
+              <figure class="data-figure"><a href="../../assets/v2/covid-spatial.png"><img src="../../assets/v2/covid-spatial.png" width="1080" height="1000" loading="lazy" alt="中国 COVID-19 空间回归系数原图：31 个省级单元，V2 区间宽度案例汇总约缩小 87%。"></a><figcaption><strong>空间回归系数。</strong> 31 个省级单元；区间宽度案例汇总约缩小 87%。</figcaption></figure>
+            </div>
+          </details>
+          <details class="case-figures">
+            <summary>美国乙肝 <small>时间汇总约缩小 99% · 空间汇总约缩小 98%</small></summary>
+            <div class="figure-pair">
+              <figure class="data-figure"><a href="../../assets/v2/hbv-temporal.png"><img src="../../assets/v2/hbv-temporal.png" width="1080" height="1000" loading="lazy" alt="美国乙肝时间回归系数原图：2012–2023 年，V2 区间宽度案例汇总约缩小 99%。"></a><figcaption><strong>时间回归系数。</strong> 2012–2023 年；本案例 4 个解释变量的区间宽度汇总约缩小 99%。</figcaption></figure>
+              <figure class="data-figure"><a href="../../assets/v2/hbv-spatial.png"><img src="../../assets/v2/hbv-spatial.png" width="1080" height="1000" loading="lazy" alt="美国乙肝空间回归系数原图：阿巴拉契亚 5 个州，V2 区间宽度案例汇总约缩小 98%。"></a><figcaption><strong>空间回归系数。</strong> 阿巴拉契亚 5 个州；区间宽度案例汇总约缩小 98%。</figcaption></figure>
+            </div>
+          </details>
+        </div>
+        <aside class="scope-note" aria-labelledby="scope-title">
+          <h3 id="scope-title">怎样理解这些区间</h3>
+          <div>
+            <p>95% 贝叶斯可信区间，是<strong>在给定观测数据和模型假设下</strong>，包含参数后验分布 95% 概率的区间。回归系数描述模型中的关联，不能单凭它认定因果效应。</p>
+            <p>素材图中的区间以各自后验均值为中心，重点<strong>只比较宽度</strong>，不表示系数位置、方向保持不变；将时间与空间区间的端点直接相加，也不能得到有效的联合 95% 区间。</p>
+            <p>区间更窄本身不能证明估计更准确、重复抽样覆盖率更好、校准充分或所有应用场景更优。本页复用所提供的三案例比较材料，不代表本次重新拟合或软件已通过全面验收。</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="section video-section" id="video" aria-labelledby="video-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="section-number">02 / 看演示</span><h2 id="video-title">2 分 54 秒，<br>走进 V2 三案例对比。</h2></div>
+          <p class="section-intro">中文旁白与字幕，依次介绍回归系数、可信区间，以及时间、空间两个维度的案例结果。点按播放后才加载视频。</p>
+        </div>
+        <div class="video-panel">
+          <video controls playsinline preload="none" width="1920" height="1080" poster="../../assets/v2/overview-zh-poster.png" aria-label="BSTVC V2 三案例对比中文演示" aria-describedby="video-scope">
+            <source src="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC-V2-overview-zh-1080p.mp4" type="video/mp4">
+            <track kind="captions" src="../../assets/v2/overview-zh.vtt" srclang="zh-CN" label="简体中文字幕">
+            <p>当前浏览器无法播放视频。请<a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC-V2-overview-zh-1080p.mp4">下载中文演示 MP4</a>，或阅读下方文字讲解。</p>
+          </video>
+        </div>
+        <div class="video-meta"><span>中文旁白 · 已烧录中文字幕 · 1920 × 1080 · 约 174 秒</span><a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC-V2-overview-zh-1080p.mp4">播放不畅？直接下载 MP4 ↓</a></div>
+        <p class="video-scope" id="video-scope">解读提示：视频及封面中的宣传表述，应限定为本批案例报告的区间宽度变化。更窄不等于更准确或校准已获证实；图以各自后验均值为中心比较宽度，不能据此判断位置、方向或因果关系。</p>
+        <details class="transcript">
+          <summary>阅读文字讲解与章节</summary>
+          <ol>
+            <li><time>00:00</time><strong>对比问题：</strong>对同一批案例数据，在相同公开分析设置下，查看 V1 与 V2 报告的区间宽度。</li>
+            <li><time>00:22</time><strong>两个概念：</strong>回归系数描述模型中的关联；95% 可信区间是在给定数据和模型假设下的后验概率区间。宽度应结合模型与诊断解读。</li>
+            <li><time>00:46</time><strong>三个案例：</strong>全球健康预期寿命、中国 COVID-19、美国乙肝，分别展示连续型、二分类与计数型结果。</li>
+            <li><time>01:00</time><strong>时间维度：</strong>材料报告三个案例的时间区间宽度汇总分别约缩小 99%、94%、99%。</li>
+            <li><time>01:30</time><strong>时间汇总：</strong>三个案例共有 22 个解释变量条目、372 个时间区间，材料报告全部变窄。</li>
+            <li><time>01:40</time><strong>空间维度：</strong>空间宽度汇总分别约缩小 38%、87%、98%；2,330 个空间区间中 96.7% 变窄，健康预期寿命的无共享边界地区基本持平。</li>
+            <li><time>02:10</time><strong>结果解读：</strong>本页聚焦区间宽度。素材还称三项拟合指标大体相近，但没有在此提供原值、等价标准或全面诊断，不能据此认定全面优越。</li>
+            <li><time>02:40</time><strong>开始使用：</strong>选择对应语言的桌面版，按 V2 用户指南准备数据并重新运行分析。免费下载，科研使用。</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+    <section class="section download-section" id="download" aria-labelledby="download-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="section-number">03 / 开始探索</span><h2 id="download-title">让时空分析，<br>走进你的桌面。</h2></div>
+          <p class="section-intro">通过图形界面开展贝叶斯时空分析。选择适合自己的语言版本，参考对应指南，从案例到自己的研究数据。</p>
+        </div>
+        <div class="download-grid">
+          <article class="download-card">
+            <span class="edition-label">中文版 · CHINESE EDITION</span><h3>BSTVC 中文桌面版</h3><p>中文安装器通过独立百度网盘入口提供。中文与英文安装器是不同语言版本的文件，请按自己的需要选择。</p>
+            <a class="button button-primary" href="https://pan.baidu.com/s/5h7zSPjXEvBINShxLVLjirA">下载中文桌面版 <span aria-hidden="true">↗</span></a><br>
+            <a class="text-link" href="../../zh/assets/bstvc-user-guide.html">阅读中文用户指南 ↗</a>
+          </article>
+          <article class="download-card secondary">
+            <span class="edition-label">英文版 · ENGLISH EDITION</span><h3>BSTVC English V2</h3><p>Windows x64 英文安装器 · 版本 26.10.25</p>
+            <a class="button button-outline" href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC_desktop_EN_win_x64_26.10.25_setup.exe" hreflang="en">下载英文安装器 <span aria-hidden="true">↓</span></a><br>
+            <a class="text-link" href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.10.25">GitHub Release 与资产 ↗</a>
+            <dl class="release-details"><dt>发布日期</dt><dd><time datetime="2026-11-04">2026 年 11 月 4 日</time></dd><dt>英文包大小</dt><dd>547,613,237 字节（约 522.2 MiB）</dd><dt>英文包 SHA-256</dt><dd class="hash">63c7873b351037de85282ac7da0febbdc6363d3579f4f39bf68b4eeca31ff0b7</dd></dl>
+          </article>
+        </div>
+        <p class="edition-note">免费下载，科研使用；具体使用条件以对应版本许可与说明为准。上述版本号、大小和 SHA-256 仅对应英文安装器，不适用于中文网盘文件。</p>
+        <div class="getting-started"><p>先阅读本版数据要求与案例说明，再准备数据并重新运行 V2 分析。将模型假设、数据质量与诊断结果一同纳入解读。</p><a href="../../zh/assets/bstvc-user-guide.html">打开中文用户指南 ↗</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><div><p>BSTVC 桌面版 · 贝叶斯时空分析</p><p>案例图与统计摘要来源：所提供的 BSTVC V2 三案例对比材料 V04。</p></div><nav class="footer-links" aria-label="页脚导航"><a href="../">中文首页</a><a href="https://chaosong.blog/">宋超 Chao Song</a><a href="/BSTVC-Desktop/v2/" lang="en" hreflang="en">English</a><a href="#main">返回顶部 ↑</a></nav></div></footer>
+</body>
+</html>

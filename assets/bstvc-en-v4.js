@@ -578,18 +578,18 @@
     const section = document.querySelector("#download");
     if (!section) return;
     const title = section.querySelector("h2");
-    if (title) title.innerHTML = 'BSTVC Desktop installer update.<br><span>V2 will be provided later.</span>';
+    if (title) title.innerHTML = 'BSTVC Desktop V2.<br><span>Explore time and space with credible intervals.</span>';
     const intro = section.querySelector(".download-copy > p:not(.section-kicker)");
-    if (intro) intro.textContent = "The English Windows installer v2026.8.1 has been withdrawn because it contains a bug. Please do not use this installer. A new V2 installer will be provided later.";
+    if (intro) intro.textContent = "BSTVC Desktop V2 is available for Windows x64. Explore the three-case interval comparison, download the English installer, and follow the current user guide.";
 
     const actions = section.querySelector(".download-actions");
     if (actions) actions.innerHTML = `
-      <div class="download-resource-card download-resource-primary is-coming-soon" data-resource="INSTALLER STATUS" role="status" aria-label="Installer withdrawn; V2 coming soon">
-        <span class="download-resource-meta"><i>01</i><b>ENGLISH DESKTOP</b><em>V2 SOON</em></span>
-        <strong>Installer withdrawn · V2 coming soon</strong>
-        <p>The English Windows installer v2026.8.1 has been removed because it contains a bug. Please do not use this installer.</p>
-        <span class="download-resource-action">A new V2 installer will be provided later.</span>
-      </div>
+      <a class="download-resource-card download-resource-primary" data-resource="DOWNLOAD V2" href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC_desktop_EN_win_x64_26.10.25_setup.exe" aria-label="Download BSTVC Desktop V2 English installer for Windows x64">
+        <span class="download-resource-meta"><i>01</i><b>ENGLISH DESKTOP V2</b><em>WIN x64</em></span>
+        <strong>Download BSTVC Desktop V2</strong><p>Version 26.10.25 · Published 4 November 2026 · 548 MB</p>
+        <span class="download-resource-sha"><b>SHA-256</b><code>63c7873b351037de85282ac7da0febbdc6363d3579f4f39bf68b4eeca31ff0b7</code></span>
+        <span class="download-resource-action">Download English Windows installer <i>↓</i></span></a>
+      <a class="download-resource-card" data-resource="V2 OVERVIEW" href="./v2/" target="_blank" rel="noopener noreferrer"><span class="download-resource-meta"><i>V2</i><b>WHAT IS NEW</b><em>NEW</em></span><strong>Explore the V2 update</strong><p>Three public cases, temporal and spatial credible intervals, and a visual guide.</p><span class="download-resource-action">Open V2 overview ↗</span></a>
       <a class="download-resource-card" data-resource="DESKTOP REPOSITORY" href="https://github.com/bayesianstvc/BSTVC-Desktop" target="_blank" rel="noreferrer">
         <span class="download-resource-meta"><i>02</i><b>DESKTOP</b><em>GITHUB</em></span>
         <strong>BSTVC-Desktop Repository</strong>
@@ -625,7 +625,7 @@
       const caption = packagePanel.querySelector("figcaption");
       if (caption) caption.textContent = "BSTVC Desktop · English interface · Data preparation, modeling, and results workflow";
       const label = packagePanel.querySelector(":scope > span");
-      if (label) label.textContent = "ENGLISH RELEASE / 2026.8.1";
+      if (label) label.textContent = "ENGLISH DESKTOP V2 / 26.10.25";
       const list = packagePanel.querySelector("ul");
       if (list) list.innerHTML = `
         <li><span>01</span> Windows x64 installer</li>
