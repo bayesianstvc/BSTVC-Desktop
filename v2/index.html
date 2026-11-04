@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What’s new in BSTVC V2 · Three public case studies</title>
-  <meta name="description" content="Explore BSTVC V2 through credible-interval comparisons for global health-adjusted life expectancy, COVID-19 in China and hepatitis B in the United States. Download the English Windows edition.">
+  <meta name="description" content="Explore BSTVC V2 through three public case studies and an English video overview of temporal and spatial credible-interval comparisons. Download the English Windows edition.">
   <meta name="theme-color" content="#061b27">
   <link rel="canonical" href="https://bayesianstvc.github.io/BSTVC-Desktop/v2/">
   <link rel="alternate" hreflang="en" href="https://bayesianstvc.github.io/BSTVC-Desktop/v2/">
@@ -45,7 +45,7 @@
           <p class="hero-lede">How do reported associations vary across time and place? Explore the V2 update through three public case studies, comparing the interval widths reported by V1 and V2.</p>
           <div class="actions">
             <a class="button button-primary" href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC_desktop_EN_win_x64_26.10.25_setup.exe">Download English edition <span aria-hidden="true">↓</span></a>
-            <a class="button button-outline" href="#comparison">Explore the comparisons <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#video">Watch the English overview <span aria-hidden="true">▷</span></a>
           </div>
           <p class="hero-footnote">Windows x64 · English installer 26.10.25 · Free download for research use</p>
         </div>
@@ -118,13 +118,32 @@
     <section class="section video-section" id="video" aria-labelledby="video-title">
       <div class="container">
         <div class="section-heading">
-          <div><span class="section-number">02 / THE WALKTHROUGH</span><h2 id="video-title">English video<br>coming later.</h2></div>
-          <p class="section-intro">The comparison table and captions above are available in English. The current narrated overview is in Chinese, with Chinese subtitles, and is available separately on the Chinese page.</p>
+          <div><span class="section-number">02 / THE WALKTHROUGH</span><h2 id="video-title">2 minutes 50 seconds.<br>See the V2 comparisons.</h2></div>
+          <p class="section-intro">An English-narrated overview with English subtitles introduces regression coefficients, credible intervals, and the temporal and spatial results from the three public cases. The video loads only when you press play.</p>
         </div>
-        <div class="video-status">
-          <span class="status-symbol" aria-hidden="true">▷</span>
-          <div><h3>Prefer to watch the Chinese overview?</h3><p>The 2-minute 54-second overview introduces the three cases and their interval-width comparisons. Its promotional wording should be read alongside the scientific scope described above.</p><a href="/BSTVC-Desktop/zh/v2/#video" hreflang="zh-CN">Watch on the Chinese V2 page <span aria-hidden="true">↗</span></a></div>
+        <div class="video-panel">
+          <video controls playsinline preload="none" width="1920" height="1080" poster="../assets/v2/overview-en-poster.jpg" aria-label="BSTVC V2 three-case comparison: English overview" aria-describedby="video-scope">
+            <source src="../assets/v2/overview-en.mp4" type="video/mp4">
+            <track kind="captions" src="../assets/v2/overview-en.vtt" srclang="en" label="English captions">
+            <p>Your browser cannot play this video. <a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC-V2-overview-en-1080p.mp4">Download the English MP4</a>, or read the text walkthrough below.</p>
+          </video>
         </div>
+        <div class="video-meta"><span>English narration · Burned-in English subtitles · 1920 × 1080 · 170 seconds</span><a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC-V2-overview-en-1080p.mp4">Playback issues? Download the MP4 ↓</a></div>
+        <p class="video-scope" id="video-scope">Reading note: the video and poster describe reported interval-width changes in these cases. Narrower intervals alone do not establish greater accuracy, adequate calibration or causal effects. The comparison figures centre intervals on their respective posterior means to compare widths; unchanged coefficient locations or directions should not be inferred from the presentation.</p>
+        <details class="transcript">
+          <summary>Read the text walkthrough and chapters</summary>
+          <ol>
+            <li><time>00:00</time><strong>The comparison:</strong> examine the interval widths reported by V1 and V2 using the same case-study data and matching public analysis settings.</li>
+            <li><time>00:20</time><strong>Two key terms:</strong> a regression coefficient describes a modelled association. A 95% credible interval is a posterior probability interval conditional on the data and model assumptions; read its width alongside those assumptions and diagnostics.</li>
+            <li><time>00:44</time><strong>Three public cases:</strong> global health-adjusted life expectancy, COVID-19 in China and hepatitis B in the United States illustrate continuous, binary and count outcomes.</li>
+            <li><time>01:00</time><strong>Temporal coefficients:</strong> the materials report case-level width summaries approximately 99%, 94% and 99% narrower, respectively.</li>
+            <li><time>01:30</time><strong>Temporal summary:</strong> the three cases contain 22 explanatory-variable entries and 372 temporal intervals; the materials report that all became narrower.</li>
+            <li><time>01:40</time><strong>Spatial coefficients:</strong> case-level width summaries were approximately 38%, 87% and 98% narrower. The materials report narrowing for 96.7% of 2,330 spatial intervals; HALE areas without shared-border neighbours remained broadly similar.</li>
+            <li><time>02:10</time><strong>Interpretation:</strong> this page focuses on widths. The materials also describe three fit measures as broadly similar, but do not supply their raw values or an equivalence criterion here; this does not establish superiority across applications.</li>
+            <li><time>02:36</time><strong>Get started:</strong> choose a language edition, follow the V2 guide, prepare your data and run a new analysis. The desktop app is a free download for research use.</li>
+          </ol>
+        </details>
+        <p class="video-scope">Prefer Chinese? <a href="/BSTVC-Desktop/zh/v2/#video" lang="zh-CN" hreflang="zh-CN">观看中文版演示 ↗</a></p>
       </div>
     </section>
     <section class="section download-section" id="download" aria-labelledby="download-title">

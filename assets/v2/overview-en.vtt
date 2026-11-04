@@ -1,0 +1,137 @@
+WEBVTT
+
+1
+00:00:00.440 --> 00:00:02.340
+Same data. Same settings.
+
+2
+00:00:02.503 --> 00:00:05.378
+We only upgraded the software. What changed?
+
+3
+00:00:07.640 --> 00:00:11.353
+The credible intervals of the space-time coefficients got much narrower.
+
+4
+00:00:11.770 --> 00:00:15.720
+In plain terms: we can now say how much each factor matters,
+
+5
+00:00:15.707 --> 00:00:17.408
+with far less uncertainty.
+
+6
+00:00:20.340 --> 00:00:22.077
+First, two key terms.
+
+7
+00:00:22.240 --> 00:00:26.102
+A regression coefficient tells you how much a factor affects the outcome.
+
+8
+00:00:26.530 --> 00:00:30.355
+A credible interval is the range where that effect most likely lies.
+
+9
+00:00:30.780 --> 00:00:34.617
+A forecast of 41 to 95 °F tells you nothing.
+
+10
+00:00:34.793 --> 00:00:37.680
+64 to 72 °F, and you know what to wear.
+
+11
+00:00:38.110 --> 00:00:42.635
+The narrower the range, the more certain the estimate, and the clearer the conclusion.
+
+12
+00:00:44.340 --> 00:00:46.827
+We compared three public case studies:
+
+13
+00:00:46.852 --> 00:00:52.902
+global healthy life expectancy, COVID-19 in China, and hepatitis B in the US.
+
+14
+00:00:53.065 --> 00:00:57.690
+We ran each one in both versions and measured how wide the intervals were.
+
+15
+00:01:00.340 --> 00:01:05.128
+First, temporal coefficients: how a factor's effect changes from year to year.
+
+16
+00:01:05.328 --> 00:01:12.990
+Global healthy life expectancy: 99% narrower, just 1/69 of the original width.
+
+17
+00:01:14.340 --> 00:01:20.040
+COVID-19 in China: 94% narrower, 1/16 of the width.
+
+18
+00:01:22.340 --> 00:01:27.690
+Hepatitis B in the US: 99% narrower, 1/100 of the width.
+
+19
+00:01:30.240 --> 00:01:35.202
+3 cases, 22 predictors, 372 temporal intervals.
+
+20
+00:01:35.365 --> 00:01:37.127
+Every single one got narrower.
+
+21
+00:01:40.340 --> 00:01:45.615
+Next, spatial coefficients: how the same factor's effect differs from place to place.
+
+22
+00:01:48.240 --> 00:01:52.127
+Global healthy life expectancy: 38% narrower.
+
+23
+00:01:52.290 --> 00:01:55.503
+Every country that shares a border got narrower intervals.
+
+24
+00:01:58.340 --> 00:02:02.490
+COVID-19 in China: 87% narrower.
+
+25
+00:02:04.340 --> 00:02:08.190
+Hepatitis B in the US: 98% narrower.
+
+26
+00:02:10.340 --> 00:02:11.303
+Here's the summary.
+
+27
+00:02:11.465 --> 00:02:15.490
+Temporal coefficients: intervals more than 90% narrower.
+
+28
+00:02:15.653 --> 00:02:19.640
+Spatial coefficients: 38–98% narrower.
+
+29
+00:02:19.802 --> 00:02:22.240
+Model fit: on par with the old version.
+
+30
+00:02:22.720 --> 00:02:26.695
+In short: more certain estimates, with no loss in model fit.
+
+31
+00:02:28.340 --> 00:02:31.852
+BSTVC. Making space and time explainable.
+
+32
+00:02:32.270 --> 00:02:34.820
+Narrower intervals. Clearer conclusions.
+
+33
+00:02:36.440 --> 00:02:41.590
+BSTVC Desktop V2 is free to download for research. No coding needed.
+
+34
+00:02:41.753 --> 00:02:45.715
+Scan the code, or visit the BSTVC homepage to get started.
