@@ -578,9 +578,9 @@
     const section = document.querySelector("#download");
     if (!section) return;
     const title = section.querySelector("h2");
-    if (title) title.innerHTML = 'BSTVC Desktop V2.<br><span>Explore time and space with credible intervals.</span>';
+    if (title) title.innerHTML = 'BSTVC Desktop V2.<br><span>Narrower intervals in three public cases.</span>';
     const intro = section.querySelector(".download-copy > p:not(.section-kicker)");
-    if (intro) intro.textContent = "BSTVC Desktop V2 is available for Windows x64. Explore the three-case interval comparison, download the English installer, and follow the current user guide.";
+    if (intro) intro.textContent = "Three public V1/V2 comparisons report approximately 94–99% narrower temporal and 38–98% narrower spatial 95% credible-interval width summaries. Explore the results and English video, then download V2 for Windows x64. These are case-specific width comparisons; narrower intervals alone do not establish greater accuracy or calibration.";
 
     const actions = section.querySelector(".download-actions");
     if (actions) actions.innerHTML = `
@@ -589,7 +589,7 @@
         <strong>Download BSTVC Desktop V2</strong><p>Version 26.10.25 · Published 4 November 2026 · 548 MB</p>
         <span class="download-resource-sha"><b>SHA-256</b><code>63c7873b351037de85282ac7da0febbdc6363d3579f4f39bf68b4eeca31ff0b7</code></span>
         <span class="download-resource-action">Download English Windows installer <i>↓</i></span></a>
-      <a class="download-resource-card" data-resource="V2 OVERVIEW" href="./v2/" target="_blank" rel="noopener noreferrer"><span class="download-resource-meta"><i>V2</i><b>WHAT IS NEW</b><em>NEW</em></span><strong>Explore the V2 update</strong><p>Three public cases, temporal and spatial credible intervals, and a visual guide.</p><span class="download-resource-action">Open V2 overview ↗</span></a>
+      <a class="download-resource-card" data-resource="V2 OVERVIEW" href="./v2/" target="_blank" rel="noopener noreferrer"><span class="download-resource-meta"><i>V2</i><b>WHAT IS NEW</b><em>NEW</em></span><strong>V2: narrower reported credible intervals</strong><p>Three-case width summaries: temporal ≈94–99% narrower · spatial ≈38–98% narrower. English video and case comparisons.</p><span class="download-resource-action">See results &amp; watch the English video ↗</span></a>
       <a class="download-resource-card" data-resource="DESKTOP REPOSITORY" href="https://github.com/bayesianstvc/BSTVC-Desktop" target="_blank" rel="noreferrer">
         <span class="download-resource-meta"><i>02</i><b>DESKTOP</b><em>GITHUB</em></span>
         <strong>BSTVC-Desktop Repository</strong>
@@ -1069,8 +1069,8 @@
   }
 
   function applyStructuredMetadata() {
-    document.title = "BSTVC | Desktop";
-    document.querySelector('meta[name="description"]')?.setAttribute("content", "BSTVC is an open-source Bayesian framework and English desktop tool for ante-hoc spatiotemporal interpretability, key-driver identification, and dynamic prediction.");
+    document.title = "BSTVC Desktop V2 | Three-case interval comparisons";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", "BSTVC is an open-source Bayesian framework and English desktop tool for spatiotemporal interpretability. Explore V2’s narrower reported credible intervals in three public cases, with guides, videos and Windows downloads.");
   }
 
   function wireMobileModelDisclosure() {

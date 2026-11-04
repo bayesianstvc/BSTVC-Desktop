@@ -18,7 +18,9 @@
 
 [What is new in V2](https://bayesianstvc.github.io/BSTVC-Desktop/v2/) · [中文 V2 更新与讲解视频](https://bayesianstvc.github.io/BSTVC-Desktop/zh/v2/)
 
-The supplied three-case comparison reports narrower temporal and spatial 95% credible intervals. These case-specific width comparisons do not by themselves establish accuracy, calibration, or causal effects.
+**V2’s headline case-study result: narrower reported credible intervals.** Across three public cases, summaries of 95% credible-interval widths were approximately **94%–99% narrower for temporal coefficients** and **38%–98% narrower for spatial coefficients** than in V1. [Explore the V2 comparison](https://bayesianstvc.github.io/BSTVC-Desktop/v2/) · [Watch the English overview](https://bayesianstvc.github.io/BSTVC-Desktop/v2/#video).
+
+These are approximate case-level median summaries, not a common reduction for every interval; accuracy and calibration require assessment alongside the model and diagnostics.
 
 **[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/)** · **[桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)** · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
@@ -138,7 +140,7 @@ BSTVC Desktop organizes model output around a transparent evidence chain:
 
 ## Quick start
 
-1. **Check installer availability.** The English Windows installer is withdrawn; wait for the replacement V2 before installing. Use the online guide and case datasets to prepare in the meantime.
+1. **Download V2.** Get the English Windows installer, verify the version and SHA-256 listed above, and follow the English online guide to install the app and run a case study.
 2. **Prepare** a spatial map and model-ready spatiotemporal panel table.
 3. **Validate** map-unit identifiers and observation order in **Data Check**.
 4. **Start with STVC** for a first local spatiotemporal analysis, then extend to STIVC or STVPI when the research question requires interaction or global contribution.
@@ -193,6 +195,6 @@ For an extended publication and application record, visit the **[BSTVC brand web
 
 HEOA–West China Health & Medical Geography Group
 
-[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/) · [桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) · [Download](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.10.25) · [User guide](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · **[BSTVC brand website](https://bayesianstvc.github.io/)**
+[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/) · [桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) · [Download](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.10.25) · [English user guide](https://bayesianstvc.github.io/BSTVC-Desktop/guide/) · [中文用户指南](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
 </div>
