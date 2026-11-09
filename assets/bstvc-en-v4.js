@@ -421,7 +421,7 @@
     ["TestData_Continuous.csv + TestMap_Continuous 完整 Shapefile", "TestData_Continuous.csv + complete TestMap_Continuous Shapefile set"],
     ["BSTVC-R 首次公开发布：将 STVC 系列模型、示例数据、安装说明与可复现分析流程整合为开放研究工具。", "First public release of BSTVC-R, integrating the STVC model family, example data, installation guidance, and reproducible workflows."],
     ["面向 BSTVC 桌面版的轻量资源监视器：观察模型计算期间的 CPU、内存与线程状态，帮助选择更快、更稳的参数。", "A lightweight resource monitor for BSTVC Desktop that tracks CPU, memory, and thread states during model computation to support faster, more stable settings."],
-    ["bayesianstvc/BSTVC-R 以“full-map”框架统一支持连续型、二分类和计数型响应，输出局部机制、关键驱动与动态预测。", "bayesianstvc/BSTVC-R supports continuous, binary, and count responses within a full-map framework, producing local mechanisms, key-driver evidence, and dynamic predictions."],
+    ["bayesianstvc/BSTVC-R 以“full-map”框架统一支持连续型、二分类和计数型响应，输出局部机制、关键驱动与动态预测。", "BSTVC-R is the earlier V1 research prototype. Use BSTVC Desktop V2 for the latest analysis workflow."],
     ["仓库提供 GetStart.Rmd、英文/中文 PDF、数据预处理脚本与 GitHub Issues；桌面版适合零代码复现，R 包适合批量研究。", "The repository provides GetStart.Rmd, English and Chinese PDFs, preprocessing scripts, and GitHub Issues. Desktop supports no-code reproduction; the R package supports batch research."],
     ["页面端仅提交站点标识与匿名访问事件；前端不读取或展示原始 IP。统计接口不可用或设备离线时，仅保留地图底图与离线状态，不生成访问点。", "The page sends only a site identifier and anonymous visit event; it neither reads nor displays raw IP addresses. When the statistics service is unavailable or the device is offline, only the base map and offline state remain, with no visitor points generated."],
     ["不同数据规模、模型结构与电脑配置对应不同的资源工作点。建议先使用 BSTVC 默认 6 线程，再以相近模型的真实运行轨迹比较 8 或 12 线程。", "Different data scales, model structures, and hardware configurations have different resource sweet spots. Start with the BSTVC default of six threads, then compare eight or 12 using real trajectories from similar models."],
@@ -692,7 +692,7 @@
         <h4>One framework. Multiple ways to explore.</h4>
       </div>
       <div class="organization-products" aria-label="Four BSTVC open-source products">
-        <a href="https://github.com/bayesianstvc/BSTVC-R" target="_blank" rel="noreferrer"><b>BSTVC-R</b><span>Modeling package</span></a>
+        <a href="https://github.com/bayesianstvc/BSTVC-R" target="_blank" rel="noreferrer"><b>BSTVC-R</b><span>V1 research prototype</span></a>
         <a href="https://github.com/bayesianstvc/BSTVC-Desktop" target="_blank" rel="noreferrer"><b>BSTVC-Desktop</b><span>No-code analysis</span></a>
         <a href="https://github.com/bayesianstvc/BSTVC-Shiny" target="_blank" rel="noreferrer"><b>BSTVC-Shiny</b><span>Interactive application</span></a>
         <a href="https://github.com/bayesianstvc/BSTVC-Monitor" target="_blank" rel="noreferrer"><b>BSTVC-Monitor</b><span>Resource diagnostics</span></a>

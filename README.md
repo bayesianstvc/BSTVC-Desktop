@@ -159,7 +159,7 @@ For complete English instructions, follow the **[online BSTVC Desktop User Guide
 | Choose | Best when you need |
 |:--|:--|
 | **BSTVC Desktop** | A graphical, guided workflow; lower setup cost; teaching; applied analysis; rapid inspection and export |
-| **[BSTVC-R](https://github.com/bayesianstvc/BSTVC-R)** | Scripted automation, customized analysis pipelines, reproducible batch processing, and advanced R integration |
+| **[BSTVC-R](https://github.com/bayesianstvc/BSTVC-R)** | Earlier V1 research prototype, available for reproducing published R workflows. [Get Desktop V2](https://bayesianstvc.github.io/BSTVC-Desktop/) for the latest release. |
 
 Both interfaces belong to the same BSTVC research ecosystem. The desktop edition is the recommended entry point for most new users; the R package remains available for programmable workflows.
 
@@ -177,7 +177,7 @@ BSTVC is designed for spatiotemporal panel and areal research in GIScience, spat
 - **Official feedback email:** [bstvc.research@gmail.com](mailto:bstvc.research@gmail.com) for method, desktop, and R package questions. See the [Chinese feedback checklist](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#feedback) for reproducible reports.
 - **Bug reports and feature requests:** [BSTVC-Desktop Issues](https://github.com/bayesianstvc/BSTVC-Desktop/issues)
 - **Statistical framework:** [BSTVC brand website](https://bayesianstvc.github.io/)
-- **R package:** [bayesianstvc/BSTVC-R](https://github.com/bayesianstvc/BSTVC-R)
+- **R package (V1 research prototype):** [bayesianstvc/BSTVC-R](https://github.com/bayesianstvc/BSTVC-R)
 - **Desktop development:** [Xianteng Tang](https://tangxxxxt.github.io/)
 - **Project leadership and statistical methodology:** [Chao Song](https://chaosong.blog/)
 
