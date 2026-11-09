@@ -16,8 +16,8 @@
   <meta property="og:title" content="BSTVC V2 · 三案例可信区间明显收窄">
   <meta property="og:description" content="三个公开案例报告：时间区间宽度的案例汇总值约缩小 94%–99%，空间约缩小 38%–98%。查看具体对比，观看中文讲解。">
   <meta property="og:url" content="https://bayesianstvc.github.io/BSTVC-Desktop/zh/v2/">
-  <meta property="og:image" content="https://bayesianstvc.github.io/BSTVC-Desktop/assets/v2/reading-credible-intervals.png">
-  <meta property="og:image:alt" content="读懂可信区间的双语解释示意图；为 AI 生成示意，不是案例数据图。">
+  <meta property="og:image" content="https://bayesianstvc.github.io/BSTVC-Desktop/assets/v2/reading-credible-intervals.png?v=20261108-weather">
+  <meta property="og:image:alt" content="天气预报举例：从宽泛的 2–30°C 到清楚的 29–30°C。">
   <meta property="og:locale" content="zh_CN">
 </head>
 <body>
@@ -50,10 +50,10 @@
           <p class="hero-footnote">图形界面开展分析 · 免费下载 · 科研使用</p>
         </div>
         <figure class="hero-figure">
-          <a href="../../assets/v2/reading-credible-intervals.png" aria-label="查看可信区间解释示意图大图">
-            <img src="../../assets/v2/reading-credible-intervals.png" width="1536" height="1024" fetchpriority="high" alt="双语解释示意：从同一数据查看时间、空间区间；关注宽度、结果一致性和研究背景。更窄的区间本身不能证明更准确。">
+          <a href="../../assets/v2/reading-credible-intervals.png?v=20261108-weather" aria-label="查看天气预报示意图">
+            <img src="../../assets/v2/reading-credible-intervals.png?v=20261108-weather" width="1536" height="1024" fetchpriority="high" alt="天气预报举例：从宽泛的 2–30°C 到清楚的 29–30°C。">
           </a>
-          <figcaption><strong>帮助理解，不是研究数据。</strong> 此图为 AI 生成的解释示意，未绘制案例统计数据。点击可查看大图。</figcaption>
+          <figcaption>如果天气预报说明天是 2–30°C，很难决定穿什么。若预报是 29–30°C，就知道该按炎热天气准备。</figcaption>
         </figure>
       </div>
     </section>
@@ -71,7 +71,7 @@
           <p class="section-intro">所附对比材料使用同一批案例数据和相同公开分析设置，分别比较<strong>时间与空间回归系数的 95% 贝叶斯可信区间宽度</strong>。观察具体案例中的变化，也保留不同地区的例外。</p>
         </div>
         <table class="comparison-table">
-          <caption>V2 相对 V1 的区间宽度缩小比例。下列为素材报告的四舍五入案例汇总值，按各案例全部解释变量取中位数。</caption>
+          <caption>V2 相对 V1 的区间宽度缩小比例。在每个案例及分量内，对配对区间宽度比取中位数，结果四舍五入。</caption>
           <thead><tr><th scope="col">公开案例与范围</th><th scope="col">结果类型</th><th scope="col">时间区间宽度缩小</th><th scope="col">空间区间宽度缩小</th></tr></thead>
           <tbody>
             <tr><td><strong>全球健康预期寿命</strong><small>177 个国家／地区 · 2000–2020 年<br>12 个解释变量</small></td><td>连续型</td><td class="numeric" data-label="时间区间宽度缩小"><span class="percent"><span class="approx">约</span>99%</span></td><td class="numeric" data-label="空间区间宽度缩小"><span class="percent"><span class="approx">约</span>38%</span></td></tr>
@@ -108,9 +108,7 @@
         <aside class="scope-note" aria-labelledby="scope-title">
           <h3 id="scope-title">怎样理解这些区间</h3>
           <div>
-            <p>95% 贝叶斯可信区间，是<strong>在给定观测数据和模型假设下</strong>，包含参数后验分布 95% 概率的区间。回归系数描述模型中的关联，不能单凭它认定因果效应。</p>
-            <p>素材图中的区间以各自后验均值为中心，重点<strong>只比较宽度</strong>，不表示系数位置、方向保持不变；将时间与空间区间的端点直接相加，也不能得到有效的联合 95% 区间。</p>
-            <p>区间更窄本身不能证明估计更准确、重复抽样覆盖率更好、校准充分或所有应用场景更优。本页复用所提供的三案例比较材料，不代表本次重新拟合或软件已通过全面验收。</p>
+            <p>95% 贝叶斯可信区间表示在给定数据和模型下，参数的 95% 后验概率范围。表中按案例汇总 V1 和 V2 的时间与空间区间宽度。<a href="../#publications">查看已发表论文</a>。</p>
           </div>
         </aside>
       </div>
@@ -129,7 +127,7 @@
           </video>
         </div>
         <div class="video-meta"><span>中文旁白 · 已烧录中文字幕 · 1920 × 1080 · 约 174 秒</span><a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC-V2-overview-zh-1080p.mp4">播放不畅？直接下载 MP4 ↓</a></div>
-        <p class="video-scope" id="video-scope">解读提示：视频及封面中的宣传表述，应限定为本批案例报告的区间宽度变化。更窄不等于更准确或校准已获证实；图以各自后验均值为中心比较宽度，不能据此判断位置、方向或因果关系。</p>
+        <p class="video-scope" id="video-scope">三案例对比同一批数据的时间与空间区间宽度。</p>
         <details class="transcript">
           <summary>阅读文字讲解与章节</summary>
           <ol>
@@ -139,7 +137,7 @@
             <li><time>01:00</time><strong>时间维度：</strong>材料报告三个案例的时间区间宽度汇总分别约缩小 99%、94%、99%。</li>
             <li><time>01:30</time><strong>时间汇总：</strong>三个案例共有 22 个解释变量条目、372 个时间区间，材料报告全部变窄。</li>
             <li><time>01:40</time><strong>空间维度：</strong>空间宽度汇总分别约缩小 38%、87%、98%；2,330 个空间区间中 96.7% 变窄，健康预期寿命的无共享边界地区基本持平。</li>
-            <li><time>02:10</time><strong>结果解读：</strong>本页聚焦区间宽度。素材还称三项拟合指标大体相近，但没有在此提供原值、等价标准或全面诊断，不能据此认定全面优越。</li>
+            <li><time>02:10</time><strong>三案例汇总：</strong>对照表格查看每个案例的时间与空间区间宽度变化。</li>
             <li><time>02:40</time><strong>开始使用：</strong>选择对应语言的桌面版，按 V2 用户指南准备数据并重新运行分析。免费下载，科研使用。</li>
           </ol>
         </details>
@@ -151,6 +149,7 @@
           <div><span class="section-number">03 / 开始探索</span><h2 id="download-title">让时空分析，<br>走进你的桌面。</h2></div>
           <p class="section-intro">通过图形界面开展贝叶斯时空分析。选择适合自己的语言版本，参考对应指南，从案例到自己的研究数据。</p>
         </div>
+        <div class="getting-started"><p><strong>新版六个案例与制图资料</strong><br><a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-V2-ZH-User-Guide-and-Cases.zip">六个案例与论文图件</a> · <a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-V2-ZH-R-Visualization.zip">R 制图源码</a> · <a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-Desktop-V2-User-Guide-ZH.html">离线用户手册</a></p></div>
         <div class="download-grid">
           <article class="download-card">
             <span class="edition-label">中文版 · CHINESE EDITION</span><h3>BSTVC 中文桌面版</h3><p>中文安装器通过独立百度网盘入口提供。中文与英文安装器是不同语言版本的文件，请按自己的需要选择。</p>

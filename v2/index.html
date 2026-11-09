@@ -16,8 +16,8 @@
   <meta property="og:title" content="BSTVC V2 · Narrower reported credible intervals">
   <meta property="og:description" content="Three public cases report approximately 94–99% narrower temporal and 38–98% narrower spatial interval-width summaries. Explore the comparisons and English video.">
   <meta property="og:url" content="https://bayesianstvc.github.io/BSTVC-Desktop/v2/">
-  <meta property="og:image" content="https://bayesianstvc.github.io/BSTVC-Desktop/assets/v2/reading-credible-intervals-en.png">
-  <meta property="og:image:alt" content="English illustrative guide to comparing credible intervals; schematic only, not research data.">
+  <meta property="og:image" content="https://bayesianstvc.github.io/BSTVC-Desktop/assets/v2/reading-credible-intervals-en.png?v=20261108-weather">
+  <meta property="og:image:alt" content="Weather forecast example: a broad 2–30°C range and a narrow 29–30°C range.">
   <meta property="og:locale" content="en_US">
 </head>
 <body>
@@ -50,10 +50,10 @@
           <p class="hero-footnote">Windows x64 · English installer 26.10.25 · Free download for research use</p>
         </div>
         <figure class="hero-figure">
-          <a href="../assets/v2/reading-credible-intervals-en.png" aria-label="Open the credible-interval reading illustration at full size">
-            <img src="../assets/v2/reading-credible-intervals-en.png" width="1536" height="1024" fetchpriority="high" alt="Schematic: the same data lead to temporal and spatial interval comparisons. Read widths carefully, assess consistency and interpret results in context. Narrower intervals do not establish accuracy.">
+          <a href="../assets/v2/reading-credible-intervals-en.png?v=20261108-weather" aria-label="Enlarge the weather forecast illustration">
+            <img src="../assets/v2/reading-credible-intervals-en.png?v=20261108-weather" width="1536" height="1024" fetchpriority="high" alt="Weather forecast example: a broad 2–30°C range and a narrow 29–30°C range.">
           </a>
-          <figcaption><strong>A guide to reading, not a research result.</strong> AI-generated explanatory schematic; no case-study data are plotted. Open the image for a larger view.</figcaption>
+          <figcaption>If tomorrow’s forecast is 2–30°C, it’s hard to know what to wear. A range of 29–30°C tells you to dress for heat.</figcaption>
         </figure>
       </div>
     </section>
@@ -71,7 +71,7 @@
           <p class="section-intro">The supplied comparison materials use the same case-study data and matching public analysis settings. They examine <strong>95% Bayesian credible-interval widths</strong> for temporal and spatial regression coefficients separately.</p>
         </div>
         <table class="comparison-table">
-          <caption>Approximate reductions in reported interval widths, V2 compared with V1. Case-level summaries are medians across explanatory variables, as reported in the supplied materials.</caption>
+          <caption>Approximate reductions in reported interval widths, V2 compared with V1. Each case and component is summarized by the median of paired interval-width ratios.</caption>
           <thead><tr><th scope="col">Public case study &amp; scope</th><th scope="col">Outcome type</th><th scope="col">Temporal width reduction</th><th scope="col">Spatial width reduction</th></tr></thead>
           <tbody>
             <tr><td><strong>Global health-adjusted life expectancy</strong><small>177 countries/territories · 2000–2020<br>12 explanatory variables</small></td><td>Continuous</td><td class="numeric" data-label="Temporal width reduction"><span class="percent"><span class="approx">≈</span>99%</span></td><td class="numeric" data-label="Spatial width reduction"><span class="percent"><span class="approx">≈</span>38%</span></td></tr>
@@ -108,9 +108,7 @@
         <aside class="scope-note" aria-labelledby="scope-title">
           <h3 id="scope-title">What the intervals tell us</h3>
           <div>
-            <p>A 95% Bayesian credible interval contains 95% of a parameter’s posterior probability, <strong>conditional on the observed data and model assumptions</strong>. A regression coefficient describes a modelled association; it does not by itself establish causation.</p>
-            <p>The supplied figures centre intervals on their respective posterior means to compare <strong>widths</strong>. They do not establish unchanged coefficient locations or directions. Adding endpoints of temporal and spatial intervals does not give a valid combined 95% interval.</p>
-            <p>Narrower intervals alone do not demonstrate greater accuracy, better repeated-sampling coverage, adequate calibration or superiority across applications. These are reported results from the supplied three-case comparison materials, rather than new fits for this page or comprehensive product validation.</p>
+            <p>A 95% Bayesian credible interval covers 95% of the posterior probability for a parameter given the data and model. The table compares temporal and spatial interval widths by case. <a href="../#publications">Read the published papers</a>.</p>
           </div>
         </aside>
       </div>
@@ -129,7 +127,7 @@
           </video>
         </div>
         <div class="video-meta"><span>English narration · Burned-in English subtitles · 1920 × 1080 · 170 seconds</span><a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC-V2-overview-en-1080p.mp4">Playback issues? Download the MP4 ↓</a></div>
-        <p class="video-scope" id="video-scope">Reading note: the video and poster describe reported interval-width changes in these cases. Narrower intervals alone do not establish greater accuracy, adequate calibration or causal effects. The comparison figures centre intervals on their respective posterior means to compare widths; unchanged coefficient locations or directions should not be inferred from the presentation.</p>
+        <p class="video-scope" id="video-scope">The video compares temporal and spatial interval widths across the three cases.</p>
         <details class="transcript">
           <summary>Read the text walkthrough and chapters</summary>
           <ol>
@@ -139,7 +137,7 @@
             <li><time>01:00</time><strong>Temporal coefficients:</strong> the materials report case-level width summaries approximately 99%, 94% and 99% narrower, respectively.</li>
             <li><time>01:30</time><strong>Temporal summary:</strong> the three cases contain 22 explanatory-variable entries and 372 temporal intervals; the materials report that all became narrower.</li>
             <li><time>01:40</time><strong>Spatial coefficients:</strong> case-level width summaries were approximately 38%, 87% and 98% narrower. The materials report narrowing for 96.7% of 2,330 spatial intervals; HALE areas without shared-border neighbours remained broadly similar.</li>
-            <li><time>02:10</time><strong>Interpretation:</strong> this page focuses on widths. The materials also describe three fit measures as broadly similar, but do not supply their raw values or an equivalence criterion here; this does not establish superiority across applications.</li>
+            <li><time>02:10</time><strong>Three-case summary:</strong> see the table for the temporal and spatial interval-width changes in each case.</li>
             <li><time>02:36</time><strong>Get started:</strong> choose a language edition, follow the V2 guide, prepare your data and run a new analysis. The desktop app is a free download for research use.</li>
           </ol>
         </details>
@@ -152,6 +150,7 @@
           <div><span class="section-number">03 / START EXPLORING</span><h2 id="download-title">Bring the analysis<br>to your desktop.</h2></div>
           <p class="section-intro">BSTVC Desktop offers a graphical workflow for Bayesian spatiotemporal analysis. Choose your language edition, follow its guide and run a new analysis with your own data.</p>
         </div>
+        <div class="getting-started"><p><strong>Six current cases and visualization resources</strong><br><a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-V2-EN-User-Guide-and-Cases.zip">Six cases and figures</a> · <a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-V2-EN-R-Visualization.zip">R visualization code</a> · <a href="https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-Desktop-V2-User-Guide-EN.html">Offline user guide</a></p></div>
         <div class="download-grid">
           <article class="download-card">
             <span class="edition-label">ENGLISH EDITION</span><h3>BSTVC Desktop V2</h3><p>English Windows x64 installer · Version 26.10.25</p>

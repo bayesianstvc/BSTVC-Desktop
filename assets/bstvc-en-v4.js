@@ -49,8 +49,8 @@
     ["利用 STVC / STIVC 分析影响因素在不同地点与时期的作用方向、强度和不确定性，回答“在哪里、何时、怎样影响”。", "Use STVC/STIVC to estimate the direction, magnitude, and uncertainty of covariate effects across places and periods—showing where, when, and how an effect operates."],
     ["TCs · SCs · 50/95% 可信区间", "TCs · SCs · 50/95% CREDIBLE INTERVALS"],
     ["全局时空可解释性", "Global Spatiotemporal Interpretability"],
-    ["利用 STVPI 量化解释因素的相对时空贡献，识别关键驱动因素及空间、时间变异来源。这些结果只能为时空归因研究提供重要证据，不构成归因或因果结论。", "Use STVPI to quantify each factor’s relative spatiotemporal contribution and identify key drivers and their spatial and temporal sources of variation. These contribution estimates provide an evidence base for subsequent causal research; they do not establish causation."],
-    ["STVPI · 相对贡献 · 归因证据", "STVPI · RELATIVE CONTRIBUTION · CONTRIBUTION EVIDENCE"],
+    ["利用 STVPI 量化解释因素的相对时空贡献，识别关键驱动因素及空间、时间变异来源。", "Use STVPI to quantify each factor’s relative spatiotemporal contribution and identify key drivers and their spatial and temporal sources of variation."],
+    ["STVPI · 相对贡献", "STVPI · RELATIVE CONTRIBUTION · CONTRIBUTION EVIDENCE"],
     ["时空动态预测", "Dynamic Spatiotemporal Prediction"],
     ["通过 STVI / STIVI 等模型开展缺失值填补、时空平滑与未来预测，构建连续可靠的时空数据。", "Use STVI/STIVI and related models for missing-value imputation, spatiotemporal smoothing, and forecasting to construct continuous, reliable spatiotemporal data."],
     ["预测 · 插补 · 时空平滑", "PREDICTION · IMPUTATION · SMOOTHING"],
@@ -259,7 +259,6 @@
     ["数据规模", "Data Scale"],
     ["上传上限设置为 1GB；计算量随空间单元、时间点、解释变量、响应类型和线程设置增加。", "The upload limit is 1 GB. Computational demand increases with spatial units, time points, explanatory variables, response type, and thread settings."],
     ["空间矩阵", "Spatial Matrix"],
-    ["点地图建议使用距离或 k 近邻；若 k 近邻矩阵出现 INLA 报错，可调整构建方式或更换矩阵类型。", "For point maps, use distance-based or k-nearest-neighbor matrices. If a kNN matrix triggers an INLA error, adjust its construction or use another matrix type."],
     ["当前二分类与计数模型未包含残差项，因此暂不能计算整体模型的解释百分比。", "The current binary and count models do not include a residual term, so an overall explained-percentage metric is not yet available."],
     ["非平稳假设", "Nonstationarity Assumption"],
     ["当前 BSTVC 默认全部解释变量具有时空非平稳性；更灵活的变量级设定属于后续扩展方向。", "BSTVC currently assumes spatiotemporal nonstationarity for all explanatory variables; more flexible variable-level settings are planned."],
@@ -270,7 +269,6 @@
 
     ["BSTVC Process Monitor：", "BSTVC Process Monitor:"],
     ["为线程参数找到合适的工作点。", "Find the Right Thread Setting."],
-    ["BSTVC 计算通常需要更高的 CPU 与内存资源。这个面向 Windows 的本地监视器，帮助用户观察真实的 INLA 进程，并选择更快、更稳的线程设置。", "BSTVC computation can be CPU- and memory-intensive. This local Windows monitor reveals real INLA resource use and helps users select faster, more stable thread settings."],
     ["线程数越高，", "More Threads"],
     ["不一定越快。", "Are Not Always Faster."],
     ["最佳参数取决于模型结构、数据规模、内存压力、处理器拓扑、散热和电源限制。监视器记录资源轨迹，帮助你在自己的电脑或工作站上比较线程设置。", "The best setting depends on model structure, data scale, memory pressure, processor topology, thermals, and power limits. The monitor records resource trajectories so you can compare thread settings on your own computer or workstation."],
@@ -281,8 +279,6 @@
     ["实时监测", "Live Monitoring"],
     ["参数比较", "Compare Settings"],
     ["本地输出", "Local Outputs"],
-    ["看见 INLA 正在怎样使用你的电脑", "See How INLA Uses Your Computer"],
-    ["监视一个或多个 inla.exe，持续记录整机 CPU、内存、线程、PID、运行时长和进程状态；主 CPU 曲线采用可直接对照 Windows 任务管理器的整机口径。", "Monitor one or more inla.exe processes and continuously record system-wide CPU, memory, threads, PID, runtime, and status. The main CPU series matches the system-wide metric shown by Windows Task Manager."],
     ["CPU mean / P95 / 高于阈值比例", "CPU mean / P95 / proportion above threshold"],
     ["当前与峰值线程数、内存占用", "Current and peak thread counts and memory use"],
     ["多个进程按 PID、开始时间和运行时长区分", "Distinguish multiple processes by PID, start time, and runtime"],
@@ -293,7 +289,6 @@
     ["已结束进程仍保留并明确标记", "Completed processes remain visible and clearly labeled"],
     ["资源记录留在本机，方便复盘与复现", "Keep Resource Records Local for Review and Reproducibility"],
     ["监视器通过 PowerShell 和浏览器本地运行，不需要云端服务，也不会上传进程数据；每次运行可保存 CSV、JSON 与本地 HTML 报告。", "The monitor runs locally through PowerShell and a browser, requires no cloud service, and uploads no process data. Each run can save CSV, JSON, and local HTML reports."],
-    ["默认目录：%LOCALAPPDATA%\\INLA-Resource-Monitor\\runs", "Default directory: %LOCALAPPDATA%\\INLA-Resource-Monitor\\runs"],
     ["可自定义输出目录、采样间隔和阈值", "Customizable output directory, sampling interval, and thresholds"],
     ["无需管理员账户，不永久修改 PowerShell 执行策略", "No administrator account or permanent PowerShell policy changes required"],
     ["推荐起点", "Recommended Start"],
@@ -367,7 +362,6 @@
     ["时空面板 Y(s,t)", "Spatiotemporal panel Y(s,t)"],
     ["局部系数 + 相对贡献", "Local coefficients + relative contributions"],
     ["时空趋势 + 动态预测", "Spatiotemporal trends + dynamic prediction"],
-    ["INLA 安装说明", "INLA Installation Guide"],
     ["BSTVC 后验方差结果", "BSTVC posterior variance components"],
     ["可比较、可量化、可复现。", "Comparable, Quantifiable, Reproducible."],
     ["衡量有效参数与复杂程度。", "Quantifies effective parameters and model complexity."],
@@ -428,12 +422,9 @@
     ["BSTVC-R 首次公开发布：将 STVC 系列模型、示例数据、安装说明与可复现分析流程整合为开放研究工具。", "First public release of BSTVC-R, integrating the STVC model family, example data, installation guidance, and reproducible workflows."],
     ["面向 BSTVC 桌面版的轻量资源监视器：观察模型计算期间的 CPU、内存与线程状态，帮助选择更快、更稳的参数。", "A lightweight resource monitor for BSTVC Desktop that tracks CPU, memory, and thread states during model computation to support faster, more stable settings."],
     ["bayesianstvc/BSTVC-R 以“full-map”框架统一支持连续型、二分类和计数型响应，输出局部机制、关键驱动与动态预测。", "bayesianstvc/BSTVC-R supports continuous, binary, and count responses within a full-map framework, producing local mechanisms, key-driver evidence, and dynamic predictions."],
-    ["BSTVC-R、Desktop User Guide、案例数据、INLA Resource Monitor 与官方网站共同组成开放研究工具链。", "BSTVC-R, the Desktop User Guide, case data, the INLA Resource Monitor, and the official website form an open research toolchain."],
     ["仓库提供 GetStart.Rmd、英文/中文 PDF、数据预处理脚本与 GitHub Issues；桌面版适合零代码复现，R 包适合批量研究。", "The repository provides GetStart.Rmd, English and Chinese PDFs, preprocessing scripts, and GitHub Issues. Desktop supports no-code reproduction; the R package supports batch research."],
     ["页面端仅提交站点标识与匿名访问事件；前端不读取或展示原始 IP。统计接口不可用或设备离线时，仅保留地图底图与离线状态，不生成访问点。", "The page sends only a site identifier and anonymous visit event; it neither reads nor displays raw IP addresses. When the statistics service is unavailable or the device is offline, only the base map and offline state remain, with no visitor points generated."],
     ["不同数据规模、模型结构与电脑配置对应不同的资源工作点。建议先使用 BSTVC 默认 6 线程，再以相近模型的真实运行轨迹比较 8 或 12 线程。", "Different data scales, model structures, and hardware configurations have different resource sweet spots. Start with the BSTVC default of six threads, then compare eight or 12 using real trajectories from similar models."],
-    ["DESCRIPTION 标注 R ≥ 4.4.0、INLA ≥ 24.06.27，采用 GPL-3 许可；模型评估覆盖 DIC、WAIC、pd 与 LS。", "DESCRIPTION specifies R ≥ 4.4.0 and INLA ≥ 24.06.27 under GPL-3; model assessment covers DIC, WAIC, pd, and LS."],
-    ["README 当前示例使用 devtools::install_github(\"songbi123/BSTVC\") 或 remotes::install_github(\"songbi123/BSTVC\")；INLA 建议先按官方说明安装。", "The current README uses devtools::install_github(\"songbi123/BSTVC\") or remotes::install_github(\"songbi123/BSTVC\"); install INLA first according to its official instructions."],
     ["model.evaluation 汇总 DIC、WAIC、eff、pd2 与 LS。比较候选模型时，DIC 与 WAIC 越小通常表示拟合表现越好；eff 与 pd2 反映有效参数和模型复杂度；LS 越接近 0，预测精度通常越高。", "model.evaluation summarizes DIC, WAIC, eff, pd2, and LS. For candidate models, smaller DIC and WAIC usually indicate better fit; eff and pd2 reflect effective parameters and complexity; LS values closer to zero generally indicate better predictive accuracy."],
     ["模型", "Model"],
     ["个人主页 ↗", "Profile ↗"],
@@ -580,7 +571,7 @@
     const title = section.querySelector("h2");
     if (title) title.innerHTML = 'BSTVC Desktop V2.<br><span>Narrower intervals in three public cases.</span>';
     const intro = section.querySelector(".download-copy > p:not(.section-kicker)");
-    if (intro) intro.textContent = "Three public V1/V2 comparisons report approximately 94–99% narrower temporal and 38–98% narrower spatial 95% credible-interval width summaries. Explore the results and English video, then download V2 for Windows x64. These are case-specific width comparisons; narrower intervals alone do not establish greater accuracy or calibration.";
+    if (intro) intro.textContent = "Three public V1/V2 comparisons report approximately 94–99% narrower temporal and 38–98% narrower spatial 95% credible-interval width summaries. Explore the results and English video, then download V2 for Windows x64. The percentages are case-level median summaries.";
 
     const actions = section.querySelector(".download-actions");
     if (actions) actions.innerHTML = `
@@ -604,8 +595,8 @@
       </a>
       <a class="download-resource-card" data-resource="CASE DATASET" href="./guide/#choose">
         <span class="download-resource-meta"><i>04</i><b>CASE DATASETS</b><em>ZIP</em></span>
-        <strong>Three English Case Studies</strong>
-        <p>Global HALE · COVID-19 occurrence · Acute hepatitis B. Original data, complete maps, ready panels, and English instructions.</p>
+        <strong>Six English Case Studies</strong>
+        <p>Six workflows with case data, result tables, publication figures and R visualization.</p>
         <span class="download-resource-action">Choose a case &amp; download <i>→</i></span>
       </a>
       <a class="download-resource-card" data-resource="MONITOR" href="https://github.com/bayesianstvc/BSTVC-Monitor" target="_blank" rel="noreferrer">

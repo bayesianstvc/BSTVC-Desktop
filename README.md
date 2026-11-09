@@ -20,7 +20,7 @@
 
 **V2’s headline case-study result: narrower reported credible intervals.** Across three public cases, summaries of 95% credible-interval widths were approximately **94%–99% narrower for temporal coefficients** and **38%–98% narrower for spatial coefficients** than in V1. [Explore the V2 comparison](https://bayesianstvc.github.io/BSTVC-Desktop/v2/) · [Watch the English overview](https://bayesianstvc.github.io/BSTVC-Desktop/v2/#video).
 
-These are approximate case-level median summaries, not a common reduction for every interval; accuracy and calibration require assessment alongside the model and diagnostics.
+If tomorrow’s forecast is 2–30°C, it’s hard to know what to wear. A range of 29–30°C tells you to dress for heat. BSTVC V2 reported narrower ranges for temporal and spatial coefficients across the three cases. The percentages summarize the median interval-width change in each case.
 
 **[Desktop official website](https://bayesianstvc.github.io/BSTVC-Desktop/)** · **[桌面端中文官网](https://bayesianstvc.github.io/BSTVC-Desktop/zh/)** · **[BSTVC brand website](https://bayesianstvc.github.io/)**
 
@@ -41,29 +41,34 @@ These are approximate case-level median summaries, not a common reduction for ev
 | **BSTVC Desktop — English installer** | Windows 10/11 users who want the complete English graphical workflow | **[Download English V2 installer](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/v2026.10.25/BSTVC_desktop_EN_win_x64_26.10.25_setup.exe)** |
 | **English V2 — 26.10.25** | Installer, checksums, and release notes | [Open the GitHub Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/v2026.10.25) |
 | **English online user guide** | Complete workflows for continuous, binary, and count responses; figures, search, and troubleshooting | [Open the English guide](https://bayesianstvc.github.io/BSTVC-Desktop/guide/) |
-| **Three English case datasets** | Original data, complete maps, verified ready panels, and companion instructions | [Choose a case](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#choose) · [GitHub data Release](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/examples-en-2026.10.02) |
+| **Six case studies and R visualization** | Datasets, maps, result tables, publication figures and plotting scripts | [Choose a case](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#choose) · [GitHub downloads](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/guides-cases-v2-2026.11.08) |
 | **English official website** | Product overview, methods, workflow, outputs, and download guidance | [bayesianstvc.github.io/BSTVC-Desktop](https://bayesianstvc.github.io/BSTVC-Desktop) |
 | **中文官方网站** | 中文方法介绍、案例、下载与使用支持 | [bayesianstvc.github.io/BSTVC-Desktop/zh/](https://bayesianstvc.github.io/BSTVC-Desktop/zh/) |
 | **中文桌面版 V2（26.10.25）** | 中文 Windows 安装包与实例数据；操作说明请阅读在线用户手册 | [百度网盘](https://pan.baidu.com/s/5h7zSPjXEvBINShxLVLjirA) |
-| **中文在线用户手册** | 中文操作流程、参数说明、结果解读与 V2 说明 | [打开在线用户手册](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · [快速开始](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#quick-start) · [V1/V2 比较](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#v2-comparison) |
+| **中文在线用户手册** | 中文操作流程、参数说明、结果解读与 V2 说明 | [打开在线用户手册](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html) · [快速开始](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#quick) · [V1/V2 比较](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#v2news) |
 
-> **Get started:** Download V2, follow the [English guide](https://bayesianstvc.github.io/BSTVC-Desktop/guide/), or explore the [V2 update](https://bayesianstvc.github.io/BSTVC-Desktop/v2/). Case datasets remain available in their separate data Release.
+> **Get started:** Download V2, follow the [English guide](https://bayesianstvc.github.io/BSTVC-Desktop/guide/), or explore the [V2 update](https://bayesianstvc.github.io/BSTVC-Desktop/v2/). The current six-case downloads include English and Chinese guides and R visualization.
 
 **SHA-256 (English installer):** `63c7873b351037de85282ac7da0febbdc6363d3579f4f39bf68b4eeca31ff0b7` · 547,613,237 bytes.
 
-## Learn with three English case studies
+## Six cases, user guides and publication figures
 
-Start with the compact count case, or choose the response family relevant to your work. Each ZIP contains the original supplied data and all map components, an English `START-HERE.html` and `README.md`, a file manifest, and the optional R visualization companion. Binary and count packages also contain ready-to-import panel CSVs verified against the original wide workbooks. These additions reshape data without changing values or imputing missingness.
+The current English and Chinese guides cover six cases. The fourth case includes separate binary and count walkthroughs. Each case bundle includes inputs, maps, reference result tables, publication figures and the accompanying R visualization scripts.
 
-| Response | Case | Guide and data |
-|:--|:--|:--|
-| **Continuous** | Global healthy life expectancy — 177 map units; 2000–2020 | [Walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/continuous.html) · [Download ZIP](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/examples-en-2026.10.02/Case-01-Continuous-Global-HALE.zip) |
-| **Binary (0/1)** | COVID-19 occurrence — 31 provinces; 12 months in 2020 | [Walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/binary.html) · [Download ZIP](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/examples-en-2026.10.02/Case-02-Binary-China-COVID-19.zip) |
-| **Count** | Acute hepatitis B — 5 US states; 2012–2023 | [Walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/count.html) · [Download ZIP](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/examples-en-2026.10.02/Case-03-Count-US-Hepatitis-B.zip) |
+**English:** [Six cases and figures](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-V2-EN-User-Guide-and-Cases.zip) · [R visualization code](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-V2-EN-R-Visualization.zip) · [Offline user guide](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-Desktop-V2-User-Guide-EN.html)
 
-**[Download all three cases](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/examples-en-2026.10.02/BSTVC-English-Case-Studies-All.zip)** · **[Release notes and SHA-256 checksums](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/examples-en-2026.10.02)** · **[Optional English R visualization](https://bayesianstvc.github.io/BSTVC-Desktop/guide/visualization.html)**
+**中文：** [六个案例与论文图件](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-V2-ZH-User-Guide-and-Cases.zip) · [R 制图源码](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-V2-ZH-R-Visualization.zip) · [离线用户手册](https://github.com/bayesianstvc/BSTVC-Desktop/releases/download/guides-cases-v2-2026.11.08/BSTVC-Desktop-V2-User-Guide-ZH.html)
 
-The original COVID-19 workbook is wide despite its `Panel` filename. The guide gives both the conversion route and the ready-panel route. Missingness is retained and documented. Historical figures in the guide are source illustrations, not newly reproduced model outputs.
+| Case | Workflow | Example | Guide |
+|:--|:--|:--|:--|
+| 1 | Continuous | African under-five mortality | [English walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#case1) · [中文操作步骤](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#case1) |
+| 2 | Binary | COVID-19 in China | [English walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#case2) · [中文操作步骤](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#case2) |
+| 3 | Count | Hepatitis B in the United States | [English walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#case3) · [中文操作步骤](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#case3) |
+| 4 | Binary and count | US suicide | [English walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#case4) · [中文操作步骤](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#case4) |
+| 5 | Spatial | US suicide, 2016 | [English walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#case5) · [中文操作步骤](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#case5) |
+| 6 | Continuous | Global health-adjusted life expectancy | [English walkthrough](https://bayesianstvc.github.io/BSTVC-Desktop/guide/#case6) · [中文操作步骤](https://bayesianstvc.github.io/BSTVC-Desktop/zh/assets/bstvc-user-guide.html#case6) |
+
+[GitHub guide and case release with checksums](https://github.com/bayesianstvc/BSTVC-Desktop/releases/tag/guides-cases-v2-2026.11.08)
 
 ## Why BSTVC Desktop?
 
@@ -110,7 +115,7 @@ Data preprocessing and order validation
           ↓
 Model selection, priors, and computing parameters
           ↓
-Bayesian model fitting with INLA
+Run a Bayesian model and export results
           ↓
 SCs / TCs / STVPI / prediction / model evaluation
           ↓

@@ -70,9 +70,9 @@ p_stvpi <- ggplot(contribution, aes(mean, reorder(effect_name, mean))) +
  geom_point(size = 2, colour = "#15343c") + scale_x_continuous(labels = scales::label_percent()) +
  labs(x = "Relative contribution", y = "Modeled component", title = "Spatiotemporal contribution with posterior uncertainty") + theme_minimal(base_size = 12)
 save_plot(p_stvpi, "03-spatiotemporal-contribution.png", height = max(8, nrow(contribution) * .25))
-# 3. Prediction accuracy on the exported response scale.
+# 3. Descriptive agreement for the selected exported result table.
 require_fields(prediction, c("y", "predict_y", settings$id, settings$time), "local.prediction")
-if (!is.numeric(prediction$y) || !is.numeric(prediction$predict_y)) stop("Observed and predicted values must be numeric.")
+if (!is.numeric(prediction$y) || !is.numeric(prediction$predict_y)) stop("Observed and exported fitted values must be numeric.")
 observed <- prediction[is.finite(prediction$y) & is.finite(prediction$predict_y), , drop = FALSE]
 if (!nrow(observed)) stop("No observed/predicted pairs are available for evaluation.")
 y <- observed$y
@@ -108,7 +108,7 @@ if (case_type == "binary") {
  print(metrics)
  p_accuracy <- ggplot(observed, aes(y, predict_y)) + geom_point(alpha = .55, colour = "#087f79") +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed", colour = "grey60") +
-  labs(x = "Observed response", y = "Predicted response", title = "Observed and predicted values") + theme_minimal(base_size = 12)
+  labs(x = "Observed response", y = "Exported fitted value", title = "Observed and exported fitted values") + theme_minimal(base_size = 12)
 }
 save_plot(p_accuracy, "04-prediction-accuracy.png")
 cat("These metrics describe the selected workbook. Independent validation requires a suitable held-out design.\n")
@@ -135,7 +135,7 @@ if (anyDuplicated(prediction[c(settings$id, settings$time)])) stop("Prediction r
 mapped_prediction <- left_join(map, prediction, by = settings$id)
 p_prediction <- ggplot(mapped_prediction) + geom_sf(aes(fill = predict_y), colour = "white", linewidth = .1) +
  facet_wrap(stats::reformulate(settings$time), ncol = 4) +
- labs(title = "Predicted response across time", x = NULL, y = NULL, fill = "Predicted response") + theme_minimal(base_size = 12)
+ labs(title = "Exported fitted quantities across time", x = NULL, y = NULL, fill = "Exported fitted value") + theme_minimal(base_size = 12)
 if (case_type == "binary") {
  p_prediction <- p_prediction + scale_fill_viridis_c(limits = c(0, 1), na.value = "grey90")
 } else {
